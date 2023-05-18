@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/42a3832eaa.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function logg() {
+        window.location.href = "Home";
+      }
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: #000000;
+        font-family: "Roboto", sans-serif;
+      }
+      .button {
+        border: 1px solid #fff;
+        border-radius: 20px;
+        color: #fff;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        padding: 15px 60px;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+      input[type="email"],
+      input[type="password"],
+      input[type="text"] {
+        background: #d4d4d4;
+        border: none;
+        font-weight: 300;
+        margin: 5px;
+        padding: 10px;
+        width: 280px;
+      }
+      .submit-btn {
+        border: none;
+        border-radius: 25px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 11px;
+        letter-spacing: 1px;
+        margin-top: 20px;
+        padding: 15px 50px;
+        text-transform: uppercase;
+      }
+      #login .submit-btn {
+        background: #eb9e10;
+      }
+      #register .submit-btn {
+        background: #eb9e10;
+      }
+      #container {
+        background-color: #000;
+        border-radius: 10px;
+        height: 550px;
+        margin: 5% auto;
+        overflow: hidden;
+        width: 1000px;
+      }
+      .social-login {
+        border: 1px solid #ccc;
+        border-radius: 50px;
+        height: 15px;
+        padding: 10px;
+        width: 15px;
+      }
+      #login {
+        background: #fff;
+        float: left;
+        height: 100%;
+        position: relative;
+        width: 50%;
+        text-align: center;
+        top: -550px;
+        z-index: 1;
+      }
+      #register {
+        background: #ffffff;
+        float: right;
+        height: 100%;
+        position: relative;
+        width: 50%;
+        text-align: center;
+        top: -550px;
+        z-index: 1;
+      }
+      #login h1,
+      #register h1 {
+        padding: 20% 0 25px;
+      }
+      #login h1 {
+        color: #eb9e10;
+      }
+      #register h1 {
+        color: #eb9e10;
+      }
+      #login p,
+      #register p {
+        font-size: 12px;
+        font-weight: 300;
+        letter-spacing: 0.3px;
+        padding: 20px;
+      }
+      #forgot-pass {
+        border-bottom: 1px solid #eb9e10;
+        color: #000;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+        padding: 3px;
+        text-decoration: none;
+      }
+      #cover {
+        background: #eb9e10;
+        color: #ffffff;
+        height: 550px;
+        margin: 0 0 0 50%;
+        position: relative;
+        text-align: center;
+        transition: margin 0.7s, background 0.5s, display 1s, width 1s;
+        width: 50%;
+        z-index: 5;
+      }
+      #cover h1 {
+        padding-top: 38%;
+      }
+      #cover p {
+        font-weight: 300;
+        line-height: 22px;
+        padding: 30px 45px 40px;
+      }
+      .sign-in {
+        display: none;
+      }
+      .sub {
+        position: relative;
+        top: -11px;
+      }
+      #cover:target {
+        background: #eb9e10;
+        margin: 0;
+      }
+      #cover:target .sign-up {
+        display: none;
+      }
+      #cover:target .sign-in {
+        display: inline-block;
+      }
+      #cover:target .login-div {
+        width: 35%;
+      }
+      #credit {
+        color: #999;
+        font-size: 14px;
+      }
+      #info {
+        background: #000000;
+        color: #555;
+        padding: 20px;
+        text-align: center;
+      }
+      p.pp{
+        color: red;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <script>
+        function logg2(){
+            let c;
+        let a = document.getElementById("l1").value;
+        let b = document.getElementById("l2").value;
+        if (a==="Ragy2106213@miuegypt.com"){
+            window.location.href = "Home";
+            c = "yess";
+        }
+        else{
+            c = "Input not validdddddd";
+        }
+        document.getElementById("demo").innerHTML = c;
+      }
+      function myFunction() {
+        let x = document.getElementById("l1").value;
+        let y = document.getElementById("l2").value;
+        let text;
+        let text2;
+        if (x === "") {
+          text = "Input not valid";
+        }
+        else text ="";
+        if (y==="") {
+            text2 ="Pass must be 8 or more char";
+        }
+        else text2 ="";
+
+        document.getElementById("demo").innerHTML = text;
+        document.getElementById("demo2").innerHTML = text2;
+      }
+      
+    </script>
+  </head>
+  <body>
+    <%- include("./partials/Nav.ejs") %>
+
+    <div id="container">
+      <div id="cover">
+        <h1 class="sign-up">Hello, Friend!</h1>
+        <p class="sign-up">
+          Enter your personal details<br />
+          and start a journey with us
+        </p>
+        <a class="button sign-up" href="#cover">Sign Up</a>
+        <h1 class="sign-in">Welcome Back!</h1>
+        <p class="sign-in">
+          To keep connected with us please<br />
+          login with your personal info
+        </p>
+        <br />
+        <a class="button sub sign-in" href="#">Sign In</a>
+      </div>
+      <div id="login">
+        <h1>Sign In</h1>
+        <p>Use your email account:</p>
+        <form id="L_in">
+          <input id="l1" type="text" placeholder="Email" autocomplete="off" />
+          <p class="pp" id="demo"></p>
+          <input id="l2" type="password" placeholder="Password" autocomplete="off" />
+          <p class="pp" id="demo2"></p>
+          <a id="forgot-pass" href="#">Forgot your password?</a><br />
+          <input class="submit-btn" type="submit" onclick="logg2()" value="Sign In"/>
+        </form>
+      </div>
+      <div id="register">
+        <h1>Create Account</h1>
+        <p>Use your email for registration:</p>
+        <form id="Sign_Up">
+          <input  type="text" placeholder="Name" autocomplete="off" /><br />
+          <input type="email" placeholder="Email" autocomplete="off" /><br />
+          <input type="password" placeholder="Password" autocomplete="off" /><br />
+          <input type="password" placeholder="Password" autocomplete="off" /><br />
+          <input class="submit-btn" type="submit" value="Sign Up" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

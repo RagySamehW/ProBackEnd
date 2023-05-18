@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="Style.css" />
+<script src="https://kit.fontawesome.com/3929e16ef5.js" crossorigin="anonymous"></script>
+<script src="{% static 'network/functions.js' %}"></script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="CSS/footer.css">
+<link rel="stylesheet" href="CSS/NavBar.css">
+
+<title>Document</title>
+<style>
+    body {
+        width: 100%;
+        background-color: #ffffff;
+    }
+
+    #navbar li a.shop {
+        color: #eb9e10;
+    }
+
+    .small-img-group {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .small-img-col {
+        flex-basis: 24%;
+        cursor: pointer;
+    }
+
+    .sproduct select {
+        display: block;
+        padding: 5px 10px;
+        margin-bottom: 5px;
+    }
+
+    .sproduct input {
+        width: 40px;
+        height: 35px;
+        padding-left: 10px;
+        font-size: 15px;
+        margin-right: 10px;
+    }
+
+    .sproduct input:focus {
+        outline: none;
+    }
+
+    .tt {
+        position: absolute;
+        left: 750px;
+        margin-top: 45px;
+    }
+
+    .buy-button {
+        background-color: #eb9e10;
+        opacity: 1;
+        transition: 0.3s all;
+    }
+
+
+    .h_container {
+        background-color: #cac7c7;
+        border-radius: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        line-height: 45px;
+        margin-top: 10px;
+        margin-right: 5px;
+
+    }
+
+    #heart2 {
+        font-size: 25px;
+    }
+
+    #heart2:hover {
+        color: red;
+    }
+
+    h4.q {
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+
+    #product1 {
+        text-align: center;
+        margin-left: 100px;
+        margin-top: 30px;
+    }
+
+    #product1 .pro {
+        width: 23%;
+        min-width: 250px;
+        padding: 10px 12px;
+        border: 1px solid #eb9e10;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 5px 5px 10px #eb9e10;
+        margin: 15px 0;
+        margin-bottom: 35px;
+        transition: 0.2s ease;
+        position: relative;
+        background-color: #000;
+        
+    }
+
+    #product1 .pro:hover {
+        box-shadow: 20px 20px 30px #eb9e10;
+        width: 25%;
+        min-width: 300px;
+    }
+
+    #product1 .pro img {
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    #product1 .pro .des {
+        text-align: start;
+        padding: 10px 0;
+    }
+
+    #product1 .pro .des span {
+        color: #635d5d;
+        font-size: 10px;
+    }
+
+    #product1 .pro .des h5 {
+        padding-top: 7px;
+        color: #ffffff;
+        font-size: 12px;
+    }
+
+    #product1 .pro .des i {
+        font-size: 10px;
+        color: #eb9e10;
+    }
+
+    #product1 .pro .des h4 {
+        padding-top: 7px;
+        font-size: 13px;
+        font-weight: 700;
+        color: #fcfcfc;
+    }
+
+    #product1 .pro .cart {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 50px;
+        font-weight: 500;
+        background-color: #000000;
+        color: #eb9e10;
+        border: 1px solid #eb9e10;
+        position: absolute;
+        bottom: 20px;
+        right: 10px;
+    }
+
+    #product1 .pro-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-top: 20px;
+        margin-right: 110px;
+        margin-left: 50px;
+    }
+    .r{
+        margin-top: 30px;
+    }
+</style>
+</head>
+
+<body>
+    <%- include("./partials/Nav.ejs") %>
+    <section class="container sproduct">
+        <div class="row mt-5">
+            <div class="col-lg-5 col-md-12 col-12 pb-1">
+                <img class="r img-fluid w-100" src="products/pp5.webp">
+                <div class="small-img-group">
+                    <div class="small-img-col">
+                        <img class="small-img" src="products/pp2.webp" width="100%">
+                    </div>
+                    <div class="small-img-col">
+                        <img class="small-img" src="products/pp1.webp" width="100%">
+                    </div>
+                    <div class="small-img-col">
+                        <img class="small-img" src="products/pp4.webp" width="100%">
+                    </div>
+                    <div class="small-img-col">
+                        <img class="small-img" src="products/pp3.webp" width="100%">
+                    </div>
+                </div>
+            </div>
+            <section class="tt">
+                <div class="col-lg-6 col-md-12 col-1h6">
+                    <h3 class="py-4">Men's Fashion T-Shirt</h3>
+                    <h2>EGP 300.00</h2>
+                    <select class="se">
+                        <option>select Size</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                    </select>
+                    <input type="number" value="1">
+                    <div class="h_container">
+                        <i id="heart2" class="far fa-heart"></i>
+                    </div>
+                    <button class="buy-button">Add To Cart</button>
+                    <h4 class="q">Product Details</h4>
+                    <span>This product is made with at least 50% sustainable materials, using a blend of both recycled
+                        polyester and organic cotton fibers. The blend is at least 10% recycled fibers or at least 10%
+                        organic cotton fibers.
+                    </span>
+
+
+                </div>
+            </section>
+        </div>
+    </section>
+    <br>
+    <hr>
+    <section id="product1" class="section-p1">
+        <hr>
+        <h2>Best Summer Collection</h2>
+        <div class="pro-container">
+            <div class="pro">
+                <img class="p1" src="products/product1.jpg" alt="">
+                <div class="des">
+                    <span>American Eagle</span>
+                    <h5>AE SUPER SOFT ICON V-NECK</h5>
+                    <div class="star">
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                    </div>
+                    <h4>EGP 300.00</h4>
+                </div>
+                <a href="#"><i class="material-icons cart">shop</i></a>
+
+            </div>
+            <div class="pro">
+                <img src="products/product2.jpg" alt="">
+                <div class="des">
+                    <span>American Eagle</span>
+                    <h5>AE SUPER SOFT ICON V-NECK</h5>
+                    <div class="star">
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                    </div>
+                    <h4>EGP 300.00</h4>
+                </div>
+                <a href="#"><i class="material-icons cart">shop</i></a>
+
+            </div>
+            <div class="pro">
+                <img src="products/product3.jpg" alt="">
+                <div class="des">
+                    <span>American Eagle</span>
+                    <h5>AE SUPER SOFT ICON V-NECK</h5>
+                    <div class="star">
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                    </div>
+                    <h4>EGP 300.00</h4>
+                </div>
+                <a href="#"><i class="material-icons cart">shop</i></a>
+
+            </div>
+            <div class="pro">
+                <img src="products/product4.jpg" alt="">
+                <div class="des">
+                    <span>American Eagle</span>
+                    <h5>AE SUPER SOFT ICON V-NECK</h5>
+                    <div class="star">
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                    </div>
+                    <h4>EGP 300.00</h4>
+                </div>
+                <a href="#"><i class="material-icons cart">shop</i></a>
+
+            </div>
+
+        </div>
+    </section>
+    <section class="foot">
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <h6>About</h6>
+                        <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative to help
+                            the upcoming programmers with the code. Scanfcode focuses on providing the most efficient
+                            code or snippets as the code wants to be simple. We will help programmers build up concepts
+                            in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap,
+                            JavaScript, PHP, Android, SQL and Algorithm.</p>
+                    </div>
+
+                    <div class="col-xs-6 col-md-3">
+                        <h6>Categories</h6>
+                        <ul class="footer-links">
+                            <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+                            <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+                            <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+                            <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+                            <li><a href="http://scanfcode.com/category/android/">Android</a></li>
+                            <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xs-6 col-md-3">
+                        <h6>Quick Links</h6>
+                        <ul class="footer-links">
+                            <li><a href="http://scanfcode.com/about/">About Us</a></li>
+                            <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+                            <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+                            <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+                            <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-sm-6 col-xs-12">
+                        <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by
+                            <a href="#">Scanfcode</a>.
+                        </p>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <ul class="social-icons">
+                            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+</body>
+
+</html>

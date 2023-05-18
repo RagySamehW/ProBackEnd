@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>E-commerce Admin Dashboard</title>
+    <style>
+        /* Styles for the header, nav, main, and footer sections... */
+        body{
+            background-color: black;
+        }
+        h2{
+            color: #eb9e10;
+            text-decoration: underline;
+            text-align: center;
+        }
+        header h1{
+            text-align: center;
+            text-decoration: underline black;
+            background-color: #eb9e10;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            color: #eb9e10;
+            background-color: black;
+        }
+
+        th {
+            background-color: #eb9e10;
+            color: black;
+        }
+        li a{
+            text-decoration: none;
+            color: #eb9e10;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        ul{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>E-commerce Admin Dashboard</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="Addmin_Users">-> Users.</a></li>
+            <li><a href="Admin_Products_List">-> Products. </a></li>
+            <li><a href="#">-> Messages. </a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Orders:</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Orders ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Order A</td>
+                    <td>Description of Product A</td>
+                    <td>$10.00</td>
+                    <td>
+                        <button class="edit-product-btn">Edit</button>
+                        <button class="delete-product-btn">Done</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Order B</td>
+                    <td>Description of Product B</td>
+                    <td>$20.00</td>
+                    <td>
+                        <button class="edit-product-btn">Edit</button>
+                        <button class="done-product-btn">Done</button>
+                    </td>
+                </tr>
+                <!-- More products... -->
+            </tbody>
+        </table>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

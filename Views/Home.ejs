@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="/Public/CSS/Home.css">
+
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/42a3832eaa.js" crossorigin="anonymous"></script>
+
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/footer.css">
+    <link rel="stylesheet" href="CSS/NavBar.css">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        
+html {
+    scroll-behavior: smooth;
+}
+
+h1 {
+    font-size: 50px;
+    line-height: 64px;
+    color: #222;
+}
+
+h2 {
+    font-size: 46px;
+    line-height: 54px;
+    color: #222;
+}
+
+h4 {
+    font-size: 20px;
+    color: #222;
+}
+
+h6 {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+p {
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+
+#navbar li a.home {
+    color: #eb9e10;
+}
+
+.section-p1 {
+    padding: 40px 80px;
+}
+
+.section-m1 {
+    margin: 40px 0;
+}
+
+button.normal {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: 0.2s;
+}
+
+button.white {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 11px 18px;
+    color: #252424;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid #000;
+    outline: none;
+    transition: 0.2s;
+}
+
+body {
+    width: 100%;
+    background-color: #fafafa;
+}
+
+#hero {
+    background-image: url("Images/woman-1245817.jpg");
+    height: 90vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 25% right 0;
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#hero h4 {
+    padding-bottom: 15px;
+
+}
+
+#hero h1 {
+    color: #ffffff;
+}
+
+#hero button {
+    background-image: url();
+    background-color: transparent;
+    color: #088178;
+    border: 0;
+    padding: 14px 80px 14px 65px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    font-weight: 700px;
+    font-size: 15px;
+}
+
+#feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#feature .fe-box {
+    width: 220px;
+    text-align: center;
+    padding: 25px 15px;
+    box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+    border: 1px solid #cce7d0;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+#feature .fe-box:hover {
+    box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.1);
+}
+
+#feature .fe-box img {
+    width: 60%;
+    margin-bottom: 10px;
+}
+
+#feature .fe-box h6 {
+    display: inline-block;
+    padding: 9px 8px 6px 8px;
+    line-height: 1;
+    border-radius: 4px;
+    color: #088178;
+    background-color: #eb9e10;
+}
+
+#feature .fe-box:nth-child(2) h6 {
+    background-color: #323233;
+}
+
+#feature .fe-box:nth-child(3) h6 {
+    background-color: #eb9e10;
+}
+
+#feature .fe-box:nth-child(4) h6 {
+    background-color: #92143e;
+}
+
+#product1 {
+    text-align: center;
+}
+
+#product1 .pro {
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #eb9e10;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px #eb9e10;
+    margin: 15px 0;
+    transition: 0.2s ease;
+    position: relative;
+    background-color: #000;
+}
+
+#product1 .pro:hover {
+    box-shadow: 20px 20px 30px #eb9e10;
+}
+
+#product1 .pro img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+#product1 .pro .des {
+    text-align: start;
+    padding: 10px 0;
+}
+
+#product1 .pro .des span {
+    color: #635d5d;
+    font-size: 12px;
+}
+
+#product1 .pro .des h5 {
+    padding-top: 7px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+#product1 .pro .des i {
+    font-size: 12px;
+    color: #eb9e10;
+}
+
+#product1 .pro .des h4 {
+    padding-top: 7px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fcfcfc;
+}
+
+#product1 .pro .cart {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+    font-weight: 500;
+    background-color: #000000;
+    color: #eb9e10;
+    border: 1px solid #eb9e10;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+
+#product1 .pro-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+
+#banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url("banners/banner2.jpg");
+    background-size: 100%;
+    width: 100%;
+    height: 40vh;
+    background-position: center;
+}
+
+#banner h4 {
+    color: #e8f6ea;
+    font-size: 18px;
+}
+
+#banner h2 {
+    color: #E3E6f3;
+    font-size: 30px;
+    ;
+}
+
+#banner h2 span {
+    color: #eb9e10;
+}
+
+#banner button:hover {
+    background-color: #eb9e10;
+}
+
+#sm-banner .banner-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url("banners/pp222.jpg");
+    background-size: 100%;
+    min-width: 580px;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+
+}
+
+#sm-banner .banner-box2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url("banners/new.jpg");
+    background-size: 100%;
+    min-width: 580px;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+}
+
+#sm-banner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+#sm-banner h4 {
+    color: #4e4e4e;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+#sm-banner h2 {
+    color: #000;
+    font-size: 28px;
+    font-weight: 800;
+
+}
+
+#sm-banner span {
+    color: #4e4e4e;
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 15px;
+}
+
+#sm-banner .banner-box:hover button {
+    background-color: #eb9e10;
+    border: 1px solid #cce7d0;
+}
+
+#sm-banner {
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 110px;
+}
+
+    </style>
+</head>
+
+<body>
+    <%- include("./partials/Nav.ejs") %>
+    <section id="hero">
+        <h4>Trade-in-offer</h4>
+        <h2>Super value deals</h2>
+        <h1>On all products</h1>
+        <p>Save more withe coupons & up to 70% off!</p>
+        <a href="Product"><button>Shop now</button></a>
+    </section>
+
+    <section id="feature" class="section-p1">
+        <div class="fe-box">
+            <img src="img4.png" alt="">
+            <h6>Free Sipping</h6>
+        </div>
+        <div class="fe-box">
+            <img src="banners/monry.jpeg" alt="">
+            <h6>Free Sipping</h6>
+        </div>
+        <div class="fe-box">
+            <img src="banners/order.png" alt="">
+            <h6>Free Sipping</h6>
+        </div>
+        <div class="fe-box">
+            <img src="banners/img4.png" alt="">
+            <h6>Free Sipping</h6>
+        </div>
+    </section>
+    <section id="product1" class="section-p1">
+        <hr>
+        <h2>Featured Products</h2>
+        <p>Best Summer Collection of all time</p>
+        <div class="pro-container">
+            <div class="pro">
+                <img class="p1" src="products/product1.jpg" alt="">
+                <div class="des">
+                    <span>American Eagle</span>
+                    <h5>AE SUPER SOFT ICON V-NECK</h5>
+                    <div class="star">
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                    </div>
+                    <h4>EGP 300.00</h4>
+                </div>
+                <a href="#"><i class="material-icons cart">shop</i></a>
+
+            </div>
+            <div class="pro">
+                <img src="products/product2.jpg" alt="">
+                <div class="des">
+                    <span>American Eagle</span>
+                    <h5>AE SUPER SOFT ICON V-NECK</h5>
+                    <div class="star">
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                    </div>
+                    <h4>EGP 300.00</h4>
+                </div>
+                <a href="#"><i class="material-icons cart">shop</i></a>
+
+            </div>
+            <div class="pro">
+                <img src="products/product3.jpg" alt="">
+                <div class="des">
+                    <span>American Eagle</span>
+                    <h5>AE SUPER SOFT ICON V-NECK</h5>
+                    <div class="star">
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                    </div>
+                    <h4>EGP 300.00</h4>
+                </div>
+                <a href="#"><i class="material-icons cart">shop</i></a>
+
+            </div>
+            <div class="pro">
+                <img src="products/product4.jpg" alt="">
+                <div class="des">
+                    <span>American Eagle</span>
+                    <h5>AE SUPER SOFT ICON V-NECK</h5>
+                    <div class="star">
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                    </div>
+                    <h4>EGP 300.00</h4>
+                </div>
+                <a href="#"><i class="material-icons cart">shop</i></a>
+
+            </div>
+            <div class="pro">
+                <img src="products/product5.jpg" alt="">
+                <div class="des">
+                    <span>American Eagle</span>
+                    <h5>AE SUPER SOFT ICON V-NECK</h5>
+                    <div class="star">
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                    </div>
+                    <h4>EGP 300.00</h4>
+                </div>
+                <a href="#"><i class="material-icons cart">shop</i></a>
+
+            </div>
+            <div class="pro">
+                <img src="products/product6.jpg" alt="">
+                <div class="des">
+                    <span>American Eagle</span>
+                    <h5>AE SUPER SOFT ICON V-NECK</h5>
+                    <div class="star">
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                    </div>
+                    <h4>EGP 300.00</h4>
+                </div>
+                <a href="#"><i class="material-icons cart">shop</i></a>
+
+            </div>
+            <div class="pro">
+                <img src="products/product7.jpg" alt="">
+                <div class="des">
+                    <span>American Eagle</span>
+                    <h5>AE SUPER SOFT ICON V-NECK</h5>
+                    <div class="star">
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                    </div>
+                    <h4>EGP 300.00</h4>
+                </div>
+                <a href="#"><i class="material-icons cart">shop</i></a>
+
+            </div>
+            <div class="pro">
+                <img src="products/product8.jpg" alt="">
+                <div class="des">
+                    <span>American Eagle</span>
+                    <h5>AE SUPER SOFT ICON V-NECK</h5>
+                    <div class="star">
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                    </div>
+                    <h4>EGP 300.00</h4>
+                </div>
+                <a href="#"><i class="material-icons cart">shop</i></a>
+
+            </div>
+        </div>
+    </section>
+    <section id="banner" class="section-m1">
+        <h4>Repair Services</h4>
+        <h2>Up to <span>>70% off</span> - All t-shirts & Accessories</h2>
+        <a href="products.html"><button class="normal">Explore More</button></a>
+    </section>
+    <section id="product1" class="section-p1">
+        <h2>New collection</h2>
+        <p>Best Summer Collection of all time</p>
+        <div class="pro-container">
+            <div class="pro">
+                <a href="item.html">
+                    <img class="p1" src="products/pp1.webp" alt="">
+                    <div class="des">
+                        <span>American Eagle</span>
+                        <h5>AE SUPER SOFT ICON V-NECK</h5>
+                        <div class="star">
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                        </div>
+                        <h4>EGP 300.00</h4>
+                    </div>
+                    <a href="cart.html"><i class="material-icons cart">shop</i></a>
+                </a>
+            </div>
+            <div class="pro">
+                <a href="item.html">
+                    <img src="products/pp2.webp" alt="">
+                    <div class="des">
+                        <span>American Eagle</span>
+                        <h5>AE SUPER SOFT ICON V-NECK</h5>
+                        <div class="star">
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                        </div>
+                        <h4>EGP 300.00</h4>
+                    </div>
+                    <a href="cart.html"><i class="material-icons cart">shop</i></a>
+                </a>
+            </div>
+            <div class="pro">
+                <a href="item.html">
+                    <img src="products/pp3.webp" alt="">
+                    <div class="des">
+                        <span>American Eagle</span>
+                        <h5>AE SUPER SOFT ICON V-NECK</h5>
+                        <div class="star">
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                        </div>
+                        <h4>EGP 300.00</h4>
+                    </div>
+                    <a href="cart.html"><i class="material-icons cart">shop</i></a>
+                </a>
+            </div>
+            <div class="pro">
+                <a href="item.html">
+                    <img src="products/pp4.webp" alt="">
+                    <div class="des">
+                        <span>American Eagle</span>
+                        <h5>AE SUPER SOFT ICON V-NECK</h5>
+                        <div class="star">
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                        </div>
+                        <h4>EGP 300.00</h4>
+                    </div>
+                    <a href="cart.html"><i class="material-icons cart">shop</i></a>
+                </a>
+            </div>
+            <div class="pro">
+                <a href="item.html">
+                    <img src="products/pp5.webp" alt="">
+                    <div class="des">
+                        <span>American Eagle</span>
+                        <h5>AE SUPER SOFT ICON V-NECK</h5>
+                        <div class="star">
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                        </div>
+                        <h4>EGP 300.00</h4>
+                    </div>
+                    <a href="cart.html"><i class="material-icons cart">shop</i></a>
+                </a>
+            </div>
+            <div class="pro">
+                <a href="item.html">
+                    <img src="products/pp6.webp" alt="">
+                    <div class="des">
+                        <span>American Eagle</span>
+                        <h5>AE SUPER SOFT ICON V-NECK</h5>
+                        <div class="star">
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                        </div>
+                        <h4>EGP 300.00</h4>
+                    </div>
+                    <a href="cart.html"><i class="material-icons cart">shop</i></a>
+                </a>
+            </div>
+            <div class="pro">
+                <a href="item.html">
+                    <img src="products/pp7.webp" alt="">
+                    <div class="des">
+                        <span>American Eagle</span>
+                        <h5>AE SUPER SOFT ICON V-NECK</h5>
+                        <div class="star">
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                        </div>
+                        <h4>EGP 300.00</h4>
+                    </div>
+                    <a href="cart.html"><i class="material-icons cart">shop</i></a>
+                </a>
+            </div>
+            <div class="pro">
+                <a href="item.html">
+                    <img src="products/pp8.webp" alt="">
+                    <div class="des">
+                        <span>American Eagle</span>
+                        <h5>AE SUPER SOFT ICON V-NECK</h5>
+                        <div class="star">
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
+                        </div>
+                        <h4>EGP 300.00</h4>
+                    </div>
+                    <a href="cart.html"><i class="material-icons cart">shop</i></a>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="sm-banner" class="section-p1">
+        <div class="banner-box">
+            <h4>Crazy deals</h4>
+            <h2>Buy 1 get 1 free</h2>
+            <span>The best gym wear is on sale at LionSoul</span>
+            <a href="products.html"><button class="white">Learn more</button></a>
+        </div>
+        <div class="banner-box banner-box2">
+            <h4>Crazy deals</h4>
+            <h2>Buy 1 get 1 free</h2>
+            <span>The best gym wear is on sale at LionSoul</span>
+            <a href="products.html"><button class="white">Collection</button></a>
+        </div>
+    </section>
+    <section id="f">
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <h6>About</h6>
+                        <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative to help
+                            the upcoming programmers with the code. Scanfcode focuses on providing the most efficient
+                            code or snippets as the code wants to be simple. We will help programmers build up concepts
+                            in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap,
+                            JavaScript, PHP, Android, SQL and Algorithm.</p>
+                    </div>
+
+                    <div class="col-xs-6 col-md-3">
+                        <h6>Categories</h6>
+                        <ul class="footer-links">
+                            <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+                            <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+                            <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+                            <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+                            <li><a href="http://scanfcode.com/category/android/">Android</a></li>
+                            <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xs-6 col-md-3">
+                        <h6>Quick Links</h6>
+                        <ul class="footer-links">
+                            <li><a href="http://scanfcode.com/about/">About Us</a></li>
+                            <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+                            <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+                            <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+                            <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-sm-6 col-xs-12">
+                        <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by
+                            <a href="#">Scanfcode</a>.
+                        </p>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <ul class="social-icons">
+                            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+</body>
+
+</html>

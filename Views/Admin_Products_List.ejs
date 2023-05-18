@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Customer List</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            color: #eb9e10;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #eb9e10;
+        }
+
+        th {
+            background-color: #eb9e10;
+            font-weight: bold;
+        }
+
+        td {
+            background-color: #fff;
+        }
+
+        tr.r:hover {
+            color: #eb9e10;
+        }
+        button.btn{
+			background-color: #eb9e10;
+			border-radius: 25px;
+			margin-bottom: 10px;
+			border: #fff;
+		}
+		button.btn:hover{
+			background-color: #242323;
+			color: #eb9e10;
+		}
+    </style>
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Product List</h1>
+        <table id="product-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Discription</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="r">
+                    <td>Tshirt</td>
+                    <td>cotton Tshirt</td>
+                    <td>300 EGP</td>
+                    <td>50</td>
+                    <td><a href="#"><button>Delet</button></a></td>
+                    
+                </tr>
+                <tr class="r">
+                    <td>Tshirt</td>
+                    <td>cotton Tshirt</td>
+                    <td>300 EGP</td>
+                    <td>50</td>
+                    <td><a href="#"><button>Delet</button></a></td>
+                    
+                </tr>
+                <!-- product data will be inserted here dynamically -->
+            </tbody>
+            <center><a href="Add_Product"><button class="btn">Add</button></a></center>
+            <center><a href="#"><button class="btn">Delet All</button></a></center>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

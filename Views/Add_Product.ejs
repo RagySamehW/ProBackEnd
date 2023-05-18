@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Product | Online Store</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<style>
+		body{
+			background-color: #eb9e10;
+		}
+		.container{
+			background-color: black;
+			margin-top: 100px;
+			color: #eb9e10;
+			border-radius: 25px;
+		}
+		button.btn{
+			background-color: #eb9e10;
+			border-radius: 25px;
+			margin-bottom: 10px;
+			border: #fff;
+		}
+		button.btn:hover{
+			background-color: #242323;
+			color: #eb9e10;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Add Product</h1>
+		<form id="edit-product-form" method="post" action="">
+			<div class="form-group">
+				<label for="product-name">Product Name:</label>
+				<input type="text" class="form-control" id="product-name" name="product-name" placeholder="Enter product name" required>
+			</div>
+			<div class="form-group">
+				<label for="product-description">Product Description:</label>
+				<textarea class="form-control" id="product-description" name="product-description" rows="3" placeholder="Enter product description" required></textarea>
+			</div>
+			<div class="form-group">
+				<label for="product-price">Product Price:</label>
+				<input type="number" class="form-control" id="product-price" name="product-price" placeholder="Enter product price" required>
+			</div>
+			<div class="form-group">
+				<label for="product-image">Product Image:</label>
+				<input type="file" class="form-control-file" id="product-image" name="product-image">
+			</div>
+			<center><button type="submit" class="btn btn-primary">Submit</button></center>
+		</form>
+	</div>
+</body>
+</html>

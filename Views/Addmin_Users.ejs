@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Customer List</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            color: #eb9e10;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #eb9e10;
+        }
+
+        th {
+            background-color: #eb9e10;
+            font-weight: bold;
+        }
+
+        td {
+            background-color: #fff;
+        }
+
+        tr:hover {
+            color: #eb9e10;
+        }
+    </style>
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Customer List</h1>
+        <table id="customer-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip</th>
+                    <th>Orders</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ragy</td>
+                    <td>Ragy2106213@miuegypt.edu.eg</td>
+                    <td>123456789123</td>
+                    <td>Ard El Golf</td>
+                    <td>Cairo</td>
+                    <td>Cairo</td>
+                    <td>56432</td>
+                    <td>1</td>
+                    <td>
+                        <a href="Edit_Users"><button>Edit</button></a>
+                        <a href="#"><button>Delet</button></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ragy</td>
+                    <td>Ragy2106213@miuegypt.edu.eg</td>
+                    <td>123456789123</td>
+                    <td>Ard El Golf</td>
+                    <td>Cairo</td>
+                    <td>Cairo</td>
+                    <td>56432</td>
+                    <td>1</td>
+                    <td>
+                        <a href="admin_users_edit.html"><button>Edit</button></a>
+                        <a href="#"><button>Delet</button></a>
+                    </td>
+                </tr>
+                <!-- customer data will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

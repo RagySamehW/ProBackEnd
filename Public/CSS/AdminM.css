@@ -1,0 +1,46 @@
+
+/* Styles for the header, nav, main, and footer sections... */
+body{
+    background-color: black;
+}
+h2{
+    color: #eb9e10;
+    text-decoration: underline;
+    text-align: center;
+}
+header h1{
+    text-align: center;
+    text-decoration: underline black;
+    background-color: #eb9e10;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: #eb9e10;
+    background-color: black;
+}
+
+th {
+    background-color: #eb9e10;
+    color: black;
+}
+li a{
+    text-decoration: none;
+    color: #eb9e10;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

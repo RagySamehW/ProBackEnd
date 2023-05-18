@@ -1,0 +1,20 @@
+
+		body{
+			background-color: #eb9e10;
+		}
+		.container{
+			background-color: black;
+			margin-top: 100px;
+			color: #eb9e10;
+			border-radius: 25px;
+		}
+		button.btn{
+			background-color: #eb9e10;
+			border-radius: 25px;
+			margin-bottom: 10px;
+			border: #fff;
+		}
+		button.btn:hover{
+			background-color: #242323;
+			color: #eb9e10;
+		}
