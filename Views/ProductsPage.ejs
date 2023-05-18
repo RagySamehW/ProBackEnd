@@ -90,6 +90,10 @@
             box-shadow: 20px 20px 30px #eb9e10;
         }
 
+        #product1 a {
+            text-decoration: none;
+        }
+
         #product1 .pro img {
             width: 100%;
             border-radius: 20px;
@@ -174,7 +178,6 @@
             <div class="pro-container">
             <% if (products.length> 0) { %>
                 <% products.forEach(pro=> { %>
-                   
                         <div onclick="" class="pro">
                             <a href="Item">
                                 <%= pro.image %>

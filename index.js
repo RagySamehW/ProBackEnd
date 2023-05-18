@@ -19,7 +19,7 @@ app.set('view engine', 'ejs');
 //app.use(session({ secret: 'Your_Secret_Key' }));
 
 const products =[
-    {"id":"11" , "name":"American Eagle 1","decription":"AE SUPER SOFT ICON V-NECK", "image":URL(Images/product5.jpg)},
+    {"id":"11" , "name":"American Eagle 1","decription":"AE SUPER SOFT ICON V-NECK"},
     {"id":"12" , "name":"American Eagle 2","decription":"AE SUPER SOFT ICON V-NECK"},
     {"id":"13" , "name":"American Eagle 3","decription":"AE SUPER SOFT ICON V-NECK"},
     {"id":"14" , "name":"American Eagle 4","decription":"AE SUPER SOFT ICON V-NECK"},
