@@ -165,7 +165,7 @@ app.get("/Cart", (req, res) => {
 
 app.get("/WishList", (req, res) => {
   res.render("WishList", {
-    employees,
+    custemors,
     user: req.session.user === undefined ? "" : req.session.user,
   });
 });
