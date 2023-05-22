@@ -5,6 +5,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
+    <script  src="https://kit.fontawesome.com/42a3832eaa.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="CSS/footer.css">
@@ -180,10 +181,10 @@
                 <% products.forEach(pro=> { %>
                         <div onclick="" class="pro">
                             <a href="Item">
-                                <%= pro.image %>
+                                <img class="p1" src="/Images/pp3.webp" alt="">
                                 <div class="des">
-                                    <span><%= pro.name %></span>
-                                    <h5>AE <%= pro.decription %></h5>
+                                    <span><%= pro.id %></span>
+                                    <h5><%= pro.decription %></h5>
                                     <div class="star">
                                         <i class="material-icons">star</i>
                                         <i class="material-icons">star</i>
@@ -200,19 +201,11 @@
                             <% } else { %>
                                 <p>There are no employees to display...</p>
                                 <% } %>
-                    </div>
-                          </section>
-        <section id="num">
-            <div>
-                <a href="products.html">
-                    <center>
-                        <button>1</button>
-                        <button>2</button>
-                        <button>3</button>
-                    </center>
-                </a>
-            </div>
 
+                        
+        
+        
+              </div>
         </section>
         <section id="f">
             <footer class="site-footer">
