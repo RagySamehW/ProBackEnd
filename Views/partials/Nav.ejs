@@ -84,21 +84,22 @@ li.name{
             <ul id="navbar">
                 <li><a class="home" href="Home">Home</a></li>
                 <li><a href="Product">Shop</a></li>
-                <% if(userName ==="Ragy") { %>
-                    <li><a href="AddminM">Admin</a></li>
+               <% if(user.Type==="client"){ %>
+               <li> <a href='/AddminM'>Admin</a></li>
                 <% } %>
+
                 <li><a href="test.html">Blog</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="Contact">Contact</a></li>
                 <li><a href="WishList"><i id="heart" class="far fa-heart"></i></a></li>
                 <li><a href="Cart"><i class="material-icons">shop</i></a></li>
-                <% if(userName ==="" ) { %>
+                <% if(user ==="" ) { %>
                    <li> <a href='/Login2'>Login</a></li>
                     <% } else { %>
                      <li> <a href='/logout'>Logout</a></li>
-                     <li class="name"> Welcome <%= userName %></li>
+                     <li class="name"> Welcome <%= user.Name %></li>
                       <% } %>
-                </div>>
+                </div>
             </ul>
         </div>
     </section>

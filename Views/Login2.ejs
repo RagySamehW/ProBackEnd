@@ -2,14 +2,8 @@
 <html lang="en">
   <head>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/42a3832eaa.js"
-      crossorigin="anonymous"
-    ></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <script  src="https://kit.fontawesome.com/42a3832eaa.js" crossorigin="anonymous"></script>
     <script>
       function logg() {
         window.location.href = "Home";
@@ -215,7 +209,6 @@
   </head>
   <body>
     <%- include("./partials/Nav.ejs") %>
-
     <div id="container">
       <div id="cover">
         <h1 class="sign-up">Hello, Friend!</h1>
@@ -235,23 +228,24 @@
       <div id="login">
         <h1>Sign In</h1>
         <p>Use your email account:</p>
-        <form id="L_in">
-          <input id="l1" type="text" placeholder="Email" autocomplete="off" />
+        <form action="/profile" method="post" id="L_in">
+          <input id="l1" type="text" placeholder="userName" name="un" autocomplete="off" />
           <p class="pp" id="demo"></p>
-          <input id="l2" type="password" placeholder="Password" autocomplete="off" />
+          <input id="l2" type="password" placeholder="Password" name="pw" autocomplete="off" />
           <p class="pp" id="demo2"></p>
           <a id="forgot-pass" href="#">Forgot your password?</a><br />
-          <input class="submit-btn" type="submit" onclick="logg2()" value="Sign In"/>
+          <input class="submit-btn" type="submit" onclick="" value="Sign In"/>
         </form>
       </div>
       <div id="register">
         <h1>Create Account</h1>
         <p>Use your email for registration:</p>
-        <form id="Sign_Up">
-          <input  type="text" placeholder="Name" autocomplete="off" /><br />
-          <input type="email" placeholder="Email" autocomplete="off" /><br />
-          <input type="password" placeholder="Password" autocomplete="off" /><br />
-          <input type="password" placeholder="Password" autocomplete="off" /><br />
+        <form id="Sign_Up" action="/signup-action" method="post" enctype="multipart/form-data">
+          <input  type="text" placeholder="Name" name="un" autocomplete="off" /><br />
+          <input type="email" placeholder="Email" name="em" autocomplete="off" /><br />
+          <input type="hidden" name="tp" value="client">
+          <input type="password" placeholder="Password" name="pw" autocomplete="off" /><br />
+          <input type="password" placeholder="Password"  autocomplete="off" /><br />
           <input class="submit-btn" type="submit" value="Sign Up" />
         </form>
       </div>

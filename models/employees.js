@@ -7,7 +7,7 @@ const employeeSchema = new Schema({
   },
   Password: {
     type: String,
-    required: true
+    
   },
   Email: {
     type: String,
@@ -15,11 +15,9 @@ const employeeSchema = new Schema({
   },
   Phone:{
     type : Number,
-    required: true
   },
   Type: {
     type: String,
-    required: true
   },
 }, { timestamps: true });
 

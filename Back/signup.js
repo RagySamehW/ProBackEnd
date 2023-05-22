@@ -3,7 +3,7 @@ import UserModel from "../models/employees.js";
 import bcrypt from "bcrypt";
 
 export default async (req, res) => {
-  const { Name, Password, Email, Phone,Type } = req.body;
+  const { Name, Password, Email } = req.body;
   try {
      if (await UserModel.findOne({ email })) {
        res.send({ err: "Email is Taken" });
@@ -14,11 +14,11 @@ export default async (req, res) => {
        const hashedPassword = await bcrypt.hash(password, salt);
 
       const newUser = new employees({
-        Type: "student",
+       
         Name,
         Password,
         Email,
-        Phone,
+        
       });
       newUser.save();
 
