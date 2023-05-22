@@ -4,6 +4,8 @@
 <head>
     <title>Customer List</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <style>
         body {
             background-color: black;
@@ -51,58 +53,43 @@
 </head>
 
 <body>
-    <%- include("./partials/Nav.ejs") %>
-    <div class="container">
-        <h1>Customer List</h1>
-        <table id="customer-table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Address</th>
-                    <th>City</th>
-                    <th>State</th>
-                    <th>Zip</th>
-                    <th>Orders</th>
-                    <th>Edit</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>ragy</td>
-                    <td>Ragy2106213@miuegypt.edu.eg</td>
-                    <td>123456789123</td>
-                    <td>Ard El Golf</td>
-                    <td>Cairo</td>
-                    <td>Cairo</td>
-                    <td>56432</td>
-                    <td>1</td>
-                    <td>
-                        <a href="Edit_Users"><button>Edit</button></a>
-                        <a href="#"><button>Delet</button></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>ragy</td>
-                    <td>Ragy2106213@miuegypt.edu.eg</td>
-                    <td>123456789123</td>
-                    <td>Ard El Golf</td>
-                    <td>Cairo</td>
-                    <td>Cairo</td>
-                    <td>56432</td>
-                    <td>1</td>
-                    <td>
-                        <a href="admin_users_edit.html"><button>Edit</button></a>
-                        <a href="#"><button>Delet</button></a>
-                    </td>
-                </tr>
-                <!-- customer data will be inserted here dynamically -->
-            </tbody>
-        </table>
-    </div>
-
-    <script src="script.js"></script>
-</body>
+    <%- include("./partials/nav.ejs") %>
+  
+      <div class="container">
+        <h1>Users List</h1>
+  
+        <% if (Allusers.length> 0) { %>
+          <table id="customer-table">
+            <tr>
+              <th>Name</th>
+              <th>Position</th>
+              <th>Phone</th>
+              <th>E-mail</th>
+              <th>Action</th>
+            </tr>
+            <% Allusers.forEach(emp=> { %>
+              <tr>
+                <td>
+                  <%= emp.Name %>
+                </td>
+                <td>
+                  <%= emp.Type %>
+                </td>
+                <td><%= emp.Phone %></td>
+                <td><%= emp.Email %></td>
+                <td>
+                    <a href="/Edit_Users"><button>Edit</button></a>
+                    <a href="#"><button>Delet</button></a>
+                </td>
+              </tr>
+              <% }) %>
+          </table>
+          <% } else { %>
+            <p>There are no employees to display...</p>
+            <% } %>
+  
+      </div>
+  
+  </body>
 
 </html>
