@@ -2,10 +2,12 @@ const express = require("express");
 const session = require("express-session");
 const fileUpload = require("express-fileupload");
 const mongoose = require("mongoose");
+const objectId = require("mongoose").ob;
 const path = require("path");
 const Employees = require("./models/employees");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
+const { assert } = require("console");
 //express app
 const app = express();
 const dbURI =
@@ -23,6 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //middleware/
 app.use(fileUpload());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(morgan("tiny"));
 
@@ -88,34 +91,53 @@ require("dotenv/config");
 
 const api = process.env.API_V1;
 
-app.get("/signup", (req, res) => {
-  res.render("signup", { user: req.session.user === undefined ? "" : req.session.user,});
+app.post('/delete', (req, res) => {
+  const userId = req.body.id;
+  // Perform the deletion in the database using Mongoose or your preferred database library
+  // Adapt this code based on your specific data model and database setup
+  Employees.findOneAndDelete({ _id: userId })
+    .then((deletedUser) => {
+      if (!deletedUser) {
+        console.log('User not found');
+        res.status(404).send('User not found');
+      } else {
+        console.log('User deleted:', deletedUser);
+        res.redirect('/'); // Redirect to the homepage or any other appropriate page
+      }
+    })
+    .catch((err) => {
+      console.error('Error deleting user:', err);
+      res.status(500).send('Error deleting user');
+    });
 });
 
-
-  app.post('/signup-action', (req, res) => {
-    console.log(req.body)
-    const emp = new Employees({
-      Name: req.body.un,
-      Password: req.body.pw,
-      Email: req.body.em,
-      Type: req.body.tp,
-      Phone:req.body.ph
-    });
-  
-    emp.save()
-      .then(result => {
-        res.redirect('/');
-      })
-      .catch(err => {
-        console.log(err);
-        // Handle the error, e.g., display an error message or redirect to an error page
-      });
+app.get("/signup", (req, res) => {
+  res.render("signup", {
+    user: req.session.user === undefined ? "" : req.session.user,
   });
-// });
+});
+
+app.post("/signup-action", (req, res) => {
+  console.log(req.body);
+  const emp = new Employees({
+    Name: req.body.un,
+    Password: req.body.pw,
+    Email: req.body.em,
+    Type: req.body.tp,
+    Phone: req.body.ph,
+  });
+  emp
+    .save()
+    .then((result) => {
+      res.redirect("/");
+    })
+    .catch((err) => {
+      console.log(err);
+      // Handle the error, e.g., display an error message or redirect to an error page
+    });
+});
 
 app.post("/profile", (req, res) => {
-
   var query = { Name: req.body.un, Password: req.body.pw };
   Employees.findOne(query)
     .then((result) => {
@@ -141,7 +163,7 @@ app.get("/logout", (req, res) => {
 
 app.get("/", (req, res) => {
   res.render("Home", {
-    user: req.session.user === undefined ? "" : req.session.user
+    user: req.session.user === undefined ? "" : req.session.user,
   });
 });
 app.get("/Product", (req, res) => {
@@ -183,19 +205,21 @@ app.get("/AddminM", (req, res) => {
 });
 
 app.get("/Admin_Products_List", (req, res) => {
-  console.log("type"+req.session.user.Type);
-  if(req.session.user !== undefined && req.session.user.Type==='client'){
+  console.log("type" + req.session.user.Type);
+  if (req.session.user !== undefined && req.session.user.Type === "client") {
     Employees.find()
-      .then(result => {
-        res.render('Admin_Products_List', { Allusers: result, user: (req.session.user === undefined ? "" : req.session.user) });
+      .then((result) => {
+        res.render("Admin_Products_List", {
+          Allusers: result,
+          user: req.session.user === undefined ? "" : req.session.user,
+        });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
-    }
-    else{
-      res.send('you are not admin');
-    }
+  } else {
+    res.send("you are not admin");
+  }
 });
 
 app.get("/Add_product", (req, res) => {
@@ -205,20 +229,22 @@ app.get("/Add_product", (req, res) => {
 });
 
 app.get("/Addmin_Users", (req, res) => {
-  console.log("type"+req.session.user.Type);
-  if(req.session.user !== undefined && req.session.user.Type==='client'){
+  console.log("type" + req.session.user.Type);
+  if (req.session.user !== undefined && req.session.user.Type === "client") {
     Employees.find()
-      .then(result => {
+      .then((result) => {
         console.log(result);
-        res.render('Addmin_Users', { Allusers: result, user: (req.session.user === undefined ? "" : req.session.user) });
+        res.render("Addmin_Users", {
+          Allusers: result,
+          user: req.session.user === undefined ? "" : req.session.user,
+        });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
-    }
-    else{
-      res.send('you are not admin');
-    }
+  } else {
+    res.send("you are not admin");
+  }
 });
 
 app.get("/Edit_Users", (req, res) => {

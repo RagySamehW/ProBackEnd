@@ -62,6 +62,7 @@
           <table id="customer-table">
             <tr>
               <th>Name</th>
+              <th>Id</th>
               <th>Position</th>
               <th>Phone</th>
               <th>E-mail</th>
@@ -73,23 +74,25 @@
                   <%= emp.Name %>
                 </td>
                 <td>
+                  <%= emp._id %>
+                </td>
+                <td>
                   <%= emp.Type %>
                 </td>
                 <td><%= emp.Phone %></td>
                 <td><%= emp.Email %></td>
                 <td>
-                    <a href="/Edit_Users"><button>Edit</button></a>
-                    <a href="#"><button>Delet</button></a>
-                </td>
-              </tr>
+                  <form action="/delete" method="POST">
+                      <button type="submit" name="id" value="<%= emp._id %>">Delete</button>
+                  </form>
+              </td>
+              </tr>     
               <% }) %>
           </table>
           <% } else { %>
             <p>There are no employees to display...</p>
             <% } %>
   
-      </div>
-  
+      </div>  
   </body>
-
 </html>
