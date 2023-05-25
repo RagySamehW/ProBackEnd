@@ -91,6 +91,53 @@ require("dotenv/config");
 
 const api = process.env.API_V1;
 
+app.get("/edit/:id", (req, res) => {
+  const userId = req.params.id;
+
+  // Retrieve the user with the specified ID from the database
+  Employees.findOne({_id: userId})
+    .then((Puser) => {
+      if (!Puser) {
+        console.log('User not found');
+        res.status(404).send('User not found');
+      } else {
+        res.render("Edit_Users", { Puser, user: req.session.user === undefined ? "" : req.session.user });
+      }
+    })
+    .catch((err) => {
+      console.error('Error retrieving user:', err);
+      res.status(500).send('Error retrieving user');
+    });
+});
+
+app.post('/edit/:id', (req, res) => {
+  const userId = req.params.id;
+  const updatedData = {
+    Name: req.body.name,
+    Email: req.body.email,
+    Phone: req.body.phone,
+    Type: req.body.type,
+    // Add more properties as needed
+  };
+
+  // Perform the update in the database using Mongoose or your preferred database library
+  Employees.findOneAndUpdate({ _id: userId }, updatedData, { new: true })
+    .then((updatedUser) => {
+      if (!updatedUser) {
+        console.log('User not found');
+        res.status(404).send('User not found');
+      } else {
+        console.log('User updated:', updatedUser);
+        res.redirect('/'); // Redirect to the appropriate page
+      }
+    })
+    .catch((err) => {
+      console.error('Error updating user:', err);
+      res.status(500).send('Error updating user');
+    });
+});
+
+
 app.post('/delete', (req, res) => {
   const userId = req.body.id;
   // Perform the deletion in the database using Mongoose or your preferred database library
@@ -206,7 +253,7 @@ app.get("/AddminM", (req, res) => {
 
 app.get("/Admin_Products_List", (req, res) => {
   console.log("type" + req.session.user.Type);
-  if (req.session.user !== undefined && req.session.user.Type === "client") {
+  if (req.session.user !== undefined && req.session.user.Type === "admin") {
     Employees.find()
       .then((result) => {
         res.render("Admin_Products_List", {
@@ -230,7 +277,7 @@ app.get("/Add_product", (req, res) => {
 
 app.get("/Addmin_Users", (req, res) => {
   console.log("type" + req.session.user.Type);
-  if (req.session.user !== undefined && req.session.user.Type === "client") {
+  if (req.session.user !== undefined && req.session.user.Type === "admin") {
     Employees.find()
       .then((result) => {
         console.log(result);

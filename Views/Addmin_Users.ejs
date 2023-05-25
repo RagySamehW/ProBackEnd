@@ -85,9 +85,7 @@
                   <form action="/delete" method="POST">
                       <button type="submit" name="id" value="<%= emp._id %>">Delete</button>
                   </form>
-                  <form action="/Edit_Users" method="get">
-                    <button type="submit" name="id" value="<%= emp._id %>">Edite</button>
-                </form>
+                  <a href="/edit/<%= emp._id %>">Edit</a>
               </td>
               </tr>     
               <% }) %>

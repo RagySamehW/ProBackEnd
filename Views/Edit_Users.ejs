@@ -48,30 +48,30 @@
     <%- include("./partials/Nav.ejs") %>
     <div class="user-edit-sheet">
         <h2>Edit User</h2>
-        <form class="ab">
-            <div class="form-group">
-                <label for="user-id">User ID:</label>
-                <input type="text" id="user-id" name="user-id" readonly>
-            </div>
+        <form class="ab" action="/edit/<%= Puser._id %>" method="POST" enctype="multipart/form-data" >
             <div class="form-group">
                 <label for="user-name">Name:</label>
-                <input type="text" id="user-name" name="user-name" required>
+                <input type="text" id="user-name" name="name" value="<%= Puser.Name %>"   >
             </div>
             <div class="form-group">
                 <label for="user-email">Email:</label>
-                <input type="email" id="user-email" name="user-email" required>
+                <input type="email" id="user-email" name="email" value="<%= Puser.Email %>" >
+            </div>
+            <div class="form-group">
+                <label for="user-phone">Phone:</label>
+                <input type="number" id="user-phone" name="phone" value="<%= Puser.Phone %>"  >
             </div>
             <div class="form-group">
                 <label for="user-role">Role:</label>
-                <select id="user-role" name="user-role" required>
-                    <option value="">Select a role</option>
-                    <option value="admin">Admin</option>
+                <select id="user-role" name="type" value="<%= Puser.Type%>" >
+                    <option >Select a role</option>
+                    <option value="admin">client</option>
                     <option value="customer">Customer</option>
                 </select>
             </div>
             <div class="form-group">
-                <button type="submit">Save</button>
-                <button type="button" onclick="cancelEdit()">Cancel</button>
+                <button type="submit" >Save</button>
+                <a href="/">Cancel</a>
             </div>
         </form>
     </div>
