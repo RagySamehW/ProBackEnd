@@ -14,8 +14,7 @@ const fs = require('fs');
 const app = express();
 var username = "";
 const dbURI =
-"mongodb+srv://mohamedaazizfcb:1234@cluster0.68eczju.mongodb.net/?retryWrites=true&w=majority";
-
+ "mongodb+srv://RagyW:1234@cluster0.vioqz3g.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose
 .connect(dbURI)
