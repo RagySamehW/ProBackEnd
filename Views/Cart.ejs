@@ -221,79 +221,75 @@ tr:hover {
     </style>
 
 </head>
-    <body>
+<body>
         <%- include("./partials/Nav.ejs") %>
         <br>
         <section>
-            <table class="table">
+            <table id= "t1"class="table">
                 <tr>
                     <th>Remove</th>
-                    <th>Image</th>
                     <th>Product</th>
+                    <th>Size</th>
                     <th>Price</th>
                     <th>Quantity</th>
                     <th>Total</th>
                 </tr>
-            <tr>
-                    <td > <img class="trash" src="trash.png" alt="delete"></td>
-                    <td><img src="shirt 1.png"style="width: 150px;" alt="pic"></td>
-                    <td> this is it's name</td>
-                    <td>65$</td>
-                    <td> <input style="width: 40px;text-align: center;" value="1" type="number"></td>
-                    <td>130$</td>
-                </tr>
-                <tr>
-                    <td > <img class="trash" src="trash.png" alt="delete"></td>
-                    <td><img src="shirt 2.jpg"style="width: 150px;" alt="pic"></td>
-                    <td> this is it's name</td>
-                    <td>70$</td>
-                    <td><input style="width: 40px;text-align: center;" value="1" type="number"></td>
-                    <td>135$</td>
-                </tr>
-                <tr>
-                   <td > <img class="trash" src="trash.png" alt="delete"></td>          
-                    <td><img src="shirt 3.png "style="width: 150px;" alt="pic"></td>
-                    <td> this is it's name</td>
-                    <td>80$</td>
-                    <td><input style="width: 40px;text-align: center;"  value="1" type="number"></td>
-                    <td>140$</td>
-                </tr>
+
+                <% if (carts.length> 0) { %>
+                    <% carts.forEach(crt=> { %>
+                            <div onclick="" class="pro">
+                                <tr>
+                                    <td>
+                                        <form action="/remove_from_cart" method="post" id="remove_from_cart">
+                                           <input hidden id="pname"  name="pname" value="<%= crt.ProductName%>"></input>
+                                           <input hidden id="psize" name="psize" value="<%= crt.Size%>"></input>
+                                           <input value="remove" type="submit"></input>
+                                                                             
+                                        </form>
+
+                                        
+                                    </td>
+                                     <td> <%= crt.ProductName%></td>
+                                     <td><%= crt.Size%></td>
+                                     <td><%= crt.Price%> EGP</td>
+                                     <td><%= crt.Quantity %></td>
+                                     <td><%= crt.Price*crt.Quantity %> EGP</td>
+                                 </tr>
+                                
+                            <% }) %>
+                                <% } else { %>
+                                    <p>.</p>
+                                    <% } %>
             </table>
         </section>
         <br>
          <section >
-            <table class="table2" >
-                <tr>
-                    <th class="coupon">COUPON</th>
-                </tr>
-                <tr>
-                    <td class="coupon">Enter your coupon code if you have one.</td>
-                </tr>
-                <tr>
-                    <td><input class="code" type=" text" placeholder ="Coupon Code">    <button class="buttonss">APPLY COUPON</button></td>
-                </tr>
-            </table>
-                <table class="table3">
+                <table class="table3" id="t3">
                     <tr>
                         <th class="header" colspan="5"> CART TOTAL</th>
                     </tr>
                     <tr>
                      <td class="header" >subtotal</td>
-                     <td class="price" colspan="4">215$</td>
+                     <td id="sub_tot" class="price" colspan="4"></td>
                     </tr>
                     <tr>
                         <td class="header" >shipping</td>
-                        <td class="price"colspan="4">255$</td>
+                        <td class="price"colspan="4">50</td>
                     </tr>
                     <tr>
                         <td style="border-top: 1px solid #000;" class="header" >Total</td>
-                        <td style="border-top: 1px solid #000;"class="price"colspan="4">465$</td>
+                        <td id="tot" style="border-top: 1px solid #000;"class="price"colspan="4"></td>
                     </tr>
                     <tr>
-                        <td  colspan="5"><button class="buttonss">Proceed to checkout</button></td>
+                        <form action="/Checkout" method="post" id="Checkout">
+                            <input hidden name="carts" value="<%= carts%>"></input>
+                            <td  colspan="5"><input value="Proceed to checkout" type="submit"></input></td>
+                        </form>
+                        
                     </tr>
                 </table>
          </section>
          
     </body>
+    
     </html>
