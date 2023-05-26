@@ -79,6 +79,41 @@ const products = [
     name: "American Eagle " + x++,
     decription: "AE SUPER SOFT ICON V-NECK",
   },
+  {
+    id: "19",
+    name: "American Eagle " + x++,
+    decription: "AE SUPER SOFT ICON V-NECK",
+  },
+  {
+    id: "20",
+    name: "American Eagle " + x++,
+    decription: "AE SUPER SOFT ICON V-NECK",
+  },
+  {
+    id: "21",
+    name: "American Eagle " + x++,
+    decription: "AE SUPER SOFT ICON V-NECK",
+  },
+  {
+    id: "22",
+    name: "American Eagle " + x++,
+    decription: "AE SUPER SOFT ICON V-NECK",
+  },
+  {
+    id: "23",
+    name: "American Eagle " + x++,
+    decription: "AE SUPER SOFT ICON V-NECK",
+  },
+  {
+    id: "24",
+    name: "American Eagle " + x++,
+    decription: "AE SUPER SOFT ICON V-NECK",
+  },
+  {
+    id: "25",
+    name: "American Eagle " + x++,
+    decription: "AE SUPER SOFT ICON V-NECK",
+  },
 ];
 const custemors = [
   { id: "1", name: " Ragy" },
@@ -213,15 +248,29 @@ app.get("/", (req, res) => {
     user: req.session.user === undefined ? "" : req.session.user,
   });
 });
+
+const itemsPerPage = 4;
 app.get("/Product", (req, res) => {
-  res.render("ProductsPage", {
-    products,
+  const page = parseInt(req.query.page) || 1;
+
+  // Calculate the start and end indexes of the products to display
+  const startIndex = (page - 1) * itemsPerPage;
+  const endIndex = page * itemsPerPage;
+
+  // Slice the products array based on the start and end indexes
+  const paginatedProducts = products.slice(startIndex, endIndex);
+
+  // Render the products page template with the paginated products and page information
+  res.render("ProductsPage",{
+    products: paginatedProducts,
+    currentPage: page,
+    totalPages: Math.ceil(products.length / itemsPerPage),
     user: req.session.user === undefined ? "" : req.session.user,
   });
 });
 
 app.get("/Item", (req, res) => {
-  res.render("Item", {
+  res.render("Item",{
     user: req.session.user === undefined ? "" : req.session.user,
   });
 });
