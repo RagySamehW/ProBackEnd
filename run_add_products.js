@@ -118,3 +118,118 @@ p1.save()
 console.log(err);
 // Handle the error, e.g., display an error message or redirect to an error page
 });
+
+p1 = new Product({
+ProductName: "T-Shirt",
+Price: 240,
+Size: "L",
+Quantity: 100,
+Description:"Good",
+});
+
+p1.save()
+.then(result => {
+})
+.catch(err => {
+console.log(err);
+// Handle the error, e.g., display an error message or redirect to an error page
+});
+
+p1 = new Product({
+ProductName: "T-Shirt",
+Price: 240,
+Size: "XL",
+Quantity: 100,
+Description:"Good",
+});
+
+p1.save()
+.then(result => {
+})
+.catch(err => {
+console.log(err);
+// Handle the error, e.g., display an error message or redirect to an error page
+});
+
+
+p1 = new Product({
+ProductName: "Shirt",
+Price: 370,
+Size: "S",
+Quantity: 100,
+Description:"Good",
+});
+
+p1.save()
+.then(result => {
+})
+.catch(err => {
+console.log(err);
+// Handle the error, e.g., display an error message or redirect to an error page
+});
+
+p1 = new Product({
+ProductName: "Shirt",
+Price: 370,
+Size: "L",
+Quantity: 100,
+Description:"Good",
+});
+
+p1.save()
+.then(result => {
+})
+.catch(err => {
+console.log(err);
+// Handle the error, e.g., display an error message or redirect to an error page
+});
+
+p1 = new Product({
+ProductName: "Shirt",
+Price: 370,
+Size: "XL",
+Quantity: 100,
+Description:"Good",
+});
+
+p1.save()
+.then(result => {
+})
+.catch(err => {
+console.log(err);
+// Handle the error, e.g., display an error message or redirect to an error page
+});
+
+
+p1 = new Product({
+ProductName: "Shoes",
+Price: 680,
+Size: "43",
+Quantity: 100,
+Description:"Good",
+});
+
+p1.save()
+.then(result => {
+})
+.catch(err => {
+console.log(err);
+// Handle the error, e.g., display an error message or redirect to an error page
+});
+
+///////////////////////////////////////////////
+p1 = new Product({
+ProductName: "Shoes",
+Price: 680,
+Size: "44",
+Quantity: 100,
+Description:"Good",
+});
+
+p1.save()
+.then(result => {
+})
+.catch(err => {
+    console.log(err);
+    // Handle the error, e.g., display an error message or redirect to an error page
+});
