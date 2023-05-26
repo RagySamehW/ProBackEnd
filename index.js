@@ -256,6 +256,63 @@ app.get("/Product", (req, res) => {
     });
    })
 });
+app.post('/add_to_cart', (req, res) => {
+  
+    Cart.findOne({ProductName:req.body.pname,UserName:req.session.user.Name, Size:req.body.psize}).then((data) => {
+  
+      if (data ==null)
+      {
+        const cart = new Cart({
+          UserName: req.session.user.Name,
+          ProductName: req.body.pname,
+          Price: parseInt(req.body.pprice),
+          Quantity: parseInt(req.body.pquantity),
+          Size: req.body.psize,
+        });
+        cart.save()
+        .then(result => {
+          res.redirect('/cart');
+        })
+        .catch(err => {
+          console.log(err);
+          // Handle the error, e.g., display an error message or redirect to an error page
+        });
+      }
+      else
+      {
+        Cart.findOneAndDelete({ProductName:req.body.pname,UserName:req.session.user.Name, Size:req.body.psize}).then((data) => {})
+        var q = data.Quantity;
+        const cart = new Cart({
+          UserName: req.session.user.Name,
+          ProductName: req.body.pname,
+          Price: parseInt(req.body.pprice),
+          Quantity: parseInt(req.body.pquantity) + q,
+          Size: req.body.psize,
+        });
+        cart.save()
+        .then(result => {
+          res.redirect('/cart');
+        })
+        .catch(err => {
+          console.log(err);
+          // Handle the error, e.g., display an error message or redirect to an error page
+        });
+      }
+  
+  
+  });
+  // });
+     })
+  app.post('/remove_from_cart', (req, res) => {
+  
+      Cart.findOneAndDelete({UserName:req.session.user.Name, ProductName:req.body.pname, Size:req.body.psize}).then(result => {
+        res.redirect('/cart');
+      })
+      .catch(err => {
+        console.log(err);
+        // Handle the error, e.g., display an error message or redirect to an error page
+      });
+    })
 
 app.get("/Item", (req, res) => {
   res.render("Item",{
