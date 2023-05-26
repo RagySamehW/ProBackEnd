@@ -313,7 +313,71 @@ app.post('/add_to_cart', (req, res) => {
         // Handle the error, e.g., display an error message or redirect to an error page
       });
     })
+app.post('/Checkout', (req, res) => {
+    var substrs = req.body.carts.split(',');
+    for (var c = 0; c < substrs.length ; c++)
+    {
+        var pro_name = "";
+        var pro_price = "";
+        var pro_size = ""; 
+        if (substrs[c].includes("ProductName")) 
+        {
+          pro_name = substrs[c].split("'")[1];
+          while (!substrs[c].includes("Size"))
+          {
+            c = c+1;
+          }
+          pro_size = substrs[c].split("'")[1];
 
+          while (!substrs[c].includes("Price"))
+          {
+            c = c+1;
+          }
+          pro_price = parseInt(substrs[c].split(" ")[3]);
+
+          while (!substrs[c].includes("Quantity"))
+          {
+            c = c+1;
+          }
+          pro_quant = parseInt(substrs[c].split(" ")[3]);
+          Cart.findOneAndDelete({UserName:req.session.user.Name, ProductName:pro_name, Size:pro_size}).then(result => {
+            var nm = result.ProductName;
+            var pr = result.Price;
+            var sz = result.Size;
+            var qt = result.Quantity;
+            var ds = result.Description;
+            Product.findOneAndDelete({ProductName:nm, Size:sz}).then((data) => {
+              console.log(data.Quantity);
+              console.log(result.Quantity);
+              console.log(qt);
+              qt = data.Quantity - qt;
+            
+            const prod = new Product({
+              ProductName: nm,
+              Price: pr,
+              Size: sz,
+              Quantity: qt,
+              Description: ds,
+            });
+            prod.save()
+            .then(result => {
+              res.redirect('/');
+          })
+          .catch(err => {
+            console.log(err);
+            // Handle the error, e.g., display an error message or redirect to an error page
+          });});
+        })
+
+
+
+
+          
+        }
+        
+    }
+  
+})
 app.get("/Item", (req, res) => {
   res.render("Item",{
     user: req.session.user === undefined ? "" : req.session.user,
