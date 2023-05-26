@@ -291,5 +291,17 @@ tr:hover {
          </section>
          
     </body>
+    <script>
+        var table = document.getElementById("t1");
+        sumVal = 0;
+        for (var i = 1; i < table.rows.length; i++) {
+          sumVal = sumVal + parseFloat(table.rows[i].cells[5].innerHTML);
+        }
+        document.getElementById("sub_tot").innerHTML = sumVal;
+        document.getElementById("sub_tot").value = sumVal;
+
+        document.getElementById("tot").innerHTML = sumVal + 50;
+        
+        </script>
     
     </html>
