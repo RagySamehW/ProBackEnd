@@ -378,10 +378,16 @@ app.post('/Checkout', (req, res) => {
     }
   
 })
-app.get("/Item", (req, res) => {
-  res.render("Item",{
-    user: req.session.user === undefined ? "" : req.session.user,
-  });
+app.post("/Item", (req, res) => {
+  var products;
+  Product.find({ProductName:req.body.pname, Size:req.body.psize}).then((data) => {
+    products = data;
+    console.log(products)
+    res.render("Item", {
+      products,
+      user: req.session.user === undefined ? "" : req.session.user,
+    });
+   })
 });
 
 app.get("/Cart", (req, res) => {
