@@ -115,12 +115,6 @@ const products = [
     decription: "AE SUPER SOFT ICON V-NECK",
   },
 ];
-const custemors = [
-  { id: "1", name: " Ragy" },
-  { id: "2", name: "Sameh" },
-  { id: "3", name: "Mariam" },
-  { id: "4", name: "Maggie" },
-];
 
 require("dotenv/config");
 
