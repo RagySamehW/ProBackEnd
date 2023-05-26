@@ -391,9 +391,14 @@ app.post("/Item", (req, res) => {
 });
 
 app.get("/Cart", (req, res) => {
-  res.render("Cart", {
-    user: req.session.user === undefined ? "" : req.session.user,
-  });
+  var carts;
+  Cart.find({UserName:req.session.user.Name}).then((data) => {
+    carts = data;
+    res.render("Cart", {
+      carts,
+      user: req.session.user === undefined ? "" : req.session.user,
+    });
+   })
 });
 
 app.get("/WishList", (req, res) => {
