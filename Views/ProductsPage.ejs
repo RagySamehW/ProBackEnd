@@ -166,30 +166,6 @@
         #num a {
             text-decoration: none;
         }
-
-        .pagination {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            /* Add this line */
-        }
-
-        .pagination a {
-            margin: 0 5px;
-            padding: 5px 10px;
-            border: 1px solid #000;
-            border-radius: 5px;
-            color: #eb9e10;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-
-        .pagination a.active,
-        .pagination a:hover {
-            background-color: #000;
-            color: #fff;
-        }
     </style>
 
     <title>Products</title>
@@ -201,18 +177,19 @@
             <h2>New Arrivals</h2>
             <p>The Store you always wanted!!</p>
             <div class="pro-container">
-                <% if (products.length> 0) { %>
-                    <% products.forEach(pro=> { %>
+            <% if (products.length> 0) { %>
+                <% products.forEach(pro=> { %>
                         <div onclick="" class="pro">
-                            <a href="Item">
-                                <img class="p1" src="/Images/pp3.webp" alt="">
+                                <img class="p1" src="/Images/<%= pro.ProductName %>.png" alt="">
                                 <div class="des">
-                                    <span>
-                                        <%= pro.id %>
-                                    </span>
-                                    <h5>
-                                        <%= pro.decription %>
-                                    </h5>
+                                    <span><%= pro.ProductName %></span>
+                                    <h5><%= pro.Description %></h5>
+                                    <form action="/item" method="post" id="add_to_cart">
+                                        <input name="pname" value ="<%= pro.ProductName%>" hidden></input>
+                                        <input name="psize" value="<%= pro.Size%>" hidden></input>
+                                        <input class="buy-button"  type="submit" onclick="" value="Show Item"/></input>
+                                    </form>
+
                                     <div class="star">
                                         <i class="material-icons">star</i>
                                         <i class="material-icons">star</i>
@@ -220,25 +197,21 @@
                                         <i class="material-icons">star</i>
                                         <i class="material-icons">star</i>
                                     </div>
-                                    <h4>EGP 300.00</h4>
+                                    <h4><%= pro.Price %></h4>
                                 </div>
                                 <a href="cart.html"><i class="material-icons cart">shop</i></a>
                             </a>
                         </div>
                         <% }) %>
-                          
                             <% } else { %>
                                 <p>There are no employees to display...</p>
                                 <% } %>
 
-            </div><br><br><br><br>
-            <center><div class="pagination">
-                <% for (var i=1; i <=totalPages; i++) { %>
-                    <a href="/product?page=<%= i %>" class="<%= currentPage === i ? 'active' : '' %>">
-                        <%= i %>
-                    </a>
-                    <% } %>
-            </div></center> 
+                        
+        
+        
+              </div>
+              
         </section>
         <section id="f">
             <footer class="site-footer">
