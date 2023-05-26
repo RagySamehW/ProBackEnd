@@ -5,9 +5,12 @@ const mongoose = require("mongoose");
 const objectId = require("mongoose").ob;
 const path = require("path");
 const Employees = require("./models/employees");
+const Coupon = require("./models/coupon");
+const Cart = require("./models/cart");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const { assert } = require("console");
+const fs = require('fs');
 //express app
 const app = express();
 const dbURI =
