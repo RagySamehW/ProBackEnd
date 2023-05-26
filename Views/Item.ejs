@@ -187,44 +187,36 @@
     <%- include("./partials/Nav.ejs") %>
     <section class="container sproduct">
         <div class="row mt-5">
+            <% if (products.length> 0) { %>
+                <% products.forEach(prod=> { %>
             <div class="col-lg-5 col-md-12 col-12 pb-1">
-                <img class="r img-fluid w-100" src="/Images/pp5.webp">
-                <div class="small-img-group">
-                    <div class="small-img-col">
-                        <img class="small-img" src="/Images/pp2.webp" width="100%">
-                    </div>
-                    <div class="small-img-col">
-                        <img class="small-img" src="/Images/pp1.webp" width="100%">
-                    </div>
-                    <div class="small-img-col">
-                        <img class="small-img" src="/Images/pp4.webp" width="100%">
-                    </div>
-                    <div class="small-img-col">
-                        <img class="small-img" src="/Images/pp3.webp" width="100%">
-                    </div>
-                </div>
+                <img class="r img-fluid w-100" src="/Images/<%= prod.ProductName%>.png">
             </div>
-            <section class="tt">
-                <div class="col-lg-6 col-md-12 col-1h6">
-                    <h3 class="py-4">Men's Fashion T-Shirt</h3>
-                    <h2>EGP 300.00</h2>
-                    <select class="se">
-                        <option>select Size</option>
-                        <option>S</option>
-                        <option>M</option>
-                        <option>L</option>
-                        <option>XL</option>
-                    </select>
-                    <input type="number" value="1">
-                    <div class="h_container">
-                        <i id="heart2" class="far fa-heart"></i>
-                    </div>
-                    <button class="buy-button">Add To Cart</button>
+            
+            <section class="tt" style="margin-left: 300px;">
+                
+                    <div class="col-lg-6 col-md-12 col-1h6">
+                        <h1 class="py-4"><%= prod.ProductName%></h3>
+                        <h3>Price: <%= prod.Price%> EGP</h2>
+                        <h4>Size: <%= prod.Size%></p>
+                    <form action="/add_to_cart" method="post" id="add_to_cart">
+                                <input class="py-4" name="pname"value ="<%= prod.ProductName%>" hidden></input>
+                                <input name="pprice" value="<%= prod.Price%>" hidden></input>
+                                <input class="se" name="psize" value="<%= prod.Size%>" hidden >Quantity:</input>
+                                <input name="pquantity" value="1">
+
+                                    
+                        <input class="buy-button"  type="submit" onclick="" value="add to cart !"/></input>
+                    </form>
+                    
                     <h4 class="q">Product Details</h4>
-                    <span>This product is made with at least 50% sustainable materials, using a blend of both recycled
-                        polyester and organic cotton fibers. The blend is at least 10% recycled fibers or at least 10%
-                        organic cotton fibers.
+                    <span>
+                        <%= prod.Description%>
                     </span>
+                    <% }) %>
+                                        <% } else { %>
+                                            <p>.</p>
+                                            <% } %>
 
 
                 </div>
@@ -233,80 +225,8 @@
     </section>
     <br>
     <hr>
-    <section id="product1" class="section-p1">
+    <section id="product1" class="section-p1" style="margin-left: 100dp;">
         <hr>
-        <h2>Best Summer Collection</h2>
-        <div class="pro-container">
-            <div class="pro">
-                <img class="p1" src="products/product1.jpg" alt="">
-                <div class="des">
-                    <span>American Eagle</span>
-                    <h5>AE SUPER SOFT ICON V-NECK</h5>
-                    <div class="star">
-                        <i class="material-icons">star</i>
-                        <i class="material-icons">star</i>
-                        <i class="material-icons">star</i>
-                        <i class="material-icons">star</i>
-                        <i class="material-icons">star</i>
-                    </div>
-                    <h4>EGP 300.00</h4>
-                </div>
-                <a href="#"><i class="material-icons cart">shop</i></a>
-
-            </div>
-            <div class="pro">
-                <img src="products/product2.jpg" alt="">
-                <div class="des">
-                    <span>American Eagle</span>
-                    <h5>AE SUPER SOFT ICON V-NECK</h5>
-                    <div class="star">
-                        <i class="material-icons">star</i>
-                        <i class="material-icons">star</i>
-                        <i class="material-icons">star</i>
-                        <i class="material-icons">star</i>
-                        <i class="material-icons">star</i>
-                    </div>
-                    <h4>EGP 300.00</h4>
-                </div>
-                <a href="#"><i class="material-icons cart">shop</i></a>
-
-            </div>
-            <div class="pro">
-                <img src="products/product3.jpg" alt="">
-                <div class="des">
-                    <span>American Eagle</span>
-                    <h5>AE SUPER SOFT ICON V-NECK</h5>
-                    <div class="star">
-                        <i class="material-icons">star</i>
-                        <i class="material-icons">star</i>
-                        <i class="material-icons">star</i>
-                        <i class="material-icons">star</i>
-                        <i class="material-icons">star</i>
-                    </div>
-                    <h4>EGP 300.00</h4>
-                </div>
-                <a href="#"><i class="material-icons cart">shop</i></a>
-
-            </div>
-            <div class="pro">
-                <img src="products/product4.jpg" alt="">
-                <div class="des">
-                    <span>American Eagle</span>
-                    <h5>AE SUPER SOFT ICON V-NECK</h5>
-                    <div class="star">
-                        <i class="material-icons">star</i>
-                        <i class="material-icons">star</i>
-                        <i class="material-icons">star</i>
-                        <i class="material-icons">star</i>
-                        <i class="material-icons">star</i>
-                    </div>
-                    <h4>EGP 300.00</h4>
-                </div>
-                <a href="#"><i class="material-icons cart">shop</i></a>
-
-            </div>
-
-        </div>
     </section>
     <section class="foot">
         <footer class="site-footer">
@@ -367,5 +287,4 @@
         </footer>
     </section>
 </body>
-
 </html>
