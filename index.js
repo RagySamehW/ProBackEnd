@@ -340,4 +340,5 @@ const items = [
 ];
 // 404 page
 app.use((req, res) => {
-   res.status(404).render('404',
+   res.status(404).render('404',{ user: (req.session.user === undefined ? "" : req.session.user) });
+});
