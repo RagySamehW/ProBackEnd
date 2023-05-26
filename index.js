@@ -246,24 +246,15 @@ app.get("/", (req, res) => {
   });
 });
 
-const itemsPerPage = 4;
 app.get("/Product", (req, res) => {
-  const page = parseInt(req.query.page) || 1;
-
-  // Calculate the start and end indexes of the products to display
-  const startIndex = (page - 1) * itemsPerPage;
-  const endIndex = page * itemsPerPage;
-
-  // Slice the products array based on the start and end indexes
-  const paginatedProducts = products.slice(startIndex, endIndex);
-
-  // Render the products page template with the paginated products and page information
-  res.render("ProductsPage",{
-    products: paginatedProducts,
-    currentPage: page,
-    totalPages: Math.ceil(products.length / itemsPerPage),
-    user: req.session.user === undefined ? "" : req.session.user,
-  });
+  var products;
+  Product.find().then((data) => {
+    products = data;
+    res.render("ProductsPage", {
+      products,
+      user: req.session.user === undefined ? "" : req.session.user,
+    });
+   })
 });
 
 app.get("/Item", (req, res) => {
