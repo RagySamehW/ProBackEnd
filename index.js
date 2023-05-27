@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const objectId = require("mongoose").ob;
 const path = require("path");
 const Employees = require("./models/employees");
+const Product = require("./models/products");
 const Coupon = require("./models/coupon");
 const Cart = require("./models/cart");
 const bodyParser = require("body-parser");
@@ -423,7 +424,7 @@ app.get("/AddminM", (req, res) => {
 app.get("/Admin_Products_List", (req, res) => {
   console.log("type" + req.session.user.Type);
   if (req.session.user !== undefined && req.session.user.Type === "admin") {
-    Employees.find()
+    Product.find()
       .then((result) => {
         res.render("Admin_Products_List", {
           Allusers: result,
