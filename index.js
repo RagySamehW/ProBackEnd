@@ -182,7 +182,27 @@ app.post('/delete', (req, res) => {
         res.status(404).send('User not found');
       } else {
         console.log('User deleted:', deletedUser);
-        res.redirect('/'); // Redirect to the homepage or any other appropriate page
+        res.redirect('Addmin_Users'); // Redirect to the homepage or any other appropriate page
+      }
+    })
+    .catch((err) => {
+      console.error('Error deleting user:', err);
+      res.status(500).send('Error deleting user');
+    });
+});
+
+app.post('/deleteP', (req, res) => {
+  const proid = req.body.id;
+  // Perform the deletion in the database using Mongoose or your preferred database library
+  // Adapt this code based on your specific data model and database setup
+  Product.findOneAndDelete({ _id: proid })
+    .then((deletedpro) => {
+      if (!deletedpro) {
+        console.log('User not found');
+        res.status(404).send('User not found');
+      } else {
+        console.log('User deleted:', deletedpro);
+        res.redirect('Admin_Products_Lists'); // Redirect to the homepage or any other appropriate page
       }
     })
     .catch((err) => {
@@ -427,7 +447,7 @@ app.get("/Admin_Products_List", (req, res) => {
     Product.find()
       .then((result) => {
         res.render("Admin_Products_List", {
-          Allusers: result,
+          Allproducts: result,
           user: req.session.user === undefined ? "" : req.session.user,
         });
       })

@@ -66,8 +66,10 @@
     <%- include("./partials/Nav.ejs") %>
     <div class="container">
         <h1>Product List</h1>
+        <center><a href="Add_Product"><button class="btn">Add</button></a></center>
+        <center><a href="#"><button class="btn">Delet All</button></a></center>
+        <% if (Allproducts.length> 0) { %>
         <table id="product-table">
-            <thead>
                 <tr>
                     <th>Name</th>
                     <th>Discription</th>
@@ -75,29 +77,26 @@
                     <th>Quantity</th>
                     <th>Delete</th>
                 </tr>
-            </thead>
-            <tbody>
+                <% Allproducts.forEach(emp=> { %>
                 <tr class="r">
-                    <td>Tshirt</td>
-                    <td>cotton Tshirt</td>
-                    <td>300 EGP</td>
-                    <td>50</td>
-                    <td><a href="#"><button>Delet</button></a></td>
-                    
-                </tr>
-                <tr class="r">
-                    <td>Tshirt</td>
-                    <td>cotton Tshirt</td>
-                    <td>300 EGP</td>
-                    <td>50</td>
-                    <td><a href="#"><button>Delet</button></a></td>
-                    
-                </tr>
-                <!-- product data will be inserted here dynamically -->
-            </tbody>
-            <center><a href="Add_Product"><button class="btn">Add</button></a></center>
-            <center><a href="#"><button class="btn">Delet All</button></a></center>
-        </table>
+                    <td><%= emp.ProductName %></td>
+                    <td><%= emp.Description %></td>
+                    <td><%= emp.Price %> LE</td>
+                    <td><%= emp.Quantity %></td>
+                    <td>
+                        <form action="/deleteP" method="POST">
+                            <button type="submit" name="id" value="<%= emp._id %>">Delete</button>
+                        </form>
+                        <a href="/edit/<%= emp._id %>">Edit</a>
+                    </td>
+                    </tr>     
+                    <% }) %>
+                </table>
+                <% } else { %>
+                  <p>There are no employees to display...</p>
+                  <% } %>   
+            
+        
     </div>
     <script src="script.js"></script>
 </body>
