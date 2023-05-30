@@ -16,6 +16,10 @@ const app = express();
 const dbURI =
   "mongodb+srv://RagyW:1234@cluster0.vioqz3g.mongodb.net/?retryWrites=true&w=majority";
 
+// Set up port and database URI //hide mongo pass and port in env
+//const port = process.env.PORT;
+//const URI = process.env.URI;
+
 mongoose
   .connect(dbURI)
   .then((result) =>
