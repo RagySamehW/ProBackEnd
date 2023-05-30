@@ -1,16 +1,16 @@
-const express = require("express");
-const session = require("express-session");
-const fileUpload = require("express-fileupload");
-const mongoose = require("mongoose");
+import express from "express";
+import session from "express-session";
+import fileUpload from "express-fileupload";
+import mongoose from "mongoose";
 const objectId = require("mongoose").ob;
-const path = require("path");
-const Employees = require("./models/employees");
-const Coupon = require("./models/coupon");
-const Cart = require("./models/cart");
-const bodyParser = require("body-parser");
-const morgan = require("morgan");
+import path from "path";
+import Employees  from "./models/employees";
+import Coupon  from "./models/coupon";
+import Cart  from "./models/cart";
+import bodyParser from "body-parser";
+import morgan from "morgan";
 const { assert } = require("console");
-const fs = require('fs');
+import fs from 'fs';
 //express app
 const app = express();
 const dbURI =
