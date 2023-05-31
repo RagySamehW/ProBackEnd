@@ -442,6 +442,28 @@ app.get("/Admin_Products_List", (req, res) => {
   }
 });
 
+app.post("/Action_Add_product", (req, res) => {
+  var p1 = new Product({
+    ProductName: req.body.pname,
+    Price: parseInt(req.body.pprice),
+    Size: req.body.psize,
+    Quantity: parseInt(req.body.pquantity),
+    Description:req.body.pdescription,
+    });
+    
+    p1.save()
+    .then(result => {
+      console.log("Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+      res.render("Home", {
+        user: req.session.user === undefined ? "" : req.session.user,
+      });
+    })
+    .catch(err => {
+    console.log(err);
+    // Handle the error, e.g., display an error message or redirect to an error page
+    });
+});
+
 app.get("/Add_product", (req, res) => {
   res.render("Add_Product", {
     user: req.session.user === undefined ? "" : req.session.user,
