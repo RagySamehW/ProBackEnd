@@ -9,67 +9,50 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      <title>Edit Product</title>
      </head>
+     <style>
+      .user-edit-sheet {
+          background-color: #eb9e10;
+          border: 1px solid #000000;
+          border-radius: 5px;
+          padding: 20px;text-align: center;
 
-    <style>
-        body {
-            background-color: black;
-        }
+      }
+      
+      .user-edit-sheet h2 {
+          margin-top: 0;
+          text-align: center;
+          text-decoration: underline;
+      }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+      .form-group {
+          margin-bottom: 10px;
+      }
 
-        h1 {
-            font-size: 32px;
-            text-align: center;
-            color: #eb9e10;
-        }
+      .form-group label {
+          display: inline-block;
+          width: 100px;
+          font-weight: bold;
+      }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
+      .form-group input,
+      .form-group select {
+          display: inline-block;
+          width: 200px;
+      }
 
-        th,
-        td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #eb9e10;
-        }
-
-        th {
-            background-color: #eb9e10;
-            font-weight: bold;
-        }
-
-        td {
-            background-color: #fff;
-        }
-
-        tr.r:hover {
-            color: #eb9e10;
-        }
-        button.btn{
-			background-color: #eb9e10;
-			border-radius: 25px;
-			margin-bottom: 10px;
-			border: #fff;
-		}
-		button.btn:hover{
-			background-color: #242323;
-			color: #eb9e10;
-		}
-    </style>
+      .form-group button {
+          margin-right: 10px;
+      }
+  </style>
+   
     </script>
 <body>
 <%- include("./partials/nav.ejs") %>
+<div class="user-edit-sheet">
   <h1>Edit Product</h1>
   
-      <form action="/editp/<%= pproduct._id %>" method="POST" enctype="multipart/form-data">
-        <div>
+      <form class="ab" action="/editp/<%= pproduct._id %>" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
           <label for="product-Name">Product Name:</label>
           <input type="text" id="product-Name" name="Name" value="<%= pproduct.ProductName%>">
         </div>
@@ -86,5 +69,6 @@
         </div>  
         <button type="submit">Update Product</button>
       </form>
+    </div>
 </body>
 </html>
