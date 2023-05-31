@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Products List</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <title>Edit Product</title>
+     </head>
+
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            color: #eb9e10;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #eb9e10;
+        }
+
+        th {
+            background-color: #eb9e10;
+            font-weight: bold;
+        }
+
+        td {
+            background-color: #fff;
+        }
+
+        tr.r:hover {
+            color: #eb9e10;
+        }
+        button.btn{
+			background-color: #eb9e10;
+			border-radius: 25px;
+			margin-bottom: 10px;
+			border: #fff;
+		}
+		button.btn:hover{
+			background-color: #242323;
+			color: #eb9e10;
+		}
+    </style>
+    </script>
+<body>
+<%- include("./partials/nav.ejs") %>
+  <h1>Edit Product</h1>
+  
+  <% if (user && user.Type === 'admin') { %>
+    <% if (product) { %>
+      <form action="/edit/<%= product._id %>" method="POST" enctype="multipart/form-data">
+        <div>
+          <label for="product-Name">Product Name:</label>
+          <input type="text" id="product-Name" name="product-Name" value="<%= product.Product-Name %>">
+        </div>
+        <div>
+            <label for="product-Description">Product Description:</label>
+            <textarea id="product-Description" name="product-Description"><%= product.Description %></textarea>
+          </div>
+        <div>
+          <label for="product-Price">Product Price:</label>
+          <input type="number" id="product-Price" name="product-Price" value="<%= product.Price %>">
+        </div>
+        <div>
+            <label for="product-Image">Product Image:</label>
+            <input type="file" id="product-Image" name="product-Image">
+          </div>
+        <div>
+          <label for="product-Quantity">Product Quantity:</label>
+          <input type="number" id="product-Quantity" name="product-Quantity" value="<%= product.Quantity %>">
+        </div>  
+        <button type="submit">Update Product</button>
+      </form>
+    <% } else { %>
+      <p>Product not found</p>
+    <% } %>
+  <% } else { %>
+    <p>You are not authorized to edit products</p>
+  <% } %>
+</body>
+</html>
