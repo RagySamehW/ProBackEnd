@@ -2,19 +2,20 @@
 <html>
 
 <head>
-
     <title>E-commerce Admin Dashboard</title>
     <style>
         /* Styles for the header, nav, main, and footer sections... */
-        body{
+        body {
             background-color: black;
         }
-        h2{
+
+        h2 {
             color: #eb9e10;
             text-decoration: underline;
             text-align: center;
         }
-        header h1{
+
+        header h1 {
             text-align: center;
             text-decoration: underline black;
             background-color: #eb9e10;
@@ -39,23 +40,31 @@
             background-color: #eb9e10;
             color: black;
         }
-        li a{
+
+        li a {
             text-decoration: none;
             color: #eb9e10;
             margin-left: 10px;
             margin-right: 10px;
         }
-        ul{
+
+        ul {
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 600px) {
+            table {
+                font-size: 12px;
+            }
         }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/42a3832eaa.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -73,7 +82,6 @@
     </nav>
     <main>
         <h2>Orders:</h2>
-        
         <table>
             <thead>
                 <tr>

@@ -48,16 +48,33 @@
         tr.r:hover {
             color: #eb9e10;
         }
-        button.btn{
-			background-color: #eb9e10;
-			border-radius: 25px;
-			margin-bottom: 10px;
-			border: #fff;
-		}
-		button.btn:hover{
-			background-color: #242323;
-			color: #eb9e10;
-		}
+
+        button.btn {
+            background-color: #eb9e10;
+            border-radius: 25px;
+            margin-bottom: 10px;
+            border: #fff;
+        }
+
+        button.btn:hover {
+            background-color: #242323;
+            color: #eb9e10;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+        }
     </style>
     </script>
 </head>
@@ -67,36 +84,34 @@
     <div class="container">
         <h1>Product List</h1>
         <center><a href="Add_Product"><button class="btn">Add</button></a></center>
-        <center><a href="#"><button class="btn">Delet All</button></a></center>
-        <% if (Allproducts.length> 0) { %>
+        <center><a href="#"><button class="btn">Delete All</button></a></center>
+        <% if (Allproducts.length > 0) { %>
         <table id="product-table">
-                <tr>
-                    <th>Name</th>
-                    <th>Discription</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Delete</th>
-                </tr>
-                <% Allproducts.forEach(emp=> { %>
-                <tr class="r">
-                    <td><%= emp.ProductName %></td>
-                    <td><%= emp.Description %></td>
-                    <td><%= emp.Price %> LE</td>
-                    <td><%= emp.Quantity %></td>
-                    <td>
-                        <form action="/deleteP" method="POST">
-                            <button type="submit" name="id" value="<%= emp._id %>">Delete</button>
-                        </form>
-                        <a href="/edit/<%= emp._id %>">Edit</a>
-                    </td>
-                    </tr>     
-                    <% }) %>
-                </table>
-                <% } else { %>
-                  <p>There are no employees to display...</p>
-                  <% } %>   
-            
-        
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Delete</th>
+            </tr>
+            <% Allproducts.forEach(emp=> { %>
+            <tr class="r">
+                <td><%= emp.ProductName %></td>
+                <td><%= emp.Description %></td>
+                <td><%= emp.Price %> LE</td>
+                <td><%= emp.Quantity %></td>
+                <td>
+                    <form action="/deleteP" method="POST">
+                        <button type="submit" name="id" value="<%= emp._id %>">Delete</button>
+                    </form>
+                    <a href="/edit/<%= emp._id %>">Edit</a>
+                </td>
+            </tr>
+            <% }) %>
+        </table>
+        <% } else { %>
+        <p>There are no products to display...</p>
+        <% } %>
     </div>
     <script src="script.js"></script>
 </body>

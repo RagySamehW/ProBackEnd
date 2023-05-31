@@ -48,52 +48,63 @@
         tr:hover {
             color: #eb9e10;
         }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+        }
     </style>
-    </script>
 </head>
 
 <body>
     <%- include("./partials/nav.ejs") %>
-  
-      <div class="container">
+
+    <div class="container">
         <h1>Users List</h1>
-  
-        <% if (Allusers.length> 0) { %>
-          <table id="customer-table">
+
+        <% if (Allusers.length > 0) { %>
+        <table id="customer-table">
             <tr>
-              <th>Name</th>
-              <th>Id</th>
-              <th>Position</th>
-              <th>Phone</th>
-              <th>E-mail</th>
-              <th>Action</th>
+                <th>Name</th>
+                <th>Id</th>
+                <th>Position</th>
+                <th>Phone</th>
+                <th>E-mail</th>
+                <th>Action</th>
             </tr>
             <% Allusers.forEach(emp=> { %>
-              <tr>
+            <tr>
                 <td>
-                  <%= emp.Name %>
+                    <%= emp.Name %>
                 </td>
                 <td>
-                  <%= emp._id %>
+                    <%= emp._id %>
                 </td>
                 <td>
-                  <%= emp.Type %>
+                    <%= emp.Type %>
                 </td>
                 <td><%= emp.Phone %></td>
                 <td><%= emp.Email %></td>
                 <td>
-                  <form action="/delete" method="POST">
-                      <button type="submit" name="id" value="<%= emp._id %>">Delete</button>
-                  </form>
-                  <a href="/edit/<%= emp._id %>">Edit</a>
-              </td>
-              </tr>     
-              <% }) %>
-          </table>
-          <% } else { %>
-            <p>There are no employees to display...</p>
-            <% } %>
-  
-      </div>  
-  </body>
+                    <form action="/delete" method="POST">
+                        <button type="submit" name="id" value="<%= emp._id %>">Delete</button>
+                    </form>
+                    <a href="/edit/<%= emp._id %>">Edit</a>
+                </td>
+            </tr>
+            <% }) %>
+        </table>
+        <% } else { %>
+        <p>There are no employees to display...</p>
+        <% } %>
+
+    </div>
+</body>
+
 </html>
