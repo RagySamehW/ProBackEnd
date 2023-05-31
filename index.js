@@ -410,12 +410,26 @@ app.get("/AddminM", (req, res) => {
 
 
 app.post("/Action_Add_product", (req, res) => {
+  let imgFile;
+  let uploadPath;
+  console.log(req.files)
+  if (!req.files || Object.keys(req.files).length === 0) {
+    return res.status(400).send('No files were uploaded.');
+  }
+  imgFile = req.files.img;
+  uploadPath = __dirname + '/public/images/' + req.body.pname + path.extname(imgFile.name);
+  // Use the mv() method to place the file somewhere on your server
+  imgFile.mv(uploadPath, function (err) {
+    if (err)
+      return res.status(500).send(err);
+
   var p1 = new Product({
     ProductName: req.body.pname,
     Price: parseInt(req.body.pprice),
     Size: req.body.psize,
     Quantity: parseInt(req.body.pquantity),
     Description:req.body.pdescription,
+    Image: req.body.un + path.extname(imgFile.name),
     });
     
     p1.save()
@@ -427,6 +441,7 @@ app.post("/Action_Add_product", (req, res) => {
     console.log("no");
     // Handle the error, e.g., display an error message or redirect to an error page
     });
+  });
 });
 
 app.get("/Add_product", (req, res) => {

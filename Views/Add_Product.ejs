@@ -37,7 +37,7 @@
 	<%- include("./partials/Nav.ejs") %>
 	<div class="container">
 		<h1>Add Product</h1>
-		<form id="edit-product-form" method="post" action="/Action_Add_product">
+		<form id="edit-product-form" method="post" action="/Action_Add_product" enctype="multipart/form-data">
 			<div class="form-group">
 				<label for="product-name">Product Name:</label>
 				<input type="text" class="form-control" id="product-name" name="pname" placeholder="Enter product name" required>
@@ -57,6 +57,10 @@
 			<div class="form-group">
 				<label for="product-name">Product Description:</label>
 				<input type="text" class="form-control" id="product-desc" name="pdescription" placeholder="Enter product description" required>
+			</div>
+			<div class="form-group">
+				<label for="product-name">Product image</label>
+				<input type="file" class="form-control" id="product-img" name="img">
 			</div>
 			<center><button type="submit" class="btn btn-primary">Submit</button></center>
 		</form>
