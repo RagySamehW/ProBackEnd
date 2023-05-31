@@ -190,7 +190,7 @@
             <% products.forEach(prod=> { %>
         <div class="row mt-5">
             <div class="col-lg-5 col-md-12 col-12 pb-1">
-                <img class="r img-fluid w-100" src="/Images/<%= prod.Image %>" width="100">
+                <img class="r img-fluid w-100" src="/Images/<%= prod.Image %>" width="500">
             </div>
             <section class="tt">
                 <div class="col-lg-6 col-md-12 col-1h6">
@@ -222,9 +222,8 @@
             </section>
         </div>
         <% }) %>
-        <% } else { %>
-            <p>.</p>
-            <% } %>
+        <% } %>
+        
     </section>
     <br>
     <hr>
