@@ -36,22 +36,26 @@
 	<%- include("./partials/Nav.ejs") %>
 	<div class="container">
 		<h1>Add Product</h1>
-		<form id="edit-product-form" method="post" action="">
+		<form id="Action_Add_product" method="post" action="Action_Add_product">
 			<div class="form-group">
 				<label for="product-name">Product Name:</label>
-				<input type="text" class="form-control" id="product-name" name="product-name" placeholder="Enter product name" required>
+				<input type="text" class="form-control" id="product-name" name="pname" placeholder="Enter product name" required>
 			</div>
 			<div class="form-group">
-				<label for="product-description">Product Description:</label>
-				<textarea class="form-control" id="product-description" name="product-description" rows="3" placeholder="Enter product description" required></textarea>
+				<label for="product-name">Product Price:</label>
+				<input type="text" class="form-control" id="product-price" name="pprice" placeholder="Enter product price" required>
 			</div>
 			<div class="form-group">
-				<label for="product-price">Product Price:</label>
-				<input type="number" class="form-control" id="product-price" name="product-price" placeholder="Enter product price" required>
+				<label for="product-name">Product Size:</label>
+				<input type="text" class="form-control" id="product-size" name="psize" placeholder="Enter product size" required>
 			</div>
 			<div class="form-group">
-				<label for="product-image">Product Image:</label>
-				<input type="file" class="form-control-file" id="product-image" name="product-image">
+				<label for="product-name">Product Quantity:</label>
+				<input type="text" class="form-control" id="product-quantity" name="pquantity" placeholder="Enter product quantity" required>
+			</div>
+			<div class="form-group">
+				<label for="product-name">Product Description:</label>
+				<input type="text" class="form-control" id="product-desc" name="pdescription" placeholder="Enter product description" required>
 			</div>
 			<center><button type="submit" class="btn btn-primary">Submit</button></center>
 		</form>
