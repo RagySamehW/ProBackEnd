@@ -70,14 +70,14 @@
   
   <% if (user && user.Type === 'admin') { %>
     <% if (product) { %>
-      <form action="/edit/<%= product._id %>" method="POST" enctype="multipart/form-data">
+      <form action="/editp/<%= product._id %>" method="POST" enctype="multipart/form-data">
         <div>
           <label for="product-Name">Product Name:</label>
           <input type="text" id="product-Name" name="product-Name" value="<%= product.Product-Name %>">
         </div>
         <div>
             <label for="product-Description">Product Description:</label>
-            <textarea id="product-Description" name="product-Description"><%= product.Description %></textarea>
+            <textarea id="product-Description" name="product-Description"> value="<%= product.Description %>"</textarea>
           </div>
         <div>
           <label for="product-Price">Product Price:</label>

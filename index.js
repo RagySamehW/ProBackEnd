@@ -41,85 +41,6 @@ app.set("view engine", "ejs");
 
 app.use(session({ secret: "Your_Secret_Key" }));
 
-let x = 1;
-const products = [
-  {
-    id: "11",
-    name: "American Eagle " + x++,
-    decription: "AE SUPER SOFT ICON V-NECK",
-  },
-  {
-    id: "12",
-    name: "American Eagle " + x++,
-    decription: "AE SUPER SOFT ICON V-NECK",
-  },
-  {
-    id: "13",
-    name: "American Eagle " + x++,
-    decription: "AE SUPER SOFT ICON V-NECK",
-  },
-  {
-    id: "14",
-    name: "American Eagle " + x++,
-    decription: "AE SUPER SOFT ICON V-NECK",
-  },
-  {
-    id: "15",
-    name: "American Eagle " + x++,
-    decription: "AE SUPER SOFT ICON V-NECK",
-  },
-  {
-    id: "16",
-    name: "American Eagle " + x++,
-    decription: "AE SUPER SOFT ICON V-NECK",
-  },
-  {
-    id: "17",
-    name: "American Eagle " + x++,
-    decription: "AE SUPER SOFT ICON V-NECK",
-  },
-  {
-    id: "18",
-    name: "American Eagle " + x++,
-    decription: "AE SUPER SOFT ICON V-NECK",
-  },
-  {
-    id: "19",
-    name: "American Eagle " + x++,
-    decription: "AE SUPER SOFT ICON V-NECK",
-  },
-  {
-    id: "20",
-    name: "American Eagle " + x++,
-    decription: "AE SUPER SOFT ICON V-NECK",
-  },
-  {
-    id: "21",
-    name: "American Eagle " + x++,
-    decription: "AE SUPER SOFT ICON V-NECK",
-  },
-  {
-    id: "22",
-    name: "American Eagle " + x++,
-    decription: "AE SUPER SOFT ICON V-NECK",
-  },
-  {
-    id: "23",
-    name: "American Eagle " + x++,
-    decription: "AE SUPER SOFT ICON V-NECK",
-  },
-  {
-    id: "24",
-    name: "American Eagle " + x++,
-    decription: "AE SUPER SOFT ICON V-NECK",
-  },
-  {
-    id: "25",
-    name: "American Eagle " + x++,
-    decription: "AE SUPER SOFT ICON V-NECK",
-  },
-];
-
 require("dotenv/config");
 
 const api = process.env.API_V1;
@@ -441,6 +362,33 @@ app.get("/AddminM", (req, res) => {
   });
 });
 
+
+app.post("/Action_Add_product", (req, res) => {
+  var p1 = new Product({
+    ProductName: req.body.pname,
+    Price: parseInt(req.body.pprice),
+    Size: req.body.psize,
+    Quantity: parseInt(req.body.pquantity),
+    Description:req.body.pdescription,
+    });
+    
+    p1.save()
+    .then(result => {
+      console.log("Done");
+      res.redirect("Admin_Products_List");
+    })
+    .catch(err => {
+    console.log("no");
+    // Handle the error, e.g., display an error message or redirect to an error page
+    });
+});
+
+app.get("/Add_product", (req, res) => {
+  res.render("Add_Product", {
+    user: req.session.user === undefined ? "" : req.session.user,
+  });
+});
+
 app.get("/Admin_Products_List", (req, res) => {
   console.log("type" + req.session.user.Type);
   if (req.session.user !== undefined && req.session.user.Type === "admin") {
@@ -457,12 +405,6 @@ app.get("/Admin_Products_List", (req, res) => {
   } else {
     res.send("you are not admin");
   }
-});
-
-app.get("/Add_product", (req, res) => {
-  res.render("Add_Product", {
-    user: req.session.user === undefined ? "" : req.session.user,
-  });
 });
 
 app.get("/Addmin_Users", (req, res) => {
@@ -496,38 +438,6 @@ app.get("/Login2", (req, res) => {
   });
 });
 
-// Assuming you have an array of items
-let g = 1;
-const items = [
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  "Item " + g++,
-  // ...
-];
 // 404 page
 app.use((req, res) => {
    res.status(404).render('404',{ user: (req.session.user === undefined ? "" : req.session.user) });
