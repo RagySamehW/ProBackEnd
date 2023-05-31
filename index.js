@@ -45,6 +45,52 @@ require("dotenv/config");
 
 const api = process.env.API_V1;
 
+app.get("/editp/:id", (req, res) => {
+  const pId = req.params.id;
+
+  // Retrieve the user with the specified ID from the database
+  Product.findOne({_id: pId})
+    .then((pproduct) => {
+      if (!pproduct) {
+        console.log('User not found');
+        res.status(404).send('User not found');
+      } else {
+        res.render("editproducts", { pproduct, user: req.session.user === undefined ? "" : req.session.user });
+      }
+    })
+    .catch((err) => {
+      console.error('Error retrieving user:', err);
+      res.status(500).send('Error retrieving user');
+    });
+});
+
+app.post('/editp/:id', (req, res) => {
+  const pId = req.params.id;
+  const pupdatedData = {
+    ProductName: req.body.Name,
+    Description: req.body.Description,
+    Price: req.body.Price,
+    Quantity: req.body.Quantity,
+   
+    // Add more properties as needed
+  };
+
+  // Perform the update in the database using Mongoose or your preferred database library
+  Product.findOneAndUpdate({ _id: pId }, pupdatedData, { new: true })
+    .then((pupdatedData) => {
+      if (!pupdatedData) {
+        console.log('User not found');
+        res.status(404).send('User not found');
+      } else {
+        console.log('product updated:', pupdatedData);
+        res.redirect('/'); // Redirect to the appropriate page
+      }
+    })
+    .catch((err) => {
+      console.error('Error updating user:', err);
+      res.status(500).send('Error updating user');
+    });
+});
 app.get("/edit/:id", (req, res) => {
   const userId = req.params.id;
 
@@ -123,7 +169,7 @@ app.post('/deleteP', (req, res) => {
         res.status(404).send('User not found');
       } else {
         console.log('User deleted:', deletedpro);
-        res.redirect('Admin_Products_Lists'); // Redirect to the homepage or any other appropriate page
+        res.redirect('/'); // Redirect to the homepage or any other appropriate page
       }
     })
     .catch((err) => {
