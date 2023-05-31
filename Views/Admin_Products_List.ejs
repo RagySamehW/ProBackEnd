@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Customer List</title>
+    <title>Products List</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -61,11 +61,14 @@
     </style>
     </script>
 </head>
-
+<head>
+    <title>Products List</title>
+</head>
 <body>
     <%- include("./partials/Nav.ejs") %>
     <div class="container">
         <h1>Product List</h1>
+        <% if (Allusers.length> 0) { %>
         <table id="product-table">
             <thead>
                 <tr>
@@ -74,29 +77,20 @@
                     <th>Price</th>
                     <th>Quantity</th>
                     <th>Delete</th>
-		    <th>edit</th>
+		            <th>edit</th>
                 </tr>
             </thead>
             <tbody>
+                 <!-- product data will be inserted here dynamically -->
+                <% Allproducts.forEach(product=> { %>
                 <tr class="r">
-                    <td>Tshirt</td>
-                    <td>cotton Tshirt</td>
-                    <td>300 EGP</td>
-                    <td>50</td>
+                    <td><%= product.Name %></td>
+                    <td><%= product.Discription %></td>
+                    <td><%= product.Price%></td>
+                    <td><%= product.Quantity %></td>
                     <td><a href="Admin_Products_List"><button>Delete</button></a></td>
 		    <td><a href="editproducts"><button>edit</button></a></td>
-                    
                 </tr>
-                <tr class="r">
-                    <td>Tshirt</td>
-                    <td>cotton Tshirt</td>
-                    <td>300 EGP</td>
-                    <td>50</td>
-                    <td><a href="#"><button>Delete</button></a></td>
-		    <td><a href="editproducts"><button>edit</button></a></td>
-                    
-                </tr>
-                <!-- product data will be inserted here dynamically -->
             </tbody>
             <center><a href="Add_Product"><button class="btn">Add new product</button></a></center>
             <center><a href="AddminM"><button class="btn">Delete All</button></a></center>
