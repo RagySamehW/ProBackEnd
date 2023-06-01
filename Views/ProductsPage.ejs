@@ -180,10 +180,10 @@
             <% if (products.length> 0) { %>
                 <% products.forEach(pro=> { %>
                         <div onclick="" class="pro">
-                                <img class="p1" src="/Images/<%= pro.ProductName %>.jpg" alt="">
+                                <img class="p1" src="/Images/<%= pro.Image %>" alt="" width="100pxl">
                                 <div class="des">
                                     <span><%= pro.ProductName %></span>
-                                    <h5><%= pro.Description %></h5>
+                                    <h5><%= pro.Smalldesc %></h5>
                                     <form action="/item" method="post" id="add_to_cart">
                                         <input name="pname" value ="<%= pro.ProductName%>" hidden></input>
                                         <input name="psize" value="<%= pro.Size%>" hidden></input>
