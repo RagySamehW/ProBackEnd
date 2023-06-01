@@ -69,6 +69,7 @@ app.post('/editp/:id', (req, res) => {
   const pupdatedData = {
     ProductName: req.body.Name,
     Description: req.body.Description,
+    Smalldesc: req.body.psdescription,
     Price: req.body.Price,
     Quantity: req.body.Quantity,
    
@@ -244,6 +245,7 @@ app.get("/Product", (req, res) => {
     });
    })
 });
+
 app.post('/add_to_cart', (req, res) => {
   
     Cart.findOne({ProductName:req.body.pname,UserName:req.session.user.Name, Size:req.body.psize}).then((data) => {
@@ -291,6 +293,7 @@ app.post('/add_to_cart', (req, res) => {
   });
   // });
      })
+
   app.post('/remove_from_cart', (req, res) => {
   
       Cart.findOneAndDelete({UserName:req.session.user.Name, ProductName:req.body.pname, Size:req.body.psize}).then(result => {
@@ -301,6 +304,7 @@ app.post('/add_to_cart', (req, res) => {
         // Handle the error, e.g., display an error message or redirect to an error page
       });
     })
+
 app.post('/Checkout', (req, res) => {
     var substrs = req.body.carts.split(',');
     for (var c = 0; c < substrs.length ; c++)
@@ -427,9 +431,10 @@ app.post("/Action_Add_product", (req, res) => {
     ProductName: req.body.pname,
     Price: parseInt(req.body.pprice),
     Size: req.body.psize,
+    Smalldesc: req.body.psdescription,
     Quantity: parseInt(req.body.pquantity),
     Description:req.body.pdescription,
-    Image: req.body.un + path.extname(imgFile.name),
+    Image: req.body.pname + path.extname(imgFile.name),
     });
     
     p1.save()
