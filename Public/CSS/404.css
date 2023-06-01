@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Spartan", sans-serif;
+}     
+body {
+        background-color: dimgrey;
+      }
+      h1 {
+        color: #c58308;
+      }
+    
+      @media only screen and (max-width: 600px) {    
+        body {
+          margin: 0;
+          padding: 20px;
+        }
+      }
