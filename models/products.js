@@ -19,6 +19,9 @@ const productSchema = new Schema({
   Description: {
     type: String,
   },
+  Smalldesc: {
+    type: String,
+  },
   Image:{
     type: String,
   },
