@@ -196,27 +196,32 @@
                 <div class="col-lg-6 col-md-12 col-1h6">
                     <h3 class="py-4">Men's Fashion T-Shirt</h3>
                     <h2><%= prod.Price%> LE</h2>
-                    <select class="se">
-                        <option>select Size</option>
-                        <option>S</option>
-                        <option>M</option>
-                        <option>L</option>
-                        <option>XL</option>
-                    </select>
-                    <input type="number" value="1">
-                    <div class="h_container">
-                        <i id="heart2" class="far fa-heart"></i>
-                    </div>
-                    <button class="buy-button">Add To Cart</button>
-                    <h4 class="q">Product Details</h4>
-                    <span><%= prod.Description%></span>
+
                     <form action="/add_to_cart" method="post" id="add_to_cart">
+                        <select class="se">
+                            <option>select Size</option>
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                            <option>XL</option>
+                        </select>
+                        <input type="hidden" name="product_id" value="<%= prod._id %>">
                         <input class="py-4" name="pname"value ="<%= prod.ProductName%>" hidden></input>
                         <input name="pprice" value="<%= prod.Price%>" hidden></input>
-                        <input class="se" name="psize" value="<%= prod.Size%>" hidden >Quantity:</input>
-                        <input name="pquantity" value="1">    
-                <input class="buy-button"  type="submit" onclick="" value="add to cart !"/></input>
-            </form>
+                        <input type="number" name="pquantity" value="1">    
+                        <div class="h_container">
+                            <i id="heart2" class="far fa-heart"></i>
+                        </div>
+                        <button class="buy-button"  type="submit" onclick="" value="add to cart !"/>Add To Cart</button>
+                    </form>
+
+
+                    
+                    
+                    <h4 class="q">Product Details</h4>
+                    <span><%= prod.Description%></span>
+                    
+            
 
                 </div>
             </section>
