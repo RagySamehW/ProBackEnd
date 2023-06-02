@@ -40,8 +40,9 @@ router.get("/Addmin_Users", Admin.userList);
 router.post("/edit/:id" , Admin.EditUserP);
 router.get("/edit/:id" , Admin.EditUserG);
 router.post("/delete" , Admin.DeletUser);
-router.get("/deleteP" , Admin.DeletPro);
+router.post("/deleteP" , Admin.DeletPro);
 router.get("/Admin_Products_List" , Admin.ProList);
 router.post("/Action_Add_product", Admin.AddP);
-
+router.post("/editp/:id", Admin.EditUserP);
+router.get("/editp/:id", Admin.EditUserG);
 module.exports = router;
