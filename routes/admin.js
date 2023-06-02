@@ -42,6 +42,6 @@ router.get("/edit/:id" , Admin.EditUserG);
 router.post("/delete" , Admin.DeletUser);
 router.get("/deleteP" , Admin.DeletPro);
 router.get("/Admin_Products_List" , Admin.ProList);
-
+router.post("/Action_Add_product", Admin.AddP);
 
 module.exports = router;
