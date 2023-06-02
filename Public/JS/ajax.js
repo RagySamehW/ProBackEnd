@@ -6,7 +6,7 @@ $(document).ready(function () {
             url: '/user/checkU',
             method: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify({ UserName: data }),
+            data: JSON.stringify({ Name: data }),
             success: function (response) {
                 $('#result').html('UserName is ' + response);
                 if (response == 'taken') {
