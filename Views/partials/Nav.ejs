@@ -1,76 +1,84 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" href="/CSS/Nav.css">
     <style>
         * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Spartan", sans-serif;
-}
-#header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 80px;
-    background-color: #000000;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-    z-index: 999;
-    position: sticky;
-    top: 0;
-    left: 0;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Spartan", sans-serif;
+        }
 
-}
-#header .logo {
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fffcfc;
-    font-family: Serif;
-}
-#navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap; /* Added flex-wrap */
-}
+        #header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 80px;
+            background-color: #000000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+            z-index: 999;
+            position: sticky;
+            top: 0;
+            left: 0;
 
-#navbar li {
-    list-style: none;
-    padding: 0 20px;
-    position: relative;
+        }
 
-}
+        #header .logo {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fffcfc;
+            font-family: Serif;
+        }
 
-#navbar li a {
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fffcfc;
-    transition: 0.3s ease;
-}
+        #navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            /* Added flex-wrap */
+        }
 
-#navbar li a.active::after,
-#navbar li a:hover::after {
-    content: "";
-    width: 30%;
-    height: 2px;
-    background-color: #eb9e10;
-    position: absolute;
-    bottom: -4px;
-    left: 20px;
-}
-#heart {
-    font-size: 25px;
-}
-li.name{
-    color: #fffcfc;
-    font-style: italic;
-}
+        #navbar li {
+            list-style: none;
+            padding: 0 20px;
+            position: relative;
+
+        }
+
+        #navbar li a {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fffcfc;
+            transition: 0.3s ease;
+        }
+
+        #navbar li a.active::after,
+        #navbar li a:hover::after {
+            content: "";
+            width: 30%;
+            height: 2px;
+            background-color: #eb9e10;
+            position: absolute;
+            bottom: -4px;
+            left: 20px;
+        }
+
+        #heart {
+            font-size: 25px;
+        }
+
+        li.name {
+            color: #fffcfc;
+            font-style: italic;
+        }
     </style>
-    
+
 </head>
+
 <body>
     <section id="header">
         <a class="logo" href="Home">LionSoul</a>
@@ -79,24 +87,58 @@ li.name{
             <ul id="navbar">
                 <li><a class="home" href="/">Home</a></li>
                 <li><a href="/Product">Shop</a></li>
-               <% if(user.Type==="admin"){ %>
-               <li> <a href='/admin/AddminM'>Admin</a></li>
-                <% } %>
+                <% if(user.Type==="admin" ){ %>
+                    <li> <a href='/admin/AddminM'>Admin</a></li>
+                    <% } %>
+                        <li><a href="/user/Contact">Contact</a></li>
+                        <li><a href="/user/WishList"><i id="heart" class="far fa-heart"></i></a></li>
+                        <li><a href="/user/Cart"><i class="material-icons">shop</i></a></li>
+                        <% if(user==="" ) { %>
+                            <li> <a href='/user/Login2'>Login</a></li>
+                            <% } else { %>
+                                <li> <a href='/user/logout'>Logout</a></li>
+                                <li class="name"> Welcome <%= user.Name %>
+                                </li>
+                                <% } %>
+                                    <li>
+                                        <input type="tex" id="Search" onkeyup="sendData(this)" value="      Search.....">
+                                        <section id="SearchResult"></section>
 
-                <li><a href="test.html">Blog</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="Contact">Contact</a></li>
-                <li><a href="/user/WishList"><i id="heart" class="far fa-heart"></i></a></li>
-                <li><a href="/user/Cart"><i class="material-icons">shop</i></a></li>
-                <% if(user ==="" ) { %>
-                   <li> <a href='/user/Login2'>Login</a></li>
-                    <% } else { %>
-                     <li> <a href='/user/logout'>Logout</a></li>
-                     <li class="name"> Welcome <%= user.Name %></li>
-                      <% } %>
-                </div>
-            </ul>
+                                    </li>
+        </div>
+        </ul>
         </div>
     </section>
+    <script>
+        function sendData(e) {
+            const SearchResult = document.getElementById('SearchResult');
+            let match = e.value.match(/^[a-zA-z]*/);
+            let match2 = e.value.match(/\s*/);
+            if (match2[0] === e.value) {
+                SearchResult.innerHTML = '';
+                return;
+            }
+            if (match[0] === e.value) {
+                fetch('/getproducts', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ payload: e.value })
+                }).then(res => res.json()).then(data => {
+                    let payload = data.payload;
+                    SearchResult.innerHTML = '';
+                    if(payload.length < 1){
+                        SearchResult.innerHTML = '<p>No Result Found </p>';
+                        return;
+                    }
+                    payload.forEach((item, index) => {
+                        if(index > 0) SearchResult.innerHTML += '<hr>'
+                        SearchResult.innerHTML += `<p>${item.name}</p>`;
+                    });
+                });
+            }
+
+        };
+    </script>
 </body>
+
 </html>
