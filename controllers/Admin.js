@@ -114,11 +114,48 @@ const ProList = (req,res) => {
     });
 };
 
+const AddP = (req,res) => {
+  let imgFile;
+  let uploadPath;
+  if (!req.files || Object.keys(req.files).length === 0) {
+      return res.status(400).send('No files were uploaded.');
+  }
+  imgFile = req.files.img;
+  uploadPath = path.join(__dirname, '../public/images/' + req.body.un + path.extname(imgFile.name));
+
+  // Use the mv() method to place the file somewhere on your server
+  imgFile.mv(uploadPath, function (err) {
+      if (err)
+          res.status(500).send(err);
+
+  var p1 = new Product({
+    ProductName: req.body.pname,
+    Price: parseInt(req.body.pprice),
+    Size: req.body.psize,
+    Smalldesc: req.body.psdescription,
+    Quantity: parseInt(req.body.pquantity),
+    Description:req.body.pdescription,
+    Image: req.body.pname + path.extname(imgFile.name),
+    });
+    
+    p1.save()
+    .then(result => {
+      console.log("Done");
+      res.redirect("/admin/Admin_Products_List");
+    })
+    .catch(err => {
+    console.log("no");
+    // Handle the error, e.g., display an error message or redirect to an error page
+    });
+  });
+};
+
 module.exports = {
     userList,
     EditUserG,
     EditUserP,
     DeletUser,
     DeletPro,
-    ProList
+    ProList,
+    AddP
 };
