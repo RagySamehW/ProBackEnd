@@ -18,7 +18,7 @@ const userList = (req, res) => {
     });
 };
 
-const EditUserG = (reg, res) => {
+const EditUserG = (req, res) => {
   const userId = req.params.id;
   // Retrieve the user with the specified ID from the database
   Employees.findOne({ _id: userId })
@@ -39,7 +39,7 @@ const EditUserG = (reg, res) => {
     });
 };
 
-const EditUserP = (reg, res) => {
+const EditUserP = (req, res) => {
   const userId = req.params.id;
   const updatedData = {
     Name: req.body.name,
@@ -92,7 +92,7 @@ const DeletPro = (req, res) => {
         res.status(404).send("User not found");
       } else {
         console.log("User deleted:", deletedpro);
-        res.redirect("Admin_Products_Lists");
+        res.redirect("Admin_Products_List");
       }
     })
     .catch((err) => {
@@ -121,7 +121,7 @@ const AddP = (req,res) => {
       return res.status(400).send('No files were uploaded.');
   }
   imgFile = req.files.img;
-  uploadPath = path.join(__dirname, '../public/images/' + req.body.un + path.extname(imgFile.name));
+  uploadPath = path.join(__dirname, '../public/images/' + req.body.pname + path.extname(imgFile.name));
 
   // Use the mv() method to place the file somewhere on your server
   imgFile.mv(uploadPath, function (err) {
@@ -150,6 +150,53 @@ const AddP = (req,res) => {
   });
 };
 
+const EditProG = (req, res) => {
+  const pId = req.params.id;
+
+  // Retrieve the user with the specified ID from the database
+  Product.findOne({ _id: pId })
+    .then((pproduct) => {
+      if (!pproduct) {
+        console.log('User not found');
+        res.status(404).send('User not found');
+      } else {
+        res.render("editproducts", { pproduct, user: req.session.user === undefined ? "" : req.session.user });
+      }
+    })
+    .catch((err) => {
+      console.error('Error retrieving user:', err);
+      res.status(500).send('Error retrieving user');
+    });
+};
+
+const EditProP = (req, res) => {
+  const pId = req.params.id;
+  const pupdatedData = {
+    ProductName: req.body.Name,
+    Description: req.body.Description,
+    Smalldesc: req.body.psdescription,
+    Price: req.body.Price,
+    Quantity: req.body.Quantity,
+   
+    // Add more properties as needed
+  };
+  // Perform the update in the database using Mongoose or your preferred database library
+  Product.findOneAndUpdate({ _id: pId }, pupdatedData, { new: true })
+    .then((pupdatedData) => {
+      if (!pupdatedData) {
+        console.log('User not found');
+        res.status(404).send('User not found');
+      } else {
+        console.log('product updated:', pupdatedData);
+        res.redirect('/'); // Redirect to the appropriate page
+      }
+    })
+    .catch((err) => {
+      console.error('Error updating user:', err);
+      res.status(500).send('Error updating user');
+    });
+};
+
 module.exports = {
     userList,
     EditUserG,
@@ -157,5 +204,7 @@ module.exports = {
     DeletUser,
     DeletPro,
     ProList,
-    AddP
+    AddP,
+    EditProG,
+    EditProP
 };
