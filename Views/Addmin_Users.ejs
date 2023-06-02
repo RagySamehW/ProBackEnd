@@ -92,10 +92,10 @@
                 <td><%= emp.Phone %></td>
                 <td><%= emp.Email %></td>
                 <td>
-                    <form action="/delete" method="POST">
+                    <form action="/admin/delete" method="POST">
                         <button type="submit" name="id" value="<%= emp._id %>">Delete</button>
                     </form>
-                    <a href="/edit/<%= emp._id %>">Edit</a>
+                    <a href="/admin/edit/<%= emp._id %>">Edit</a>
                 </td>
             </tr>
             <% }) %>
