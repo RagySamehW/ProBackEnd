@@ -1,9 +1,9 @@
 $(document).ready(function () {
-    $("#un").on('keyup', function (e) {
+    $("#U").on('keyup', function (e) {
         e.preventDefault();
-        var data = $('#un').val();
+        var data = $('#U').val();
         $.ajax({
-            url: '/user/checkUN',//the URL to which the AJAX request will be sent.
+            url: '/user/checkU',
             method: 'POST',
             contentType: 'application/json',
             data: JSON.stringify({ UserName: data }),

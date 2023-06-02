@@ -175,6 +175,21 @@ const Checkout = (req,res) =>{
     }
   }
 };
+const checkU = (req, res) => {
+    var query = { UserName: req.body.UserName };
+    Employees.find(query)
+        .then(result => {
+            if (result.length > 0) {
+                res.send('taken');
+            }
+            else {
+                res.send('available');
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        });
+};
 
 module.exports = {
   Getuser,
@@ -182,5 +197,6 @@ module.exports = {
   AddtoCart,
   Cartv,
   RemoveCart,
-  Checkout
+  Checkout,
+  checkU
 };

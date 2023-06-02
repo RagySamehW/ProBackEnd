@@ -47,5 +47,6 @@ router.get("/logout", (req, res) => {
 router.post("/add_to_cart", User.AddtoCart);
 router.post("/remove_from_cart", User.RemoveCart);
 router.post("/Checkout", User.Checkout);
+router.post('/checkU', User.checkU);
 
 module.exports = router;
