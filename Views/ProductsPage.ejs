@@ -166,6 +166,30 @@
         #num a {
             text-decoration: none;
         }
+
+        .pagination {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Add this line */
+        }
+
+        .pagination a {
+            margin: 0 5px;
+            padding: 5px 10px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            color: #eb9e10;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .pagination a.active,
+        .pagination a:hover {
+            background-color: #000;
+            color: #fff;
+        }
     </style>
 
     <title>Products</title>
@@ -203,17 +227,21 @@
                             </a>
                         </div>
                         <% }) %>
-                            <% } else { %>
-                                <p>There are no employees to display...</p>
-                                <% } %>
-
-                        
-        
-        
-              </div>
-              
-        </section>
-        <section id="f">
+                       
+                    <% } else { %>
+                        <p>There are no products to display...</p>
+                    <% } %>
+                </div><br><br><br><br>
+                <center><div class="pagination">
+                    <% for (var i=1; i <=totalPages; i++) { %>
+                        <a href="/product?page=<%= i %>" class="<%= currentPage === i ? 'active' : '' %>">
+                            <%= i %>
+                        </a>
+                        <% } %>
+                </div></center> 
+                    </div>
+                </section>
+                <section id="f">
             <footer class="site-footer">
                 <div class="container">
                     <div class="row">
