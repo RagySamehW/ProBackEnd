@@ -83,7 +83,7 @@
     <%- include("./partials/Nav.ejs") %>
     <div class="container">
         <h1>Product List</h1>
-        <center><a href="Add_Product"><button class="btn">Add</button></a></center>
+        <center><a href="/admin/Add_Product"><button class="btn">Add</button></a></center>
         <center><a href="#"><button class="btn">Delete All</button></a></center>
         <% if (Allproducts.length > 0) { %>
         <table id="product-table">
@@ -101,7 +101,7 @@
                 <td><%= emp.Price %> LE</td>
                 <td><%= emp.Quantity %></td>
                 <td>
-                    <form action="/deleteP" method="POST">
+                    <form action="/admin/deleteP" method="POST">
                         <button type="submit" name="id" value="<%= emp._id %>">Delete</button>
                     </form>
                     <a href="/editp/<%= emp._id %>">Edit</a>
