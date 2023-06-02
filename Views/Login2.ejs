@@ -228,7 +228,7 @@
       <div id="login">
         <h1>Sign In</h1>
         <p>Use your email account:</p>
-        <form action="/profile" method="post" id="L_in">
+        <form action="/user/profile" method="post" id="L_in">
           <input id="l1" type="text" placeholder="userName" name="un" autocomplete="off" />
           <p class="pp" id="demo"></p>
           <input id="l2" type="password" placeholder="Password" name="pw" autocomplete="off" />
@@ -240,7 +240,7 @@
       <div id="register">
         <h1>Create Account</h1>
         <p>Use your email for registration:</p>
-        <form id="Sign_Up" action="/signup-action" method="post" enctype="multipart/form-data">
+        <form id="Sign_Up" action="/user/signup-action" method="post" enctype="multipart/form-data">
           <input  type="text" placeholder="Name" name="un" autocomplete="off" /><br />
           <input type="email" placeholder="Email" name="em" autocomplete="off" /><br />
           <input type="hidden" name="tp" value="client">
