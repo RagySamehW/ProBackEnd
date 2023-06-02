@@ -27,12 +27,12 @@ app.use(express.urlencoded({ extended: true }));
 
 //middleware/
 app.use(fileUpload());
-//app.use(bodyParser.urlencoded({ extended: true }));
-//app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(morgan("tiny"));
 
 app.use(express.static("Public"));
-//app.use('/Images',express.static('Public/Images'));
+app.use('/Images',express.static('Public/Images'));
 
 app.set("Views", "./Views");
 app.set("view engine", "ejs");
