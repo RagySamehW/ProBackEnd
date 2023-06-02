@@ -4,11 +4,8 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <script  src="https://kit.fontawesome.com/42a3832eaa.js" crossorigin="anonymous"></script>
-    <script>
-      function logg() {
-        window.location.href = "Home";
-      }
-    </script>
+
+    <script src="/js/ajax-UN.js"></script>
     <style>
       * {
         margin: 0;
@@ -171,22 +168,9 @@
       }
     </style>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="./style.css" />
 
     <script>
-        function logg2(){
-            let c;
-        let a = document.getElementById("l1").value;
-        let b = document.getElementById("l2").value;
-        if (a==="Ragy2106213@miuegypt.com"){
-            window.location.href = "Home";
-            c = "yess";
-        }
-        else{
-            c = "Input not validdddddd";
-        }
-        document.getElementById("demo").innerHTML = c;
-      }
+  
       function myFunction() {
         let x = document.getElementById("l1").value;
         let y = document.getElementById("l2").value;
@@ -206,6 +190,14 @@
       }
       
     </script>
+     <script>
+      function validate() {
+          if (document.getElementById('result').innerHTML.includes('taken'))
+              return false;
+          else
+              return true;
+      }
+  </script>
   </head>
   <body>
     <%- include("./partials/Nav.ejs") %>
@@ -240,8 +232,9 @@
       <div id="register">
         <h1>Create Account</h1>
         <p>Use your email for registration:</p>
-        <form id="Sign_Up" action="/user/signup-action" method="post" enctype="multipart/form-data">
+        <form id="Sign_Up" action="/user/signup-action" method="post" onsubmit="return validate()" enctype="multipart/form-data">
           <input  type="text" placeholder="Name" name="un" autocomplete="off" /><br />
+          <span id="result"></span>
           <input type="email" placeholder="Email" name="em" autocomplete="off" /><br />
           <input type="hidden" name="tp" value="client">
           <input type="password" placeholder="Password" name="pw" autocomplete="off" /><br />
