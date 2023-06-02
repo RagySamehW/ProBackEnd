@@ -278,7 +278,7 @@
             <div onclick="" class="pro">
                 <tr>
                     <td>
-                        <form action="/remove_from_cart" method="post" id="remove_from_cart">
+                        <form action="/usser/remove_from_cart" method="post" id="remove_from_cart">
                             <input hidden id="pname" name="pname" value="<%= crt.ProductName%>"></input>
                             <input hidden id="psize" name="psize" value="<%= crt.Size%>"></input>
                             <input value="remove" type="submit" value="<%= crt._id%>"></input>
@@ -319,7 +319,7 @@
                 <td id="tot" style="border-top: 1px solid #000;" class="price" colspan="4"></td>
             </tr>
             <tr>
-                <form action="/Checkout" method="post" id="Checkout">
+                <form action="/user/Checkout" method="post" id="Checkout">
                     <input hidden name="carts" value="<%= carts%>"></input>
                     <td colspan="5"><input value="Proceed to checkout" type="submit"></input></td>
                 </form>
