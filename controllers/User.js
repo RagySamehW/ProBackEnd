@@ -4,14 +4,16 @@ const Product = require("../models/products");
 const objectId = require("mongoose").ob;
 const path = require("path");
 
-const Getuser = (req, res) => {
+const Getuser = async(req, res) => {
   var query = { Name: req.body.un, Password: req.body.pw };
+  const products = await Product.aggregate([{ $sample: { size: 8 } }]).exec();
+    const productss = await Product.aggregate([{ $sample: { size: 4 } }]).exec();
   Employees.findOne(query)
     .then((result) => {
       if (result) {
         console.log(result);
         req.session.user = result;
-        res.render("Home", {
+        res.render("Home", { productss ,products,
           user: req.session.user === undefined ? "" : req.session.user,
         });
       } else {
@@ -59,7 +61,7 @@ const AddtoCart = (req, res) => {
       cart
         .save()
         .then((result) => {
-          res.redirect("/cart");
+          res.redirect("/user/cart");
         })
         .catch((err) => {
           console.log(err);
@@ -82,7 +84,7 @@ const AddtoCart = (req, res) => {
       cart
         .save()
         .then((result) => {
-          res.redirect("/cart");
+          res.redirect("/user/cart");
         })
         .catch((err) => {
           console.log(err);
@@ -109,7 +111,7 @@ const RemoveCart = (req,res) =>{
         Size: req.body.psize,
       })
         .then((result) => {
-          res.redirect("/cart");
+          res.redirect("/user/cart");
         })
         .catch((err) => {
           console.log(err);
@@ -175,8 +177,9 @@ const Checkout = (req,res) =>{
     }
   }
 };
+
 const checkU = (req, res) => {
-    var query = { UserName: req.body.UserName };
+    var query = { Name: req.body.Name };
     Employees.find(query)
         .then(result => {
             if (result.length > 0) {
