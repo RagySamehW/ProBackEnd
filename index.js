@@ -51,6 +51,28 @@ app.use("/", homeRoutes);
 app.use("/user", userRoutes);
 app.use("/admin", adminRoutes);
 
+app.get('/search', async (req, res) => {
+  const query = req.query.query; 
+
+  try {
+    let products;
+
+    if (query && query.length >= 2) {
+      
+      products = await Product.find({ name: { $regex: query, $options: 'i' } });
+    }
+    else
+    {
+      products = await Product.find();
+    }
+
+    res.render('search-results', { products }); // 
+  } catch (error) {
+    console.error('Error searching for products:', error);
+    res.status(500).send('Error searching for products');
+  }
+});
+
 // 404 page
 app.use((req, res) => {
   res
