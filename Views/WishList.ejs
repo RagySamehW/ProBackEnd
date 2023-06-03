@@ -182,33 +182,32 @@
 </head>
 
 <body>
-    <body>
+   
         <%- include("./partials/Nav.ejs") %>
        
 
-
-        <% if (custemors.length> 0) { %>
-            <% custemors.forEach(emp=> { %>
-                <div class="wish">
-                    <div class="products">
-                        <div class="product">
-                            <img src="products/product1-1.jpg">
-                            <div class="product-info">
-                                <h3 class="product-name"><%= emp.name %></h3>
-                                <h4 class="product-price"><%= emp.id %></h4>
-                                <p class="product-add"><span class="add">Add to cart</span></p>
-                                <p class="product-remove">
-                                    <i class="fa fa-trash" aria-hidden="true"></i>
-                                    <span class="remove">Remove</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <% }) %>
-            <% } else { %>
-              <p>There are no employees to display...</p>
-              <% } %>
+<% if (WishList.length > 0) { %>
+  <% WishList.forEach(product => { %>
+    <div class="wish">
+      <div class="products">
+        <div class="product">
+          <img src="<%= product.image %>">
+          <div class="product-info">
+            <h3 class="product-name"><%= product.ProductName %></h3>
+            <p class="product-description"><%= product.Smalldesc %></p>
+            <p class="product-add"><a href="/wishlist/AddtoCart/<%= product._id %>" class="add">Add to cart</a>
+            </p>
+            <p class="product-remove">
+              <a href="/wishlist/remove/<%= product._id %>" class="remove">Remove</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+<% } else { %>
+  <p>Your wishlist is empty.</p>
+<% } %>
     </body>
 
 </html>
