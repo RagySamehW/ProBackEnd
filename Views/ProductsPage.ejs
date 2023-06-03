@@ -12,7 +12,19 @@
     <link rel="stylesheet" href="CSS/NavBar.css">
     <script src="https://kit.fontawesome.com/3929e16ef5.js" crossorigin="anonymous"></script>
     <script src="{% static 'network/functions.js' %}"></script>
-
+    <script>
+        (function(d, s, id){
+          var js, el = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://widget.rasayel.io/v1/widget.min.js';
+          el.parentNode.insertBefore(js, el);
+          js.onload = function () {
+            var w = window.RasayelOmniWidget;
+            w.create({"title":"Hi","message":"Get in contact with us!","minimal":false,"channels":[{"identifier":"+201009400682","friendlyName":"On Whatsapp","type":"WABA"}]})
+          }
+        }(document, 'script', 'rasayel-js'));
+        </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
