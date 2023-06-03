@@ -149,23 +149,22 @@ const AddP = (req,res) => {
     });
   });
 };
-
 const EditProG = (req, res) => {
   const pId = req.params.id;
 
-  // Retrieve the user with the specified ID from the database
-  Product.findOne({ _id: pId })
+  // Retrieve the product with the specified ID from the database
+  Product.findById(pId)
     .then((pproduct) => {
       if (!pproduct) {
-        console.log('User not found');
-        res.status(404).send('User not found');
-      } else {
-        res.render("editproducts", { pproduct, user: req.session.user === undefined ? "" : req.session.user });
+        console.log('Product not found');
+        return res.status(404).send('Product not found');
       }
+
+      res.render("editproducts", { pproduct, user: req.session.user || "" });
     })
     .catch((err) => {
-      console.error('Error retrieving user:', err);
-      res.status(500).send('Error retrieving user');
+      console.error('Error retrieving product:', err);
+      res.status(500).send('Error retrieving product');
     });
 };
 
@@ -177,23 +176,23 @@ const EditProP = (req, res) => {
     Smalldesc: req.body.psdescription,
     Price: req.body.Price,
     Quantity: req.body.Quantity,
-   
     // Add more properties as needed
   };
+
   // Perform the update in the database using Mongoose or your preferred database library
-  Product.findOneAndUpdate({ _id: pId }, pupdatedData, { new: true })
-    .then((pupdatedData) => {
-      if (!pupdatedData) {
-        console.log('User not found');
-        res.status(404).send('User not found');
-      } else {
-        console.log('product updated:', pupdatedData);
-        res.redirect('/'); // Redirect to the appropriate page
+  Product.findByIdAndUpdate(pId, pupdatedData, { new: true })
+    .then((updatedProduct) => {
+      if (!updatedProduct) {
+        console.log('Product not found');
+        return res.status(404).send('Product not found');
       }
+
+      console.log('Product updated:', updatedProduct);
+      res.redirect('/'); // Redirect to the appropriate page
     })
     .catch((err) => {
-      console.error('Error updating user:', err);
-      res.status(500).send('Error updating user');
+      console.error('Error updating product:', err);
+      res.status(500).send('Error updating product');
     });
 };
 

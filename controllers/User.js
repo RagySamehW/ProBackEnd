@@ -178,7 +178,7 @@ const Checkout = (req,res) =>{
   }
 };
 
-const checkU = (req, res) => {
+const checkUN = (req, res) => {
     var query = { Name: req.body.Name };
     Employees.find(query)
         .then(result => {
@@ -201,5 +201,5 @@ module.exports = {
   Cartv,
   RemoveCart,
   Checkout,
-  checkU
+  checkUN
 };

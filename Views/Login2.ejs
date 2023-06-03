@@ -4,8 +4,10 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <script  src="https://kit.fontawesome.com/42a3832eaa.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <script src="/js/ajax-UN.js"></script>
+
+    <script src="/JS/ajax.js"></script>
     <style>
       * {
         margin: 0;
@@ -233,7 +235,7 @@
         <h1>Create Account</h1>
         <p>Use your email for registration:</p>
         <form id="Sign_Up" action="/user/signup-action" method="post" onsubmit="return validate()" enctype="multipart/form-data">
-          <input  type="text" placeholder="Name" name="un" autocomplete="off" /><br />
+          <input  type="text" placeholder="Name" id="un" name="un" autocomplete="off" /><br />
           <span id="result"></span>
           <input type="email" placeholder="Email" name="em" autocomplete="off" /><br />
           <input type="hidden" name="tp" value="client">

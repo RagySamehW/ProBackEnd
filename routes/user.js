@@ -18,8 +18,21 @@ router.get("/signup", (req, res) => {
     user: req.session.user === undefined ? "" : req.session.user,
   });
 });
+
+router.post('/WishList', (req, res) => {
+  // Retrieve the product ID from the request body
+  const productId = req.body.productId;
+
+  // Perform your logic to add/remove the product from the user's favorites list
+  // Example: Save the product ID in the user's favorites collection in the database
+
+  // Send the response back to the client
+  res.sendStatus(200); // Sending a success status code (e.g., 200) to indicate successful operation
+});
+
 router.get("/WishList", (req, res) => {
   res.render("WishList", {
+    custemors,
     user: req.session.user === undefined ? "" : req.session.user,
   });
 });
@@ -47,6 +60,6 @@ router.get("/logout", (req, res) => {
 router.post("/add_to_cart", User.AddtoCart);
 router.post("/remove_from_cart", User.RemoveCart);
 router.post("/Checkout", User.Checkout);
-router.post('/checkU', User.checkU);
+router.post('/checkU', User.checkUN);
 
 module.exports = router;

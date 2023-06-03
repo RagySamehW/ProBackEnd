@@ -24,6 +24,12 @@ router.get("/AddminM", (req, res) => {
 });
 
 
+router.get("/editproduct", (req, res) => {
+  res.render("editproduct", {
+    user: req.session.user === undefined ? "" : req.session.user,
+  });
+});
+
 router.get("/Edit_Users", (req, res) => {
   res.render("Edit_Users", {
     user: req.session.user === undefined ? "" : req.session.user,

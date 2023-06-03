@@ -53,7 +53,7 @@
     <div class="user-edit-sheet">
       <h1>Edit Product</h1>
 
-      <form class="ab" action="/editp/<%= pproduct._id %>" method="POST" enctype="multipart/form-data">
+      <form class="ab" action="/admin/editp/<%= pproduct._id %>" method="POST" enctype="multipart/form-data">
         <div class="form-group">
           <label for="product-Name">Product Name:</label>
           <input type="text" id="product-Name" name="Name" value="<%= pproduct.ProductName%>">
