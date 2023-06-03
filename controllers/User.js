@@ -194,6 +194,21 @@ const checkUN = (req, res) => {
         });
 };
 
+exports.removeFromWishlist = (req, res) => {
+    const productId = req.params.productId;
+    User.findById(req.user._id, (err, user) => {
+      if (err) {
+        console.log(err);
+        res.redirect('/wishlist');
+      } else {
+        user.wishlist = user.wishlist.filter(id => id.toString() !== productId);
+        user.save();
+        res.redirect('/wishlist');
+      }
+    });
+  }
+};
+
 module.exports = {
   Getuser,
   Adduser,
