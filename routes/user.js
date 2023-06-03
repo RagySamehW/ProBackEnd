@@ -56,6 +56,7 @@ router.get("/logout", (req, res) => {
   req.session.destroy();
   res.redirect("/");
 });
+router.get('/wishlist/AddtoCart/:productId', user.AddtoCart);
 
 router.post("/add_to_cart", User.AddtoCart);
 router.post("/remove_from_cart", User.RemoveCart);
