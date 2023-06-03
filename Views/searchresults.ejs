@@ -1,0 +1,19 @@
+ 
+ <body>
+ <%- include("./partials/Nav.ejs") %>
+ <h2>Search Results</h2>
+
+<% if (products.length === 0) { %>
+  <p>No products found.</p>
+<% } else { %>
+  <ul>
+    <% products.forEach(product => { %>
+      <li>
+        <h3><%= product.productname %></h3>
+        <p><%= product.description %></p>
+        <img src="<%= product.image %>" alt="<%= product.productname %>">
+      </li>
+    <% }) %>
+  </ul>
+<% } %>
+ </body>
