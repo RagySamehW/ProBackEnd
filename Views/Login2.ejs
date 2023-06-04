@@ -234,9 +234,9 @@
       <div id="register">
         <h1>Create Account</h1>
         <p>Use your email for registration:</p>
-        <form id="Sign_Up" action="/user/signup-action" method="post" onsubmit="return validate()" enctype="multipart/form-data">
+        <form id="Sign_Up" action="/user/signup-action" method="post" enctype="multipart/form-data">
           <input  type="text" placeholder="Name" id="un" name="un" autocomplete="off" /><br />
-          <span id="result"></span>
+          
           <input type="email" placeholder="Email" name="em" autocomplete="off" /><br />
           <input type="hidden" name="tp" value="client">
           <input type="password" placeholder="Password" name="pw" autocomplete="off" /><br />
