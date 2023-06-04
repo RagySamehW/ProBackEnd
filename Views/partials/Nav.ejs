@@ -114,9 +114,13 @@ function googleTranslateElementInit() {
                                 </li>
                                 <% } %>
                                     <li>
-                                        <input type="tex" id="Search" onkeyup="sendData(this)" value="      Search.....">
-                                        <section id="SearchResult"></section>
-
+                                        <!-- <input type="tex" id="Search" onkeyup="sendData(this)" value="      Search.....">
+                                        <section id="SearchResult"></section> -->
+                                        <div>
+                                            <form action="/search" method="GET" class="search-form">
+                                          <input type="text" name="query" placeholder="Search products..." />
+                                          <button type="submit">Search</button>
+                                          </div>
                                     </li>
         </div>
         </ul>
@@ -152,11 +156,7 @@ function googleTranslateElementInit() {
 
         };
     </script>
-    <div>
-    <form action="/search" method="GET" class="search-form">
-  <input type="text" name="query" placeholder="Search products..." />
-  <button type="submit">Search</button>
-  </div>
+    
 </form>
 </body>
 
