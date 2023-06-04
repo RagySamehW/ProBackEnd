@@ -76,4 +76,7 @@ router.post("/getproducts", async (req, res) => {
   res.send({ payload: search });
 });
 
+router.get('/WishList', (req, res) =>{
+  res.render('WishList',{ employees});
+});
 module.exports = router;

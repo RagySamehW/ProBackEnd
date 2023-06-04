@@ -19,9 +19,13 @@ router.get("/signup", (req, res) => {
   });
 });
 
+router.get('/WishList', (req, res) =>{
+  res.render('WishList',{ user: req.session.user === undefined ? "" : req.session.user,});
+});
 
-router.get('/wishlist/remove/:productId', user.removeFromWishlist);
-router.get('/wishlist/AddtoCart/:productId', user.AddtoCart);
+
+router.get('/wishlist/remove/:productId', User.removeFromWishlist);
+router.get('/wishlist/AddtoCart/:productId', User.AddtoCart);
 
 router.get("/Cart", User.Cartv);
 router.post("/profile", User.Getuser);

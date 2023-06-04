@@ -1,3 +1,4 @@
+@@ -0,0 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,6 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="//code.tidio.co/tu1stys3qwixtipasrjnph1mwc7mgfl8.js" async></script>
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/42a3832eaa.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -182,32 +182,33 @@
 </head>
 
 <body>
-   
+    <body>
         <%- include("./partials/Nav.ejs") %>
        
 
-<% if (WishList.length > 0) { %>
-  <% WishList.forEach(product => { %>
-    <div class="wish">
-      <div class="products">
-        <div class="product">
-          <img src="<%= product.image %>">
-          <div class="product-info">
-            <h3 class="product-name"><%= product.ProductName %></h3>
-            <p class="product-description"><%= product.Smalldesc %></p>
-            <p class="product-add"><a href="/wishlist/AddtoCart/<%= product._id %>" class="add">AddtoCart</a>
-            </p>
-            <p class="product-remove">
-              <a href="/wishlist/remove/<%= product._id %>" class="remove">Remove</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  <% }) %>
-<% } else { %>
-  <p>Your wishlist is empty.</p>
-<% } %>
+
+        <% if (user.length> 0) { %>
+            <% user.forEach(emp=> { %>
+                <div class="wish">
+                    <div class="products">
+                        <div class="product">
+                            <img src="products/product1-1.jpg">
+                            <div class="product-info">
+                                <h3 class="product-name"><%= emp.name %></h3>
+                                <h4 class="product-price"><%= emp.id %></h4>
+                                <p class="product-add"><span class="add">Add to cart</span></p>
+                                <p class="product-remove">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                    <span class="remove">Remove</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+            <% } else { %>
+              <p>There are no employees to display...</p>
+              <% } %>
     </body>
 
 </html>
