@@ -89,7 +89,11 @@
         <div>
             <ul id="navbar">
               <div id="google_translate_element"></div>
-
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
                 <li><a class="home" href="/">Home</a></li>
                 <li><a href="/Product">Shop</a></li>
                 <% if(user.Type==="admin" ){ %>
