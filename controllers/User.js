@@ -194,7 +194,7 @@ const checkUN = (req, res) => {
         });
 };
 
-exports.removeFromWishlist = (req, res) => {
+const removeFromWishlist = (req, res) => {
     const productId = req.params.productId;
     User.findById(req.user._id, (err, user) => {
       if (err) {
@@ -206,8 +206,8 @@ exports.removeFromWishlist = (req, res) => {
         res.redirect('/wishlist');
       }
     });
-  }
-};
+  };
+
 
 module.exports = {
   Getuser,
@@ -216,5 +216,6 @@ module.exports = {
   Cartv,
   RemoveCart,
   Checkout,
-  checkUN
+  checkUN,
+  removeFromWishlist
 };
