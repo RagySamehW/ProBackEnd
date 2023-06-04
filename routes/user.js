@@ -19,9 +19,6 @@ router.get("/signup", (req, res) => {
   });
 });
 
-router.get('/WishList', (req, res) =>{
-  res.render('WishList',{ user: req.session.user === undefined ? "" : req.session.user,});
-});
 
 
 router.get('/wishlist/remove/:productId', User.removeFromWishlist);
