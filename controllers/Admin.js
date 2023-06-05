@@ -2,7 +2,7 @@ const Employees = require("../models/employees");
 const Product = require("../models/products");
 const objectId = require("mongoose").ob;
 const path = require("path");
-
+const fs = require("fs");
 
 const userList = (req, res) => {
   Employees.find()
