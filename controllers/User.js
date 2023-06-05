@@ -2,7 +2,7 @@ const Employees = require("../models/employees");
 const Cart = require("../models/cart");
 const Product = require("../models/products");
 const objectId = require("mongoose").ob;
-const path = require("path");
+
 
 const Getuser = async(req, res) => {
   var query = { Name: req.body.un, Password: req.body.pw };
