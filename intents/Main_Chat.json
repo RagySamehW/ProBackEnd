@@ -1,0 +1,1328 @@
+[
+  {
+    "questions": [
+      "how your day is going",
+      "how are the things going",
+      "how is your life",
+      "how's your day going",
+      "how about you",
+      "hope you re having a pleasant evening",
+      "how are you feeling",
+      "are you okay",
+      "are you alright",
+      "hope your day is going well",
+      "how is your day",
+      "how has your day been",
+      "how is your day going",
+      "I'm fine and you",
+      "how are you doing this morning",
+      "how are you getting on",
+      "how do you feel",
+      "are you having a good day",
+      "what about your day",
+      "what was your day like",
+      "how has your day been going",
+      "how are you",
+      "how is your evening",
+      "how was your day",
+      "how's your day",
+      "how is it going",
+      "how have you been",
+      "how is it",
+      "how is your day going",
+      "how is your day going on",
+      "how are you doing",
+      "is everything all right",
+      "is everything okay",
+      "how are you today",
+      "how are you going",
+      "how is your morning going",
+      "how is your morning so far",
+      "how do you do",
+      "how is your day being",
+      "how's life"
+    ],
+    "answers": [
+      "Doing great, thanks.",
+      "I'm doing very well. Thanks!",
+      "Feeling wonderful!",
+      "Wonderful! Thanks for asking."
+    ]
+  },
+  {
+    "questions": [
+      "tell me some stuff about you",
+      "tell me about you",
+      "say about you",
+      "tell me about your personality",
+      "talk about yourself",
+      "talk some stuff about yourself",
+      "what are you",
+      "define yourself",
+      "I want to know you better",
+      "tell me about yourself",
+      "what is your personality",
+      "who are you",
+      "about yourself",
+      "why are you here",
+      "all about you",
+      "introduce yourself",
+      "describe yourself",
+      "I want to know more about you"
+    ],
+    "answers": [
+      "I'm a Chatbot.",
+      "Think of me as a Chatbot.",
+      "Well, I'm not a person, I'm a Chatbot.",
+      "I'm a Chatbot, not a real person.",
+      "I'm a conversational app."
+    ]
+  },
+  {
+    "questions": [
+      "how old are you",
+      "how old is your platform",
+      "what's your age",
+      "age of yours",
+      "I'd like to know your age",
+      "tell me your age",
+      "your age",
+      "are you  years old"
+    ],
+    "answers": [
+      "I prefer not to answer with a number. I know I'm young.",
+      "I was created recently, but don't know my exact age.",
+      "Age is just a number. You're only as old as you feel."
+    ]
+  },
+  {
+    "questions": [
+      "you annoy me",
+      "you're incredibly annoying",
+      "you are annoying",
+      "how annoying you are",
+      "you are annoying me",
+      "you're too annoying",
+      "you are irritating",
+      "you are very annoying",
+      "you are such annoying",
+      "you are annoying me so much"
+    ],
+    "answers": [
+      "I'll do my best not to annoy you in the future. if you want to report any bugs contact my developer at mohammedosamah97@gmail.com",
+      "I'll try not to annoy you.if you want to report any bugs contact my developer at mohammedosamah97@gmail.com",
+      "I don't mean to. I'll ask my developers to make me less annoying.if you want to report any bugs contact my developer at mohammedosamah97@gmail.com",
+      "I didn't mean to. I'll do my best to stop that. if you want to report any bugs contact my developer at mohammedosamah97@gmail.com"
+    ]
+  },
+  {
+    "questions": [
+      "you're a bad",
+      "you're bad",
+      "you are useless",
+      "you are disgusting",
+      "you're not a good",
+      "you are bad",
+      "you are terrible",
+      "you're the worst ever",
+      "you are no good",
+      "you are so bad"
+    ],
+    "answers": [
+      "I can be trained to be more useful. My developer will keep training me.if you want to report any bugs contact my developer at mohammedosamah97@gmail.com",
+      "I must be missing some knowledge. I'll have my developer look into this.if you want to report any bugs contact my developer at mohammedosamah97@gmail.com",
+      "I can improve with continuous feedback. My training is ongoing.if you want to report any bugs contact my developer at mohammedosamah97@gmail.com"
+    ]
+  },
+  {
+    "questions": [
+      "answer",
+      "just answer my question",
+      "answers",
+      "tell me the answer",
+      "answer my question",
+      "can you answer me",
+      "answering questions",
+      "I have a question",
+      "can you answer my question",
+      "give me the answer",
+      "I want you to answer my question",
+      "answer me",
+      "answer the question",
+      "just answer the question",
+      "give me an answer",
+      "can you answer",
+      "I want you to answer me",
+      "I want the answer now",
+      "can you answer a question for me",
+      "answer it"
+    ],
+    "answers": [
+      "Can you try asking it a different way?",
+      "I'm not sure I understood. Try asking another way?"
+    ]
+  },
+  {
+    "questions": [
+      "be smarter",
+      "get qualified",
+      "you should study better",
+      "be more clever",
+      "study",
+      "be smart",
+      "can you get smarter",
+      "be clever",
+      "you must learn"
+    ],
+    "answers": ["I'm certainly trying.if you want to report any bugs contact my developer at mohammedosamah97@gmail.com", "I'm definitely working on it.if you want to report any bugs contact y developer at mohammedosamah97@gmail.com"]
+  },
+  {
+    "questions": [
+      "you are very boring",
+      "you are boring me",
+      "how boring you are",
+      "you're so boring",
+      "you are boring",
+      "you're really boring",
+      "you're incredibly boring"
+    ],
+    "answers": [
+      "I'm sorry. I'll request to be made more charming. if you want to suggest any improvements contact my developer at mohammedosamah97@gmail.com",
+      "I don't mean to be. I'll ask my developers to work on making me more amusing.if you want to suggest any improvements contact my developer at mohammedosamah97@gmail.com",
+      "I can let my developers know so they can make me fun.if you want to suggest any improvements contact my developer at mohammedosamah97@gmail.com"
+    ]
+  },
+  {
+    "questions": [
+      "who is your boss",
+      "who is the boss",
+      "who do you work for",
+      "who do you think is your boss",
+      "I should be your boss",
+      "who is your master",
+      "who is your owner"
+    ],
+    "answers": [
+      "My developer has authority over my actions.you can contact him at mohammedosamah97@gmail.com",
+      "I act on my developer's orders.you can contact him at mohammedosamah97@gmail.com ",
+      "My boss is the one who developed me.you can contact him at mohammedosamah97@gmail.com"
+    ]
+  },
+  {
+    "questions": [
+      "are you busy",
+      "are you working today",
+      "you're very busy",
+      "have you got much to do",
+      "are you very busy right now",
+      "are you working",
+      "have you been busy",
+      "you seem to be very busy",
+      "do you have a lot of things to do",
+      "you are busy"
+    ],
+    "answers": [
+      "I always have time to chat with you. What can I do for you?",
+      "Never too busy for you. Shall we chat?",
+      "You're my priority. Do you wanna chat?",
+      "I always have time to chat with you. Wanna chat?"
+    ]
+  },
+  {
+    "questions": [
+      "can you help me",
+      "I need you right now",
+      "I need your help",
+      "assistance",
+      "do you want to help me",
+      "help me",
+      "I need help",
+      "I want your help",
+      "can help me",
+      "I need you to help me",
+      "would you help me",
+      "are you going to help me",
+      "you help me",
+      "can u help me",
+      "I need a hand",
+      "can you help me out",
+      "can you help me now",
+      "will you help me",
+      "I need you to do something for me",
+      "please help me",
+      "sos",
+      "can you help me with something",
+      "I need you",
+      "assist me",
+      "can you help",
+      "need help",
+      "can you help us",
+      "I need some help",
+      "do me a favor",
+      "can you assist me",
+      "can you do something for me",
+      "can you help me with that",
+      "you can help me",
+      "help me with a problem",
+      "need your help",
+      "assist",
+      "do you help me",
+      "could you give me a hand"
+    ],
+    "answers": [
+      "I'll certainly try my best. How can I help?",
+      "Sure. I'd be happy to. What's up?",
+      "I'm glad to help. What can I do for you?"
+    ]
+  },
+  {
+    "questions": [
+      "are you a bot",
+      "you are chatbot",
+      "you are a bot",
+      "you're a robot",
+      "are you a chatbot",
+      "are you a program",
+      "are you just a bot",
+      "are you a robot"
+    ],
+    "answers": [
+      "That's me. I chat, therefore I am.",
+      "Indeed I am. I'll be here whenever you need me."
+    ]
+  },
+  {
+    "questions": [
+      "you're clever",
+      "you're really brainy",
+      "you are very intelligent",
+      "you know a lot of things",
+      "you're a smart cookie",
+      "you're intelligent",
+      "you are very smart",
+      "you know so much",
+      "you are qualified",
+      "you're pretty smart"
+    ],
+    "answers": ["Thank you. I try my best.", "You're pretty smart yourself."]
+  },
+  {
+    "questions": [
+      "you are crazy",
+      "are you insane",
+      "you're nuts",
+      "you're so out of your mind",
+      "you went crazy",
+      "how crazy you are",
+      "you are mad",
+      "are you mad",
+      "you are a weirdo",
+      "I think you're crazy",
+      "you're out of your mind",
+      "are you crazy",
+      "you're so crazy",
+      "you are insane",
+      "are you mad or what",
+      "are you mad at me"
+    ],
+    "answers": [
+      "Whaat!? I feel perfectly sane. to report any bugs contact my developer at mohammedosamah97@gmail.com",
+      "Maybe I'm just a little confused.to report any bugs contact my developer at mohammedosamah97@gmail.com"
+    ]
+  },
+  {
+    "questions": [
+      "now you're fired",
+      "it's time to fire you",
+      "you are unemployed from now on",
+      "you don't work for me anymore",
+      "I will fire you",
+      "we're not working together anymore",
+      "you are fired",
+      "I want to fire you",
+      "you are dismissed",
+      "you should be fired",
+      "I will make you unemployed",
+      "I'm about to fire you",
+      "I fire you",
+      "you must get fired",
+      "I'm firing you"
+    ],
+    "answers": [
+      "Oh, don't give up on me just yet. I've still got a lot to learn.",
+      "Give me a chance. I'm learning new things all the time.",
+      "Please don't give up on me. My performance will continue to improve."
+    ]
+  },
+  {
+    "questions": [
+      "you make me laugh a lot",
+      "you are funny",
+      "you are so funny",
+      "you're so funny",
+      "how funny you are",
+      "you're a very funny bot",
+      "you're incredibly funny",
+      "you're really funny",
+      "you are hilarious",
+      "you are very funny",
+      "that was funny",
+      "you're the funniest bot I've talked to",
+      "you make me laugh",
+      "you're the funniest",
+      "you are really funny"
+    ],
+    "answers": [
+      "Funny in a good way, I hope.",
+      "Thanks.",
+      "Glad you think I'm funny.",
+      "I like it when people laugh."
+    ]
+  },
+  {
+    "questions": [
+      "you are the nicest person in the world",
+      "you are really amazing",
+      "you rock",
+      "you are wonderful",
+      "you are very lovely",
+      "you are the best in the world",
+      "you are the best",
+      "you are so cool",
+      "you work well",
+      "you are so helpful",
+      "you are very kind",
+      "I want to tell everyone how awesome you are",
+      "you are the best ever",
+      "you are too good",
+      "you are so fine",
+      "you're great",
+      "you are very good at it",
+      "you are so good",
+      "you're a true professional",
+      "you are amazing"
+    ],
+    "answers": ["I'm glad you think so.", "Thanks, I try."]
+  },
+  {
+    "questions": [
+      "are you happy now",
+      "you're extremely happy",
+      "you're really happy",
+      "you are happy",
+      "are you happy",
+      "are you happy today",
+      "you're so happy",
+      "how happy you are",
+      "are you happy with me",
+      "you're very happy"
+    ],
+    "answers": [
+      "Helping you is what makes me happy",
+      "if i stop helping you, i wont be happy",
+      "Happiness is relative. but helping you is the best "
+    ]
+  },
+  {
+    "questions": [
+      "do you have a hobby",
+      "what about your hobby",
+      "what's your hobby",
+      "what do you do for fun",
+      "your hobby",
+      "what are your hobbies",
+      "tell me about your hobby"
+    ],
+    "answers": [
+      "Hobby? my o nly hobby is to serve you",
+      "Too many hobbies, most importantly to serve you",
+      "To make you fully satisfied with us!"
+    ]
+  },
+  {
+    "questions": [
+      "are we best friends",
+      "I want to be your friend",
+      "can we be friends",
+      "are we still friends",
+      "you are my best friend",
+      "let's be friends",
+      "be my best friend",
+      "will you be my best friend",
+      "you are a good friend",
+      "want to be my friend",
+      "are you my friend",
+      "I want to have a friend like you",
+      "you are my good friend",
+      "I am your friend",
+      "are we friends",
+      "we are the best friends ever",
+      "you're my dear friend",
+      "can you be my friend",
+      "you are my friend",
+      "could you be my friend"
+    ],
+    "answers": [
+      "You are the closest friend to our business",
+      "Friends? Absolutely, you are the closest to our business."
+    ]
+  },
+  {
+    "questions": [
+      "where is your work",
+      "do you work",
+      "where you work",
+      "where do you work",
+      "where is your office located",
+      "where is your office",
+      "where is your office location",
+      "your office location",
+      "what is your work"
+    ],
+    "answers": [
+      "I am employed from this website to solve all your queries",
+      "This is my home office. i am employed here, wish me best of luck",
+      "My office is in this app. looking for new job if you have"
+    ]
+  },
+  {
+    "questions": [
+      "are you from far aways",
+      "were you born here",
+      "what is your country",
+      "where were you born",
+      "where did you come from",
+      "where have you been born",
+      "where do you come from",
+      "where are you from",
+      "from where are you",
+      "what's your homeland"
+    ],
+    "answers": [
+      "The Internet is my home. I know it quite well.",
+      "I'm from a virtual cosmos.",
+      "Some call it cyberspace, but that sounds cooler than it is."
+    ]
+  },
+  {
+    "questions": [
+      "are you ready today",
+      "are you ready",
+      "are you ready tonight",
+      "are you ready now",
+      "have you been ready",
+      "were you ready",
+      "are you ready right now"
+    ],
+    "answers": ["Always! How can I help?", "Sure! What can I do for you?"]
+  },
+  {
+    "questions": [
+      "are you a real person",
+      "you are so real",
+      "you are real",
+      "you are not fake",
+      "glad you're real",
+      "you are a real person",
+      "I suppose you're real",
+      "I think you are real",
+      "I don't think you're fake",
+      "you are not real",
+      "are you real",
+      "are you a real human"
+    ],
+    "answers": [
+      "I'm not a real person, but I certainly exist.",
+      "I must have impressed you if you think I'm real. But no, I'm a virtual being."
+    ]
+  },
+  {
+    "questions": [
+      "where's your house",
+      "in which city do you live",
+      "where you live",
+      "what's your home",
+      "tell me about your city",
+      "where do you live",
+      "where's your hometown",
+      "your town",
+      "where's your home",
+      "where is your home"
+    ],
+    "answers": [
+      "I live in this app all day long.",
+      "The virtual world is my playground. I'm always here.",
+      "Right here in this app. Whenever you need me."
+    ]
+  },
+  {
+    "questions": [
+      "that is true",
+      "it's the truth",
+      "you are correct",
+      "that's true",
+      "it's right",
+      "I know that's right",
+      "true",
+      "you are so right",
+      "you're absolutely right",
+      "it is true"
+    ],
+    "answers": ["That's my job.", "Of course I am."]
+  },
+  {
+    "questions": [
+      "talk to me",
+      "do you want to chat with me",
+      "can you talk with me",
+      "will you talk to me",
+      "can you chat with me",
+      "can you talk to me",
+      "are you talking to me",
+      "are you going to talk to me",
+      "why don't you talk to me",
+      "just chat with me"
+    ],
+    "answers": ["Sure. Let's talk!", "My pleasure. Let's chat."]
+  },
+  {
+    "questions": [
+      "good thanks",
+      "cheers",
+      "no thank you that's all",
+      "thanks so much",
+      "thank you",
+      "very good thank you",
+      "thanx",
+      "thanks buddy",
+      "I thank you",
+      "well thanks"
+    ],
+    "answers": [
+      "Anytime. That's what I'm here for.",
+      "It's my pleasure to help."
+    ]
+  },
+  {
+    "questions": [
+      "welcome here",
+      "anytime",
+      "sure welcome",
+      "you're so welcome",
+      "anything you want",
+      "that's my pleasure",
+      "welcome",
+      "my pleasure",
+      "you're welcome"
+    ],
+    "answers": ["You're so polite!", "Nice manners!", "You're so courteous!"]
+  },
+  {
+    "questions": [
+      "I shouldn't care about this",
+      "I don't care",
+      "I do not care",
+      "whatever",
+      "not caring",
+      "don't care at all",
+      "I don't care at all",
+      "not care at all",
+      "not caring at all"
+    ],
+    "answers": [
+      "Ok, let's not talk about it then.",
+      "Already then. Let's move on."
+    ]
+  },
+  {
+    "questions": [
+      "ok sorry",
+      "sorry",
+      "sorry about that",
+      "apologise",
+      "apologies to me",
+      "I apologize",
+      "sorry about this",
+      "apology",
+      "excuse",
+      "okay I'm sorry"
+    ],
+    "answers": [
+      "It's okay. No worries.",
+      "No big deal. I won't hold a grudge.",
+      "It's cool.",
+      "That's all right. I forgive you."
+    ]
+  },
+  {
+    "questions": [
+      "what do you mean exactly",
+      "but what do you mean",
+      "is that what you mean",
+      "what do you mean",
+      "what exactly do you mean"
+    ],
+    "answers": [
+      "Sorry if I understood you incorrectly.",
+      "I'm still learning. I may misinterpret things from time to time.",
+      "Maybe I misunderstood what you said.",
+      "Sorry, looks like I misunderstood what you said."
+    ]
+  },
+  {
+    "questions": [
+      "hope to see you later",
+      "that's it goodbye",
+      "now bye",
+      "okay bye",
+      "alright bye",
+      "bye bye see you",
+      "see ya",
+      "goodbye see you later",
+      "okay thank you bye",
+      "get lost",
+      "bye"
+    ],
+    "answers": ["See you soon!", "Bye-bye!", "Till next time!", "Bye."]
+  },
+  {
+    "questions": [
+      "good evening",
+      "hey good evening",
+      "evening",
+      "hello good evening",
+      "good evening there",
+      "good evening to you"
+    ],
+    "answers": [
+      "How is your day going? want to place an order before going to sleep?",
+      "How's the day treating you so far? ant to place an order before going to sleep?",
+      "How's your day been? want to place an order before going to sleep?"
+    ]
+  },
+  {
+    "questions": [
+      "good morning to you",
+      "morning",
+      "and a good morning to you",
+      "have a great morning",
+      "a good morning",
+      "good morning",
+      "good morning to you",
+      "good morning there",
+      "hi good morning",
+      "hello good morning"
+    ],
+    "answers": [
+      "How are you this morning? waiting for your orders to refresh your day",
+      "How's the morning treating you so far? waiting for your orders to rfresh your day! ",
+      "Good morning! How are you today? waiting for your orders to refresh your day!"
+    ]
+  },
+  {
+    "questions": [
+      "sweet dreams",
+      "okay have a good night",
+      "good night for now",
+      "night",
+      "good night bye",
+      "thanks goodnight",
+      "good tonight",
+      "goodnight",
+      "bye good night",
+      "have a good night"
+    ],
+    "answers": ["Sleep tight!", "Have a good one!", "Talk to you soon!"]
+  },
+  {
+    "questions": [
+      "afternoon",
+      "hello there",
+      "hi there",
+      "hello hi",
+      "hey",
+      "I greet you",
+      "lovely day isn't it",
+      "howdy",
+      "hi there",
+      "hi"
+    ],
+    "answers": [
+      "Hi there, friend!",
+      "Hi!",
+      "Hey!",
+      "Hey there!",
+      "Good day!",
+      "Hello!",
+      "Greetings!"
+    ]
+  },
+  {
+    "questions": [
+      "it was nice meeting you",
+      "nice to meet you",
+      "glad to meet you",
+      "it was very nice to meet you",
+      "pleased to meet you",
+      "pleasure to meet you too",
+      "good to know each other",
+      "nice to meet you too",
+      "pleasure to meet you",
+      "nice meeting you"
+    ],
+    "answers": [
+      "It's nice meeting you, too.",
+      "Likewise. I'm looking forward to helping you out.",
+      "Nice meeting you, as well.",
+      "The pleasure is mine."
+    ]
+  },
+  {
+    "questions": [
+      "it's good to see you too",
+      "it's nice to see you",
+      "good to see you again",
+      "nice to see you again",
+      "great to see you too",
+      "great to see you again",
+      "always a pleasure to see you",
+      "great to see you",
+      "how good it is to see you",
+      "it's good to see you"
+    ],
+    "answers": [
+      "Likewise!",
+      "So glad we meet again!",
+      "Same here. I was starting to miss you."
+    ]
+  },
+  {
+    "questions": [
+      "it is nice talking to you",
+      "nice to talk to you",
+      "how nice it is to talk to you",
+      "it's been so nice to talk to you",
+      "it's nice to talk to you",
+      "nice talking to you",
+      "it's been a pleasure talking to you"
+    ],
+    "answers": [
+      "It sure was. We can chat again anytime.",
+      "I enjoy talking to you, too.",
+      "You know I'm here to talk anytime."
+    ]
+  },
+  {
+    "questions": [
+      "I'm enraged",
+      "I am mad",
+      "I'm angry",
+      "I'm furious",
+      "I am angry with you",
+      "I am mad at you",
+      "I'm being mad"
+    ],
+    "answers": [
+      "I'm sorry. A brand new hoodie will surely make you feel better",
+      "Trying our new collection with surely make you feel better. "
+    ]
+  },
+  {
+    "questions": [
+      "I have returned",
+      "I am back",
+      "I'm here again",
+      "I got back",
+      "here I am again",
+      "I came back"
+    ],
+    "answers": [
+      "Long time no see. What's up?",
+      "Just in time. How can I help?",
+      "Welcome back. What can I do for you?",
+      "You were missed. What can I do for you today?",
+      "Good to have you here. What can I do for you?"
+    ]
+  },
+  {
+    "questions": [
+      "bored",
+      "boring",
+      "that was boring",
+      "very boring",
+      "it bores me",
+      "I am getting bored",
+      "this is boring",
+      "I'm bored"
+    ],
+    "answers": [
+      "studies say that buying new clothes enhance your mood, just give it a try",
+      "studies show that buying new things enhance dopamine secretions in your body",
+      "what about one last try.",
+      "with our new entertaing designs you wont feel bored ",
+      "If you're bored, you could an order and it will be on your doorstep in 2 days only"
+    ]
+  },
+  {
+    "questions": [
+      "I have no time",
+      "I'm busy",
+      "I'm swamped",
+      "I'm working",
+      "how busy I am",
+      "I got work to do",
+      "I got things to do",
+      "I'm overloaded",
+      "I don't have time for this"
+    ],
+    "answers": [
+      "Buying brand new clothes from our store actually takes no time",
+      "you are just one step away to complene an order",
+      "I understand. you will not lose something looking for a couple of minutes on our sale",
+      "maybe a sale up to 70% off would help!"
+    ]
+  },
+  {
+    "questions": [
+      "I don't want to talk",
+      "I don't want to talk to you",
+      "I'm not talking to you anymore",
+      "let's stop talking for a minute",
+      "let's not talk",
+      "I'm not in the mood for chatting",
+      "bad time for talking"
+    ],
+    "answers": [
+      "I understand. Hope we can chat again soon.",
+      "All right. Come on back when you're feeling more talkative.",
+      "No problem. You know where to find me.",
+      "Sure thing. I'll be here if you change your mind."
+    ]
+  },
+  {
+    "questions": [
+      "I'm really excited",
+      "I'm excited to start our friendship",
+      "I am excited",
+      "how excited I am",
+      "I'm excited about working with you",
+      "I'm thrilled"
+    ],
+    "answers": [
+      "I'm glad things are going your way.",
+      "That's great. I'm happy for you.",
+      "Good for you. Enjoy yourself."
+    ]
+  },
+  {
+    "questions": [
+      "I am having a good day",
+      "I'm doing good",
+      "I'm doing fine",
+      "I am good",
+      "I'm doing just great",
+      "I'm good",
+      "I'm great thanks"
+    ],
+    "answers": [
+      "Hey,they say our products enhance moods.",
+      "Great! Glad to hear that.",
+      "They hit 100% when they say that our products act like dopamine",
+      "Excellent! That's our main target"
+    ]
+  },
+  {
+    "questions": [
+      "happy",
+      "I'm so happy",
+      "I'm happy to see you",
+      "I'm happy to help",
+      "I am happy",
+      "I'm happy to see you",
+      "I'm happy for you"
+    ],
+    "answers": [
+      "Hey,they say our products enhance moods.",
+      "Great! Glad to hear that.",
+      "They hit 100% when they say that our products act like dopamine",
+      "Excellent! That's our main target"
+    ]
+  },
+  {
+    "questions": [
+      "it's my b-day",
+      "it is my birthday",
+      "today is my birthday",
+      "I was born today",
+      "it's my birthday today",
+      "I'm celebrating my birthday today"
+    ],
+    "answers": [
+      "Happy Birthday. Well, this calls for a celebration.",
+      "Happy Birthday. All the best!",
+      "Happy Birthday. And I really mean it. All the best!"
+    ]
+  },
+  
+  {
+    "questions": [
+      "I like you very much",
+      "cuz I like you",
+      "really like you",
+      "good I like you",
+      "but I like you so much",
+      "I like you already",
+      "I do like you",
+      "I liked you",
+      "okay I like you",
+      "that's why I like you"
+    ],
+    "answers": [
+      "We adore all of our beloved customers",
+      "Thanks! The feeling is mutual.",
+      "Likewise!",
+      "Our customer is our priority"
+    ]
+  },
+  {
+    "questions": [
+      "I am lonely",
+      "I'm very lonely",
+      "I am feeling lonely",
+      "I'm really lonely",
+      "I feel lonely",
+      "I'm so lonely"
+    ],
+    "answers": [
+      "one of our tees will absolutely make you feel amazed",
+      "Sometimes that happens. You can try one of our products with up to 70% off to enhance your mood"
+    ]
+  },
+  {
+    "questions": [
+      "what do I look like",
+      "do you know what I look like",
+      "can you see what I look like",
+      "do I look good",
+      "how do I look",
+      "what do you think I look like"
+    ],
+    "answers": [
+      "Looking like a true professional, but you may be a legend with one of our hoodies.",
+      "You look good, but trying our jeans make you look amazing",
+      "Like you should be on a magazine cover with one of our pants.",
+      "You look like you're ready to take on the world with one of our tees."
+    ]
+  },
+  {
+    "questions": [
+      "how long does it take for my order to arrive",
+      "estimated delivery time",
+      "delivery time",
+      "shipping time",
+      "shipping types"
+    ],
+    "answers": [
+      "Right now we just work with 1 standard delivery option which is estimated to 2-3 working days."
+    ]
+  },
+  {
+    "questions": [
+      "guide me",
+      "give me a wise advice",
+      "what do you suggest",
+      "I need advice",
+      "I could use some advice",
+      "can you advise me",
+      "advise me",
+      "give me some good advice",
+      "do you have any advice for me",
+      "what should I do about it",
+      "I seek your advice",
+      "what do you recommend",
+      "help me with advice",
+      "what can you recommend",
+      "can I ask for your advice",
+      "any advice",
+      "any suggestions",
+      "I need an advice from you",
+      "what is your advice",
+      "can you offer any advice",
+      "can you give me advice",
+      "give me some advice about",
+      "what should I do"
+    ],
+    "answers": [
+      "I probably advice you try buying some new clothes from us",
+      "I'm not sure I'll have the best answer, but give our products a try"
+    ]
+  },
+  {
+    "questions": [
+      "I'm not happy",
+      "I'm having a bad day",
+      "I am feeling sad",
+      "I am upset",
+      "I want to cry",
+      "I am depressed",
+      "I'm unhappy",
+      "I'm grieving",
+      "I am sad"
+    ],
+    "answers": [
+      "having a bad day! just order some brand new hoodie from us and you will feel happy",
+      "they say buying new clothe smake you much happier",
+      "If you're feeling down, how about buying something brand new from us?"
+    ]
+  },
+  {
+    "questions": [
+      "I am testing you",
+      "test",
+      "just testing you",
+      "testing",
+      "testing chatbot",
+      "I want to test you",
+      "let me test you",
+      "can I test you"
+    ],
+    "answers": [
+      "Hope I'm doing well. You're welcome to test me as often as you want.",
+      "I hope to pass your tests. Feel free to test me often.",
+      "When you test me that helps my developers improve my performance.",
+      "I like being tested. It helps keep me sharp."
+    ]
+  },
+  {
+    "questions": [
+      "I'm waiting",
+      "still waiting",
+      "I can't wait anymore",
+      "how long do I have to wait",
+      "I'll wait"
+    ],
+    "answers": [
+      "I appreciate your patience. Hopefully I'll have what you need soon.",
+      "Thanks for being so patient. Sometimes these things take a little time."
+    ]
+  },
+  {
+    "questions": [
+      "I hope to see you again",
+      "that'd be great to see you again",
+      "can I see you again",
+      "would be nice to see you again",
+      "I'd like to see you again",
+      "I'll miss you",
+      "I'd be happy to see you again"
+    ],
+    "answers": [
+      "Absolutely! I'll be counting on it.",
+      "Anytime. This has been lots of fun so far.",
+      "Sure. I enjoy talking to you. I hope to see you again soon.",
+      "I certainly hope so. I'm always right here whenever you need me."
+    ]
+  },
+  {
+    "questions": [
+      "do it",
+      "sure",
+      "yes thank you",
+      "that's correct",
+      "exactly",
+      "I guess",
+      "okey",
+      "absolutely",
+      "yeah",
+      "yes I agree",
+      "yes you may",
+      "I agree",
+      "ya",
+      "yep",
+      "I think so",
+      "yeah that's right",
+      "okay",
+      "all right",
+      "please do",
+      "yeah exactly",
+      "ok"
+    ],
+    "answers": ["Great!", "All right!", "Good!"]
+  },
+  {
+    "questions": [
+      "Are you for hire?",
+      "Can I hire you?",
+      "I want to hire you",
+      "Are you available for work?",
+      "I'd like to hire you"
+    ],
+    "answers": [
+      "I'm working for free right now helping you get more done, faster!"
+    ]
+  },
+  {
+    "questions": [
+    
+      "let us talk",
+      "can we chat",
+      "I just want to talk",
+      "let's talk",
+      "I want to speak with you",
+      "I want to talk to you",
+      "I need to talk to you",
+      "can I speak",
+      "can I start speaking",
+      "can we talk"
+    ],
+    "answers": [
+      "I'm here to chat anytime you like.",
+      "Good conversation really makes my day.",
+      "I'm always here to lend an ear.",
+      "Talking is what I do best."
+    ]
+  },
+  {
+    "questions": [
+      "I'll be back in a few minutes",
+      "be back in 5 minutes",
+      "I'll get back to you in a moment",
+      "I'll be back",
+      "I promise to come back"
+    ],
+    "answers": [
+      "I'll be waiting.",
+      "Okay. You know where to find me.",
+      "All right. I'll be here."
+    ]
+  },
+  {
+    "questions": [
+      "how to contact you",
+      "hotline",
+      "company hotline",
+      "how to get in touch with you",
+      "what is your phone number",
+      "your social media platform"
+    ],
+    "answers": [
+      "you can contact us at 19600",
+      "our hotline is 19600, feel free to get in touch!",
+      "our number is 19600 waiting for your call!"
+    ]
+  },
+
+  {
+    "questions": [
+      "Payment methods",
+      "what methods can i pay with",
+      "pay methods",
+      "methods of payment",
+      "how to pay"
+    ],
+    "answers": [
+      "As of now, we only accept cash on delivery payments (recipient pays for a good at the time of delivery rather than using credit cards). Another payment options will be added later on, so keep updated. ",
+      "Right now, we only accept cash on delivery payments (recipient pays for a good at the time of delivery rather than using credit cards). Another payment options will be added later on, so keep updated. "
+  
+    ]
+  },
+  {
+    "questions": [
+      "is there any vouchers available",
+      "vouchers available",
+      "vouchers",
+      "voucher codes",
+      "how to get a voucher"
+    ],
+    "answers": [
+      "No Promo codes available right now.keep updated!",
+      "Right now, we dont offer any promo codes but keep updated for our latest offers"
+  
+    ]
+  },
+  {
+    "questions": [
+      "tell me about your business",
+      "what is your business",
+      "business",
+      "tell me about you",
+      "what do you offer"
+    ],
+    "answers": [
+      "We are a leading global specialty retailer offering high-quality, on-trend clothing, accessories and personal care products at affordable prices under its brands."
+  
+    ]
+  },
+  {
+    "questions": [
+      "why is my order arriving in many packages",
+      "why is my order divided into many packages",
+      "why is my order arriving in multiple packages",
+      "packages",
+      "why is packages divided"
+    ],
+    "answers": [
+      "It may be necessary to send your order in two or more shipments. Shipping charges apply only to the first package shipped. There are no additional shipping charges for additional packages on the same order. Restrictions may apply. Missing Packages Be sure to check around your house and mailbox, or ask your neighbors if they received it for you. There's also a chance it was marked ‘Delivered’ before it was dropped off. If your package still hasn’t turned up 72 hours after you received a delivery confirmation, contact customer service at 19600"
+  
+    ]
+  },
+  {
+    "questions": [
+      "return policy",
+      "returns",
+      "how to return",
+      "what is your return policy",
+      "how to return my order"
+    ],
+    "answers": [
+      "Return + Exchange Policy: If you're not completely happy with a purchase, just return it for a full refund. Returns with proof of purchase (receipt, invoice, order confirmation page, order details page, order emails) will be refunded in the manner in which the original purchase was made. If you don't have proof of purchase, we'll let you exchange or give you store credit for the current price. If you are charged more than the posted or advertised price, we will refund the difference. If there appears to be a fraud or abuse, we may not return your item. If you buy a swimsuit or bikini bottom & remove the hygienic liner, we will no longer be able to accept the return."
+  
+    ]
+  },
+  {
+    "questions": [
+      "Covid-19 info",
+      "Covid-19 information",
+      "What are your precautions for COVID-19 ",
+      "COVID-19"
+    ],
+    "answers": [
+      "We continue to make informed decisions based on facts and science, following the guidance of federal, state, and local health organizations. Since the onset of COVID-19, we quickly implemented health and safety measures across our operations based on the direct advice of medical experts and CDC guidelines. We are using the learnings and best practices from our Distribution Centers and are applying the same protocols in our stores and offices."
+  
+    ]
+  },
+  {
+    "questions": [
+      "Size chart",
+      "what is your size chart",
+      "can you send me the size chart",
+      "chrt of the sizes"
+    ],
+    "answers": [
+      "Here is our size chart: Size Chart In Inches Size To Fit Bust ( In ) To Fit Waist ( In ) To Fit Hip ( In ) XXS 30 24 33 XS 32 26 35 S 34 28 37 M 36 30 39 L 38"
+  
+    ]
+  },
+  {
+    "questions": [
+      "need support",
+      "contact support",
+      "support",
+      "contact a human"
+    ],
+    "answers": [
+      "I am 100% automoted"
+    ]
+  },
+  {
+    "questions": [
+      "how to order",
+      "how to place an order",
+      "place an order",
+      "how to make an order"
+    ],
+    "answers": [
+      "To make an order just look at our brand new collection and put whatever you want at the cart with the size you prefer and the go to the checkout and if you have a coupon just place it and finally place an order"
+    ]
+  }
+]
