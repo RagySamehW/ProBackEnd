@@ -55,8 +55,9 @@ Please note that we have transferred from our old repository [https://github.com
 
 Need help or have a question? Feel free to reach out to us!
 
-[![Youssef sherin](https://img.shields.io/badge/Youssef%Sherin-Contact-blue)](mailto:youssef2100694@miuegypt.edu.eg)
+
 [![Ragy Sameh](https://img.shields.io/badge/Ragy%20sameh-Contact-blue)](mailto:ragy2106213@miuegypt.edu.eg)
+[![Youssef Sherin](https://img.shields.io/badge/Youssef%20sherin-Contact-blue)](mailto:ragy2106213@miuegypt.edu.eg)
 
 Thank you for choosing Lion Soul for your clothing needs. We're committed to delivering premium products and exceptional customer service.
 
