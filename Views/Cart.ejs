@@ -319,11 +319,17 @@
                 <td id="tot" style="border-top: 1px solid #000;" class="price" colspan="4"></td>
             </tr>
             <tr>
-                <form action="/user/Checkout" method="post" id="Checkout">
-                    <input hidden name="carts" value="<%= carts%>"></input>
-                    <td colspan="5"><input value="Proceed to checkout" type="submit"></input></td>
-                </form>
+               
+              <td colspan="5"><button id="checkoutButton">
+             <a href="/user/checkout?cart=<%=cart._id%>&proudct=<%=products._id%>"><span id="checkout">Check Out</span>
+              <span class="material-symbols-outlined" id="arrowicon">
+                arrow_forward</span
+              >
+            </a> 
+            </button></td>
+                
 
+            
             </tr>
         </table>
     </section>
