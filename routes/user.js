@@ -5,6 +5,7 @@ router.use(bodyParser.json());
 
 const Cart = require("../models/cart");
 router.get('/checkout',user.checkout);
+
 const User = require("../controllers/User");
 
 router.get("/Login2", (req, res) => {
@@ -49,5 +50,5 @@ router.post("/add_to_cart", User.AddtoCart);
 router.post("/remove_from_cart", User.RemoveCart);
 router.post("/Checkout", User.Checkout);
 router.post('/checkU', User.checkUN);
-
+router.post('/order',user.order);
 module.exports = router;
