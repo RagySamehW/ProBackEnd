@@ -70,26 +70,26 @@ router.post("/Item", async (req, res) => {
 });
 
 router.get('/search', async (req, res) => {
-  const query = req.query.query; 
-
   try {
+    const query = req.query.query;
     let products;
 
     if (query && query.length >= 2) {
-      
-      products = await Product.find({ name: { $regex: query, $options: 'i' } });
-    }
-    else
-    {
-      products = await Product.find();
+      products = await Product.find({ name: { $regex: query, $options: 'i' } }).exec();
+    } else {
+      products = await Product.find().exec();
     }
 
-    res.render('search-results', { products }); // 
+    res.render('searchresults', {
+      user: req.session.user || '',
+      products 
+    });
   } catch (error) {
     console.error('Error searching for products:', error);
     res.status(500).send('Error searching for products');
   }
 });
+
 
 
 router.post("/getproducts", async (req, res) => {
