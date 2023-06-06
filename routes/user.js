@@ -1,10 +1,10 @@
 const express = require("express");
 var bodyParser = require("body-parser");
-
-
 const router = express.Router();
 router.use(bodyParser.json());
 
+const Cart = require("../models/cart");
+router.get('/checkout',user.checkout);
 const User = require("../controllers/User");
 
 router.get("/Login2", (req, res) => {
