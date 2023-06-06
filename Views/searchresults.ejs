@@ -1,19 +1,38 @@
  
  <body>
- <%- include("./partials/Nav.ejs") %>
+  <%- include("./partials/Nav.ejs") %>
  <h2>Search Results</h2>
 
 <% if (products.length === 0) { %>
   <p>No products found.</p>
 <% } else { %>
-  <ul>
-    <% products.forEach(product => { %>
-      <li>
-        <h3><%= product.productname %></h3>
-        <p><%= product.description %></p>
-        <img src="<%= product.image %>" alt="<%= product.productname %>">
-      </li>
+  <div class="pro-container">
+    <% productss.forEach((product) => { %>
+    <div class="pro">
+        <img class="p1" src="/Images/<%= product.Image %>">
+        <div class="des">
+            <span><%= product.ProductName %></span>
+            <h5><%= product.title %></h5>
+            <div class="star">
+                <i class="material-icons">star</i>
+                <i class="material-icons">star</i>
+                <i class="material-icons">star</i>
+                <i class="material-icons">star</i>
+                <i class="material-icons">star</i>
+            </div>
+            <h4><%= product.price %></h4>
+        </div>
+        <div>
+            <form action="/item" method="post" id="add_to_cart">
+                <input name="pname" value ="<%= product.ProductName%>" hidden></input>
+                <input name="psize" value="<%= product.Size%>" hidden></input>
+                <input class="buy-button"  type="submit" onclick="" value="Show Item"/></input>
+                <a href="/user/Cart"><i class="material-icons cart">shop</i></a>
+            </form>
+          </div>
+
+    </div>
     <% }) %>
-  </ul>
+</div>
 <% } %>
  </body>
