@@ -1,7 +1,6 @@
 const express = require("express");
 const session = require("express-session");
 
-
 const fileUpload = require("express-fileupload");
 const mongoose = require("mongoose");
 const _ = require("lodash");
@@ -52,11 +51,8 @@ allQustions = _.concat(
 allQustions = _.uniq(allQustions);
 allQustions = _.compact(allQustions);
 
-
-
 const sendAllQuestions = (req, res) => {
   const humanQuestions = [];
-
   try {
     allQustions.forEach((qus) => {
       if (qus.length >= 15) {
@@ -251,28 +247,7 @@ app.use("/", homeRoutes);
 app.use("/user", userRoutes);
 app.use("/admin", adminRoutes);
 
-app.get('/search', async (req, res) => {
-  const query = req.query.query; 
-
-  try {
-    let products;
-
-    if (query && query.length >= 2) {
-      
-      products = await Product.find({ name: { $regex: query, $options: 'i' } });
-    }
-    else
-    {
-      products = await Product.find();
-    }
-
-    res.render('search-results', { products }); // 
-  } catch (error) {
-    console.error('Error searching for products:', error);
-    res.status(500).send('Error searching for products');
-  }
-});
-app.get('/chatbot', function (req, res) {
++app.get('/chatbot', function (req, res) {
   res.sendFile(path.join(__dirname,"index.html"))
 })
 
