@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <style>
+
+        .sidebar a.orders {
+            background-color: black;
+            color: white;
+        }
+
+        .sidebar a:hover:not(.orders) {
+            background-color: #555;
+            color: white;
+        }
+       
+    </style>
+    <title>Admin Orders</title>
+</head>
+<body>
+
+    <div class="contenty">
+         <%- include("./partials/Nav.ejs") %>
+        <div class="sideCon">
+            
+            <div class="header">
+
+                <h2>All Previous Orders</h2>
+            </div>
+            <div class="gallery">
+                <% if (sold && sold.length > 0) { %>
+                <div class="row">
+                    <% sold.forEach((product) => { %>
+                        <div class="content">
+                            <div class="product-image">
+                                <% if (product.imagePath && product.imagePath.length > 0) { %>
+                                 <% product.imagePath.forEach((path) => { %>
+                                    <img src="<%= path %>" class="pic-1" style="width: 100%" />
+                                    <% console.log("hello Image from offer Path:", path); %>
+                                    <img src="<%= path %>" class="pic-2" style="width: 100%" />
+                                      <% }); %>
+                                       <% } %>
+                            </div>
+                            <div class="container">
+                                <h4><b> <%= product.productName %> </b></h4>
+                                 <p><%= product.sold %> item sold</p>
+                        </div>  </div>
+                    <% }); %>
+              
+                  <% } %>
+            </div>
+        </div>
+      
+      </div>
+      </body>
+      </html>
