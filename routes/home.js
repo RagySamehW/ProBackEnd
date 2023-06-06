@@ -68,11 +68,36 @@ router.post("/Item", async (req, res) => {
     }
   );
 });
+
+router.get('/search', async (req, res) => {
+  const query = req.query.query; 
+
+  try {
+    let products;
+
+    if (query && query.length >= 2) {
+      
+      products = await Product.find({ name: { $regex: query, $options: 'i' } });
+    }
+    else
+    {
+      products = await Product.find();
+    }
+
+    res.render('search-results', { products }); // 
+  } catch (error) {
+    console.error('Error searching for products:', error);
+    res.status(500).send('Error searching for products');
+  }
+});
+
+
 router.post("/getproducts", async (req, res) => {
   let payload = req.body.payload.trim();
   let search = await Product.find({
     ProductNam: { $regex: new RegExp("^" + payload + ".*", "i") },
   }).exec();
+  
   res.send({ payload: search });
 });
 
