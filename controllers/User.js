@@ -118,65 +118,7 @@ const RemoveCart = (req,res) =>{
         });
 };
 
-const Checkout = (req,res) =>{
-    var substrs = req.body.carts.split(",");
-  for (var c = 0; c < substrs.length; c++) {
-    var pro_name = "";
-    var pro_price = "";
-    var pro_size = "";
-    if (substrs[c].includes("ProductName")) {
-      pro_name = substrs[c].split("'")[1];
-      while (!substrs[c].includes("Size")) {
-        c = c + 1;
-      }
-      pro_size = substrs[c].split("'")[1];
 
-      while (!substrs[c].includes("Price")) {
-        c = c + 1;
-      }
-      pro_price = parseInt(substrs[c].split(" ")[3]);
-
-      while (!substrs[c].includes("Quantity")) {
-        c = c + 1;
-      }
-      pro_quant = parseInt(substrs[c].split(" ")[3]);
-      Cart.findOneAndDelete({
-        UserName: req.session.user.Name,
-        ProductName: pro_name,
-        Size: pro_size,
-      }).then((result) => {
-        var nm = result.ProductName;
-        var pr = result.Price;
-        var sz = result.Size;
-        var qt = result.Quantity;
-        var ds = result.Description;
-        Product.findOneAndDelete({ ProductName: nm, Size: sz }).then((data) => {
-          console.log(data.Quantity);
-          console.log(result.Quantity);
-          console.log(qt);
-          qt = data.Quantity - qt;
-
-          const prod = new Product({
-            ProductName: nm,
-            Price: pr,
-            Size: sz,
-            Quantity: qt,
-            Description: ds,
-          });
-          prod
-            .save()
-            .then((result) => {
-              res.redirect("/");
-            })
-            .catch((err) => {
-              console.log(err);
-              // Handle the error, e.g., display an error message or redirect to an error page
-            });
-        });
-      });
-    }
-  }
-};
 
 const checkUN = (req, res) => {
     var query = { Name: req.body.Name };
@@ -208,6 +150,66 @@ const removeFromWishlist = (req, res) => {
     });
   };
 
+checkout: async(req,res)=>{
+      console.log('hello');
+        const{cart}=req.query;
+          const productlist= await Cart.findById({_id:cart});
+          console.log("found the product "+productlist);
+          if(productlist){
+           
+             res.render('checkout',{user:req.session.user===undefined?"":req.session.user,productlist});
+          }
+      
+    },
+  };
+
+order:async(req,res)=>{
+        const {user_id,address,address2,add,city,phone,cart}=req.body;
+console.log('order detail');
+const productlist= await Cart.findById({_id:cart});
+  // Create an array to hold the item objects
+  const items = [];
+
+  // Iterate through the productlist array
+  productlist.item.forEach((item) => {
+    // Create an object for each item
+    const newItem = {
+      productId: item.productId,
+      productName: item.productName,
+      productPrice: item.productPrice,
+      quantity: item.quantity || 0 // Default quantity to 0 if not provided
+    };
+
+    // Push the item object to the items array
+    items.push(newItem);
+  });
+
+  // Create a new order document using the Order model
+  const newOrder = new Order({
+    UserId: user_id,
+    item: items,
+    address: address,
+    address2: address2,
+    additionaladd: add,
+    city: city,
+    phone: phone
+  });
+  await newOrder.save();
+ await Cart.findByIdAndUpdate({ _id: cart }, { $set: { item: [], totalPrice: 0 } });
+
+  // Save the new order document to the database
+ 
+    if(newOrder){
+      console.log('Order saved:', newOrder);
+      // Handle success and continue with your code
+
+      res.redirect('/')
+    }}
+    
+
+  };
+
+
 
 module.exports = {
   Getuser,
@@ -215,7 +217,8 @@ module.exports = {
   AddtoCart,
   Cartv,
   RemoveCart,
-  Checkout,
+  checkout,
   checkUN,
+  order,
   removeFromWishlist
 };
