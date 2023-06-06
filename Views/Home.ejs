@@ -383,9 +383,17 @@ body {
                   <i class="material-icons">star</i>
                 </div>
                 <h4><%= product.price %></h4>
+                <div>
+                    <form action="/item" method="post" id="add_to_cart">
+                        <input name="pname" value ="<%= product.ProductName%>" hidden></input>
+                        <input name="psize" value="<%= product.Size%>" hidden></input>
+                        <input class="buy-button"  type="submit" onclick="" value="Show Item"/></input>
+                        <a href="/user/Cart"><i class="material-icons cart">shop</i></a>
+                    </form>
+                  </div>
               </div>
-              <a href="#"><i class="material-icons cart">shop</i></a>
-              <a href="bot"><i class="material-icons cart">chatbot</i></a>
+              <a href="/item"><i class="material-icons cart">shop</i></a>
+              
 
             </div>
             <% }) %>
