@@ -30,16 +30,17 @@ As an admin, you can take control of your store's inventory and products through
 ## Screenshots
 
 ### Home Page
-![Home Page](C:\Users\vision-pc\Desktop\backend\readme)
+The home page of our clothing store website showcases a stunning collection of fashionable attire to inspire and captivate visitors.![Home Page](C:\Users\vision-pc\Desktop\backend\readme)
 
 ### Product Listing
-![Product page](C:\Users\vision-pc\Desktop\backend\readme)
+The products page of our clothing store website presents an extensive array of stylish garments, accessories, and footwear to cater to diverse fashion preferences.![Product page](C:\Users\vision-pc\Desktop\backend\readme)
 
 ### Cart
+The cart page on our clothing store website allows customers to conveniently review and manage their selected items before proceeding to checkout.
 ![Cart](C:\Users\vision-pc\Desktop\backend\readme)
 
 ### Admin dashboard
-![Admin Panel](C:\Users\vision-pc\Desktop\backend\readme)
+The admin dashboard page of your clothing store website provides a comprehensive overview and control over inventory, orders, and customer data for efficient management and analysis.![Admin Panel](C:\Users\vision-pc\Desktop\backend\readme)
 
 ## Check Out Our Web Application
 
@@ -57,7 +58,7 @@ Need help or have a question? Feel free to reach out to us!
 
 
 [![Ragy Sameh](https://img.shields.io/badge/Ragy%20sameh-Contact-blue)](mailto:ragy2106213@miuegypt.edu.eg)
-[![Youssef Sherin](https://img.shields.io/badge/Youssef%20sherin-Contact-blue)](mailto:ragy2106213@miuegypt.edu.eg)
+[![Youssef Sherin](https://img.shields.io/badge/Youssef%20sherin-Contact-blue)](mailto:youssef2100694@miuegypt.edu.eg)
 
 Thank you for choosing Lion Soul for your clothing needs. We're committed to delivering premium products and exceptional customer service.
 
