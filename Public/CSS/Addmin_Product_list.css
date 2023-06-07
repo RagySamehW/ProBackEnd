@@ -1,4 +1,3 @@
-
 body {
     background-color: black;
 }
@@ -40,13 +39,30 @@ td {
 tr.r:hover {
     color: #eb9e10;
 }
-button.btn{
+
+button.btn {
     background-color: #eb9e10;
     border-radius: 25px;
     margin-bottom: 10px;
     border: #fff;
 }
-button.btn:hover{
+
+button.btn:hover {
     background-color: #242323;
     color: #eb9e10;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    table {
+        font-size: 14px;
+    }
 }
