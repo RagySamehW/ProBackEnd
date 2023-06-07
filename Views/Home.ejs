@@ -109,7 +109,7 @@
               <img class="p1" src="/Images/<%= product.Image %>">
               <div class="des">
                 <span><%= product.ProductName %></span>
-                <h5><%= product.title %></h5>
+                <h5><%= product.Smalldesc %></h5>
                 <div class="star">
                   <i class="material-icons">star</i>
                   <i class="material-icons">star</i>
@@ -117,7 +117,7 @@
                   <i class="material-icons">star</i>
                   <i class="material-icons">star</i>
                 </div>
-                <h4><%= product.price %></h4>
+                <h4><%= product.Price %></h4>
                 <div>
                     <form action="/item" method="post" id="add_to_cart">
                         <input name="pname" value ="<%= product.ProductName%>" hidden></input>
