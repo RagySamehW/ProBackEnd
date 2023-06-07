@@ -11,6 +11,9 @@ const contacttSchema = new Schema({
   Message: {
     type: String,
   },
+  Done:{
+    type: Boolean,
+  }
 }, { timestamps: true });
 
 const Contacts = mongoose.model('Contact', contacttSchema);
