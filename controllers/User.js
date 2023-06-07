@@ -33,22 +33,36 @@ const Adduser = (req, res) => {
   console.log(req.body);
   const { un, em, ph, pw } = req.body;
 
-  // Create a new user object
-  const newUser = new Employees({
-    Name: un,
-    Email: em,
-    Phone: ph,
-    Password: pw
-  });
-  // Save the user to the database
-  newUser.save()
-    .then(() => {
-      res.json({ success: true });
-      res.render("/");
+  // Check if the username already exists
+  Employees.findOne({ Name: un })
+    .then((existingUser) => {
+      if (existingUser) {
+        // Username already exists
+        return res.status(400).json({ success: false, error: 'Username already exists' });
+      }
+
+      // Create a new user object
+      const newUser = new Employees({
+        Name: un,
+        Email: em,
+        Phone: ph,
+        Password: pw
+      });
+
+      // Save the user to the database
+      newUser.save()
+        .then(() => {
+          console.log('User saved successfully');
+          res.json({ success: true });
+        })
+        .catch((error) => {
+          console.error('Error saving user to the database', error);
+          res.status(500).json({ success: false, error: 'Error occurred during account creation. Please try again later' });
+        });
     })
     .catch((error) => {
-      console.error('Error saving user to the database', error);
-      res.status(500).json({ success: false });
+      console.error('Error finding user in the database', error);
+      res.status(500).json({ success: false, error: 'Error occurred during account creation. Please try again later' });
     });
 };
 
