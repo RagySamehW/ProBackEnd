@@ -295,9 +295,7 @@
                 </tr>
 
                 <% }) %>
-                <% } else { %>
-                <p>.</p>
-                <% } %>
+                <% }%>
         </table>
     </section>
     <br>
@@ -319,14 +317,16 @@
                 <td id="tot" style="border-top: 1px solid #000;" class="price" colspan="4"></td>
             </tr>
             <tr>
-               
+                <% if (carts.length > 0) { %>
+                    <% carts.forEach(crt=> { %>
               <td colspan="5"><button id="checkoutButton">
-             <a href="/user/checkout?cart=<%=cart._id%>&proudct=<%=products._id%>"><span id="checkout">Check Out</span>
+             <a href="/user/checkout"><span id="checkout">Check Out</span>
               <span class="material-symbols-outlined" id="arrowicon">
-                arrow_forward</span
-              >
+                arrow_forward</span>
             </a> 
             </button></td>
+            <% }) %>
+            <% }%>
                 
 
             
