@@ -28,7 +28,7 @@ router.get("/signup", (req, res) => {
 
 router.get('/wishlist/remove/:productId', User.removeFromWishlist);
 router.get('/wishlist/AddtoCart/:productId', User.AddtoCart);
-
+router.post("/Action_Add_Mess", User.AddMessage);
 router.get("/Cart", User.Cartv);
 router.post("/profile", User.Getuser);
 router.post("/signup-action", User.Adduser);
@@ -56,4 +56,5 @@ router.get("/Checkout/_id", User.checkout);
 router.post("/Checkout/_id", User.checkout);
 router.post('/checkU', User.checkUN);
 router.post('/order',User.order);
+
 module.exports = router;
