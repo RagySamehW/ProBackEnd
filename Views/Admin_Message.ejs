@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Customer List</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="/CSS/Addmin_Users.css">
+
+</head>
+
+<body>
+    <%- include("./partials/nav.ejs") %>
+
+    <div class="container">
+        <h1>Users List</h1>
+
+        <% if (Mess.length > 0) { %>
+        <table id="customer-table">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th>Action</th>
+                <th>Done</th>
+            </tr>
+            <% Mess.forEach(emp=> { %>
+            <tr>
+                <td>
+                    <%= emp.Name %>
+                </td>
+                <td>
+                    <%= emp.Email %>
+                </td>
+                <td>
+                    <%= emp.Message %>
+                </td>
+                <td>
+                    <form action="/admin/deleteM" method="POST">
+                        <button type="submit" name="id" value="<%= emp._id %>">Delete</button>
+                    </form>
+                    <a href="/admin/edit/<%= emp._id %>">Edit</a>
+                </td>
+            </tr>
+            <% }) %>
+        </table>
+        <% } else { %>
+        <p>There are no Messages to display...</p>
+        <% } %>
+
+    </div>
+</body>
+
+</html>
