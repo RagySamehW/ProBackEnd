@@ -75,14 +75,14 @@ router.get('/search', async (req, res) => {
     let products;
 
     if (query && query.length >= 2) {
-      products = await Product.find({ name: { $regex: query, $options: 'i' } }).exec();
+      products = await Product.find({ ProductName: { $regex: query, $options: 'i' } }).exec();
     } else {
       products = await Product.find().exec();
     }
 
     res.render('searchresults', {
       user: req.session.user || '',
-      products 
+      products,
     });
   } catch (error) {
     console.error('Error searching for products:', error);
