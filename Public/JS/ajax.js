@@ -20,7 +20,11 @@ $(document).ready(function() {
           if (response.success) {
             $('#register').html('<h1>Account Created Successfully!</h1>');
           } else {
-            $('#register').html('<h1>Account Creation Failed. Please try again.</h1>');
+            if (response.error === 'Username already exists') {
+              $('#nameerr').text('Username is already taken');
+            } else {
+              $('#register').html('<h1>Account Creation Failed. Please try again.</h1>');
+            }
           }
         },
         error: function(error) {
@@ -31,32 +35,32 @@ $(document).ready(function() {
     });
   
     function validateForm() {
-      var name = document.getElementById("un").value;
-      var nameerr = document.getElementById("nameerr");
-      var email = document.getElementById("em").value;
-      var emailerr = document.getElementById("ema");
-      var password = document.getElementById("password").value;
-      var confirmPassword = document.getElementById("confirmPassword").value;
-      var passwordError = document.getElementById("passwordError");
+      var name = document.getElementById('un').value;
+      var nameerr = document.getElementById('nameerr');
+      var email = document.getElementById('em').value;
+      var emailerr = document.getElementById('ema');
+      var password = document.getElementById('password').value;
+      var confirmPassword = document.getElementById('confirmPassword').value;
+      var passwordError = document.getElementById('passwordError');
   
-      if (name.trim() === "") {
-        nameerr.textContent = "You must enter a user name";
+      if (name.trim() === '') {
+        nameerr.textContent = 'You must enter a user name';
         return false;
       }
   
-      if (email.trim() === "") {
-        emailerr.textContent = "You must enter an email";
+      if (email.trim() === '') {
+        emailerr.textContent = 'You must enter an email';
         return false;
       }
   
       if (password !== confirmPassword) {
-        passwordError.textContent = "Passwords do not match";
+        passwordError.textContent = 'Passwords do not match';
         return false;
       }
   
-      nameerr.textContent = "";
-      emailerr.textContent = "";
-      passwordError.textContent = "";
+      nameerr.textContent = '';
+      emailerr.textContent = '';
+      passwordError.textContent = '';
       return true;
     }
   });
