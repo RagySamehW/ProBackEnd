@@ -58,36 +58,7 @@ function googleTranslateElementInit() {
         </ul>
         </div>
     </section>
-    <script>
-        function sendData(e) {
-            const SearchResult = document.getElementById('SearchResult');
-            let match = e.value.match(/^[a-zA-z]*/);
-            let match2 = e.value.match(/\s*/);
-            if (match2[0] === e.value) {
-                SearchResult.innerHTML = '';
-                return;
-            }
-            if (match[0] === e.value) {
-                fetch('/getproducts', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ payload: e.value })
-                }).then(res => res.json()).then(data => {
-                    let payload = data.payload;
-                    SearchResult.innerHTML = '';
-                    if(payload.length < 1){
-                        SearchResult.innerHTML = '<p>No Result Found </p>';
-                        return;
-                    }
-                    payload.forEach((item, index) => {
-                        if(index > 0) SearchResult.innerHTML += '<hr>'
-                        SearchResult.innerHTML += `<p>${item.name}</p>`;
-                    });
-                });
-            }
-
-        };
-    </script>
+  
     
 </form>
 </body>
