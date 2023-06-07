@@ -3,13 +3,17 @@ var bodyParser = require("body-parser");
 const router = express.Router();
 router.use(bodyParser.json());
 
-const Cart = require("../models/cart");
-router.get('/checkout',user.checkout);
 
-const User = require("../controllers/User");
+
+const User = require("../controllers/User")
 
 router.get("/Login2", (req, res) => {
   res.render("Login2", {
+    user: req.session.user === undefined ? "" : req.session.user,
+  });
+});
+router.get("/checkout", (req, res) => {
+  res.render("checkout", {
     user: req.session.user === undefined ? "" : req.session.user,
   });
 });
@@ -44,11 +48,12 @@ router.get("/logout", (req, res) => {
   req.session.destroy();
   res.redirect("/");
 });
-
+ 
 
 router.post("/add_to_cart", User.AddtoCart);
 router.post("/remove_from_cart", User.RemoveCart);
-router.post("/Checkout", User.Checkout);
+router.get("/Checkout/_id", User.checkout);
+router.post("/Checkout/_id", User.checkout);
 router.post('/checkU', User.checkUN);
-router.post('/order',user.order);
+router.post('/order',User.order);
 module.exports = router;
