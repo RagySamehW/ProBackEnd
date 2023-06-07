@@ -1,19 +1,22 @@
 const Employees = require("../models/employees");
 const Cart = require("../models/cart");
 const Product = require("../models/products");
+const Orders = require("../models/order");
 const objectId = require("mongoose").ob;
 const path = require("path");
 
-const Getuser = async(req, res) => {
+const Getuser = async (req, res) => {
   var query = { Name: req.body.un, Password: req.body.pw };
   const products = await Product.aggregate([{ $sample: { size: 8 } }]).exec();
-    const productss = await Product.aggregate([{ $sample: { size: 4 } }]).exec();
+  const productss = await Product.aggregate([{ $sample: { size: 4 } }]).exec();
   Employees.findOne(query)
     .then((result) => {
       if (result) {
         console.log(result);
         req.session.user = result;
-        res.render("Home", { productss ,products,
+        res.render("Home", {
+          productss,
+          products,
           user: req.session.user === undefined ? "" : req.session.user,
         });
       } else {
@@ -104,69 +107,75 @@ const Cartv = (req, res) => {
   });
 };
 
-const RemoveCart = (req,res) =>{
-    Cart.findOneAndDelete({
-        UserName: req.session.user.Name,
-        ProductName: req.body.pname,
-        Size: req.body.psize,
-      })
-        .then((result) => {
-          res.redirect("/user/cart");
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+const RemoveCart = (req, res) => {
+  Cart.findOneAndDelete({
+    UserName: req.session.user.Name,
+    ProductName: req.body.pname,
+    Size: req.body.psize,
+  })
+    .then((result) => {
+      res.redirect("/user/cart");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
 
-
-
 const checkUN = (req, res) => {
-    var query = { Name: req.body.Name };
-    Employees.find(query)
-        .then(result => {
-            if (result.length > 0) {
-                res.send('taken');
-            }
-            else {
-                res.send('available');
-            }
-        })
-        .catch(err => {
-            console.log(err);
-        });
+  var query = { Name: req.body.Name };
+  Employees.find(query)
+    .then((result) => {
+      if (result.length > 0) {
+        res.send("taken");
+      } else {
+        res.send("available");
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
 
 const removeFromWishlist = (req, res) => {
-    const productId = req.params.productId;
-    User.findById(req.user._id, (err, user) => {
-      if (err) {
-        console.log(err);
-        res.redirect('/wishlist');
-      } else {
-        user.wishlist = user.wishlist.filter(id => id.toString() !== productId);
-        user.save();
-        res.redirect('/wishlist');
-      }
-    });
-  };
+  const productId = req.params.productId;
+  User.findById(req.user._id, (err, user) => {
+    if (err) {
+      console.log(err);
+      res.redirect("/wishlist");
+    } else {
+      user.wishlist = user.wishlist.filter((id) => id.toString() !== productId);
+      user.save();
+      res.redirect("/wishlist");
+    }
+  });
+};
 
-checkout: async(req,res)=>{
-      console.log('hello');
-        const{cart}=req.query;
-          const productlist= await Cart.findById({_id:cart});
-          console.log("found the product "+productlist);
-          if(productlist){
-           
-             res.render('checkout',{user:req.session.user===undefined?"":req.session.user,productlist});
-          }
-      
-    },
-  };
+const checkout = async (req, res) => {
+  try {
+    const { cart } = req.query;
+    const productlist = await Cart.findById(mongoose.Types.ObjectId(cart));
+    
+    if (productlist) {
+      res.render("checkout", {
+        user: req.session.user || '',
+        productlist,
+      });
+    } else {
+      res.status(404).send('Cart not found');
+    }
+  } catch (error) {
+    console.error('Error during checkout:', error);
+    res.status(500).send('Error during checkout');
+  }
+};
 
-order:async(req,res)=>{
-        const {user_id,address,address2,add,city,phone,cart}=req.body;
-console.log('order detail');
-const productlist= await Cart.findById({_id:cart});
+module.exports = checkout;
+
+
+const order = async (req, res) => {
+  const { user_id, address, address2, add, city, phone, cart } = req.body;
+  console.log("order detail");
+  const productlist = await Cart.findById({ _id: cart });
   // Create an array to hold the item objects
   const items = [];
 
@@ -177,7 +186,7 @@ const productlist= await Cart.findById({_id:cart});
       productId: item.productId,
       productName: item.productName,
       productPrice: item.productPrice,
-      quantity: item.quantity || 0 // Default quantity to 0 if not provided
+      quantity: item.quantity || 0, // Default quantity to 0 if not provided
     };
 
     // Push the item object to the items array
@@ -192,24 +201,23 @@ const productlist= await Cart.findById({_id:cart});
     address2: address2,
     additionaladd: add,
     city: city,
-    phone: phone
+    phone: phone,
   });
   await newOrder.save();
- await Cart.findByIdAndUpdate({ _id: cart }, { $set: { item: [], totalPrice: 0 } });
+  await Cart.findByIdAndUpdate(
+    { _id: cart },
+    { $set: { item: [], totalPrice: 0 } }
+  );
 
   // Save the new order document to the database
- 
-    if(newOrder){
-      console.log('Order saved:', newOrder);
-      // Handle success and continue with your code
 
-      res.redirect('/')
-    }}
-    
+  if (newOrder) {
+    console.log("Order saved:", newOrder);
+    // Handle success and continue with your code
 
-  };
-
-
+    res.redirect("/");
+  }
+};
 
 module.exports = {
   Getuser,
@@ -220,5 +228,5 @@ module.exports = {
   checkout,
   checkUN,
   order,
-  removeFromWishlist
+  removeFromWishlist,
 };
