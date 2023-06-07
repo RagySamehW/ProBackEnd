@@ -169,26 +169,18 @@ const removeFromWishlist = (req, res) => {
   });
 };
 
-const checkout = async (req, res) => {
-  try {
-    const { cart } = req.query;
-    const productlist = await Cart.findById(mongoose.Types.ObjectId(cart));
-    
+ checkout: async (req, res) => {
+    console.log('hello');
+    const cart = req.query.cart;
+    const productlist = await Cart.findById({ _id: cart });
+    console.log("found the product " + productlist);
     if (productlist) {
-      res.render("checkout", {
-        user: req.session.user || '',
-        productlist,
-      });
-    } else {
-      res.status(404).send('Cart not found');
-    }
-  } catch (error) {
-    console.error('Error during checkout:', error);
-    res.status(500).send('Error during checkout');
-  }
-};
 
-module.exports = checkout;
+      res.render('checkout', { errors:'',user: req.session.user === undefined ? "" : req.session.user, cart: productlist });
+    }
+}
+
+
 
 
 const order = async (req, res) => {
