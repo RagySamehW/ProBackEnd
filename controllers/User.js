@@ -31,20 +31,24 @@ const Getuser = async (req, res) => {
 
 const Adduser = (req, res) => {
   console.log(req.body);
-  const emp = new Employees({
-    Name: req.body.un,
-    Password: req.body.pw,
-    Email: req.body.em,
-    Type: req.body.tp,
-    Phone: req.body.ph,
+  const { un, em, ph, pw } = req.body;
+
+  // Create a new user object
+  const newUser = new Employees({
+    Name: un,
+    Email: em,
+    Phone: ph,
+    Password: pw
   });
-  emp
-    .save()
-    .then((result) => {
-      res.redirect("/");
+  // Save the user to the database
+  newUser.save()
+    .then(() => {
+      res.json({ success: true });
+      res.render("/");
     })
-    .catch((err) => {
-      console.log(err);
+    .catch((error) => {
+      console.error('Error saving user to the database', error);
+      res.status(500).json({ success: false });
     });
 };
 
