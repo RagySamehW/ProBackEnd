@@ -1,38 +1,50 @@
- 
- <body>
-  <%- include("./partials/Nav.ejs") %>
- <h2>Search Results</h2>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Results</title>
+  <link rel="stylesheet" href="/CSS/Addmin_Users.css">
 
-<% if (products.length === 0) { %>
-  <p>No products found.</p>
-<% } else { %>
-  <div class="pro-container">
-    <% productss.forEach((product) => { %>
-    <div class="pro">
-        <img class="p1" src="/Images/<%= product.Image %>">
-        <div class="des">
-            <span><%= product.ProductName %></span>
-            <h5><%= product.title %></h5>
-            <div class="star">
-                <i class="material-icons">star</i>
-                <i class="material-icons">star</i>
-                <i class="material-icons">star</i>
-                <i class="material-icons">star</i>
-                <i class="material-icons">star</i>
-            </div>
-            <h4><%= product.price %></h4>
-        </div>
-        <div>
-            <form action="/item" method="post" id="add_to_cart">
+
+  </style>
+</head>
+
+
+<body>
+
+  <%- include("./partials/nav.ejs") %>
+
+  <div class="container">
+    <h1>Search Results:</h1>
+
+    <% if (products.length > 0) { %>
+    <table id="customer-table">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        <% products.forEach(product=> { %>
+        <tr>
+            <td>
+                <%= product.ProductName %>
+            </td>
+            <td>
+                <%= product.Price %>
+            </td>
+            <td>
+            <div>
+              <form action="/item" method="post" id="add_to_cart">
                 <input name="pname" value ="<%= product.ProductName%>" hidden></input>
                 <input name="psize" value="<%= product.Size%>" hidden></input>
                 <input class="buy-button"  type="submit" onclick="" value="Show Item"/></input>
-                <a href="/user/Cart"><i class="material-icons cart">shop</i></a>
             </form>
-          </div>
-
-    </div>
-    <% }) %>
-</div>
-<% } %>
- </body>
+            </div>
+          </td>
+        </tr>
+        <% }) %>
+    </table>
+    <% } else { %>
+    <p>There are no Messages to display...</p>
+    <% } %>
+</body>
+</html>
