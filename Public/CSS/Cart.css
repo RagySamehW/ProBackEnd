@@ -43,7 +43,6 @@ p {
 
 body {
     width: 100%;
-
 }
 
 #header {
@@ -57,7 +56,6 @@ body {
     position: sticky;
     top: 0;
     left: 0;
-
 }
 
 #header .logo {
@@ -78,7 +76,6 @@ body {
     list-style: none;
     padding: 0 20px;
     position: relative;
-
 }
 
 #navbar li a {
@@ -196,4 +193,43 @@ tr:hover {
 .trash {
     width: 40;
     height: 25px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    /* Adjust header padding */
+    #header {
+        padding: 10px 20px;
+    }
+
+    /* Center align the logo */
+    #header .logo {
+        text-align: center;
+    }
+
+    /* Adjust table width */
+    table {
+        width: 100%;
+    }
+
+    /* Adjust table font sizes */
+    th,
+    td {
+        font-size: 14px;
+    }
+
+    /* Make the coupon section full width */
+    .coupon {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Adjust table2 and table3 widths */
+    .table2,
+    .table3 {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
