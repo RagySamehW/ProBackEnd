@@ -170,7 +170,7 @@ const removeFromWishlist = (req, res) => {
   });
 };
 
- checkout: async (req, res) => {
+ const checkout = async (req, res) => {
     console.log('hello');
     const cart = req.query.cart;
     const productlist = await Cart.findById({ _id: cart });
