@@ -1,79 +1,160 @@
-
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<style>
+  /* Form container */
+  #form-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  /* Form input fields */
+  #form-container input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+  }
+  
+  /* Form labels */
+  #form-container label {
+    margin-bottom: 8px;
+  }
+  
+  /* Form submit button */
+  #form-container .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  /* Cart section */
+  #cart-section .col-25,
+  #cart-section .col-75 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  /* Cart container */
+  #cart-container {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  /* Cart items */
+  .product-list {
+    margin: 20px;
+  }
+  
+  /* Cart total table */
+  #cart-total-table {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  /* Cart total table headers */
+  #cart-total-table th.header {
+    text-align: left;
+  }
+  
+  /* Cart total table cells */
+  #cart-total-table td {
+    text-align: right;
+  }
+  
+  /* Place order button */
+  #checkoutButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+</style>
 </head>
 <body>
-           <%- include("./partials/Nav.ejs") %>
-<div class="row">
-  <div class="col-75">
-    <div class="container">
-      <form action="/user/order" method="POST">
-      
-        <div class="row">
-          <div class="col-50">
-            <h3>Shipping Address</h3>
-          
-            <input  type="hidden"  name="user_id"    value="<%=user._id%>">
-            <label for="fname">   <i class="fa fa-user"></i>   Full Name</label>
-            <input type="text"   id="fname"   name="firstname"    value="<%=user.firstName%>">
-            <label for="email">  <i class="fa fa-envelope"></i>    Email</label>
-            <input type="text"   id="email"  name="email"   placeholder="email"   value="<%=user.email%>">
-            <label for="adr">  <i class="fa fa-address-card-o"></i>   Address</label>
-            <input type="text"   id="adr"    name="address"    placeholder="542 W. 15th Street"    value="<%=user.address%>">
-            <label for="adr">   <i class="fa fa-address-card-o"></i>    Address 2</label>
-            <input type="text"    id="adr"    name="address2"    placeholder="542 W. 15th Street"   value="<%=user.address2%>">
-            <label for="adr">   <i class="fa fa-address-card-o"></i>    Additional Address</label>
-            <input type="text"    id="adr"    name="add"    placeholder="542 W. 15th Street">
-            <label for="city">   <i class="fa fa-institution"></i>    City</label>
-            <input type="text"    id="city"    name="city"    placeholder="">
-            <label for="phone">   <i class="fa fa-phone"></i>     Phone</label>
-            <input type="text"     id="phone"    name="phone"     placeholder="">
-
-            <div class="row">
-              <div class="col-50">
-                <label for="state">State</label>
-                <input type="text" id="state" name="state" placeholder="NY">
-              </div>
-              <div class="col-50">
-                <label for="zip">Zip</label>
-                <input type="text" id="zip" name="zip" placeholder="10001">
-              </div>
+  <%- include("./partials/Nav.ejs") %>
+  <div id="form-container" class="row">
+    <div class="col-75">
+      <div class="container">
+        <form action="/user/order" method="POST">
+        
+          <div class="row">
+            <div class="col-50">
+            
+              <input  type="hidden"  name="user_id"    value="<%=user._id%>">
+              <label for="fname">   <i class="fa fa-user"></i>   Full Name</label>
+              <input type="text"   id="fname"   name="firstname"    value="<%=user.firstName%>">
+              <label for="email">  <i class="fa fa-envelope"></i>    Email</label>
+              <input type="text"   id="email"  name="email"   placeholder="email"   value="<%=user.email%>">
+              <label for="adr">  <i class="fa fa-address-card-o"></i>   Address</label>
+              <input type="text"   id="adr"    name="address"    placeholder="Sheraton Dawla"    value="<%=user.address%>">
+        
+              <label for="phone">   <i class="fa fa-phone"></i>     Phone</label>
+              <input type="text"     id="phone"    name="phone"     placeholder="">
+  
+              
             </div>
-          </div>
-
-        
+  
           
-        </div>
-        <label>
-          <input type="checkbox" checked="checked" name="sameadr"> Cash on Delivery
-        </label>
-        <input type="hidden" name="cart" value="<%=cart._id%>">
-
-        <input type="submit" value="Continue to checkout" class="btn">
-        
-      </form>
+            
+          </div>
+          
+          
+          
+        </form>
+      </div>
+    </div>
+    <div id="cart-section" class="col-25">
+      <div id="cart-container" class="container">
+        <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i></span></h4>
+        <% carts.forEach((items) => { %>
+          <div class="product-list" style="margin: 20px;">
+            <%= items.ProductName %><span class="price"><%= items.Price %></span>EGP
+          </div>
+        <% }) %>
+        <hr>
+        <section>
+          <table id="cart-total-table" class="table3">
+              <tr>
+                  <th class="header" colspan="5">CART TOTAL</th>
+              </tr>
+              <tr>
+                  <td class="header">subtotal</td>
+                  <td id="sub_tot" class="price" colspan="4"></td>
+              </tr>
+              <tr>
+                  <td class="header">shipping</td>
+                  <td class="price" colspan="4">50</td>
+              </tr>
+              <tr>
+                  <td style="border-top: 1px solid #000;" class="header">Total</td>
+                  <td id="tot" style="border-top: 1px solid #000;" class="price" colspan="4"><%=totalPrice%></td>
+              </tr>
+              <tr>       
+                <td colspan="5">
+                  <button id="checkoutButton" onclick="orderPlaced()">Place Order</button>
+                </td>   
+              </tr>
+          </table>
+      </section>
+      </div>
     </div>
   </div>
-  <div class="col-25">
-    <div class="container">
-      <h4>  Cart <span class="price"   style="color:black">  <i class="fa fa-shopping-cart"></i>   <b><%=cart.item.length%></b><   /span></h4>
-      <% cart.item.forEach((items)=>{%>
-      <div class ="prodcutlist" style="margin: 20px;">
-        
-        
-        <%=items.productName%><span class="price"><%=items.productPrice%>EGP</span>
-        
-    
-    </div>
-    <%})%>
-      <hr>
-      <p>Total <span class="price" style="color:black"><b><%=cart.totalPrice%>EGP</b></span></p>
-    </div>
-  </div>
-</div>
-</form>
-</body>
-</html> 	
+  </body>
+<script>
+  function orderPlaced() {
+    window.location.href = "/";
+  }
+</script>
+</html>
