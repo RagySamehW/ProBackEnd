@@ -2,6 +2,7 @@ const Employees = require("../models/employees");
 const Cart = require("../models/cart");
 const Product = require("../models/products");
 const Orders = require("../models/order");
+const Messages = require("../models/contact");
 const objectId = require("mongoose").ob;
 const path = require("path");
 
@@ -219,6 +220,24 @@ const order = async (req, res) => {
   }
 };
 
+const AddMessage = (req,res) => {
+  var p1 = new Messages({
+    Name: req.body.firstname,
+    Email: req.body.email,
+    Message: req.body.subject,
+    });
+    
+    p1.save()
+    .then(result => {
+      console.log("Done");
+      res.redirect("/");
+    })
+    .catch(err => {
+    console.log("no");
+    // Handle the error, e.g., display an error message or redirect to an error page
+    });
+  };
+
 module.exports = {
   Getuser,
   Adduser,
@@ -229,4 +248,5 @@ module.exports = {
   checkUN,
   order,
   removeFromWishlist,
+  AddMessage
 };
