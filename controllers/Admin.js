@@ -1,5 +1,6 @@
 const Employees = require("../models/employees");
 const Product = require("../models/products");
+const Messages = require("../models/contact");
 const objectId = require("mongoose").ob;
 const path = require("path");
 const fs = require("fs");
@@ -196,6 +197,37 @@ const EditProP = (req, res) => {
     });
 };
 
+const MessageList = (req, res) => {
+  Messages.find()
+    .then((result) => {
+      console.log(result);
+      res.render("Admin_Message", {
+        Mess: result,
+        user: req.session.user === undefined ? "" : req.session.user,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+const DeletM = (req, res) => {
+  const proid = req.body.id;
+  Messages.findOneAndDelete({ _id: proid })
+    .then((deletedpro) => {
+      if (!deletedpro) {
+        console.log("Message not found");
+        res.status(404).send("Message not found");
+      } else {
+        console.log("Message deleted:", deletedpro);
+        res.redirect("Admin_Message");
+      }
+    })
+    .catch((err) => {
+      console.error("Error deleting user:", err);
+      res.status(500).send("Error deleting user");
+    });
+};
 module.exports = {
     userList,
     EditUserG,
@@ -205,5 +237,7 @@ module.exports = {
     ProList,
     AddP,
     EditProG,
-    EditProP
+    EditProP,
+    MessageList,
+    DeletM
 };
