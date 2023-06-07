@@ -170,17 +170,19 @@ const removeFromWishlist = (req, res) => {
   });
 };
 
- const checkout = async (req, res) => {
+const checkout = async (req, res) => {
     console.log('hello');
-    const cart = req.query.cart;
-    const productlist = await Cart.findById({ _id: cart });
-    console.log("found the product " + productlist);
-    if (productlist) {
-
-      res.render('checkout', { errors:'',user: req.session.user === undefined ? "" : req.session.user, cart: productlist });
-    }
-}
-
+    const totalprice = req.query.totalprice;
+    Cart.find({ UserName: req.session.user.Name }).then((data) => {
+      carts = data;
+      res.render("checkout", {
+        errors:'',
+        carts,
+        user: req.session.user === undefined ? "" : req.session.user,
+        totalPrice: totalprice,
+      });
+    });
+  };
 
 
 
