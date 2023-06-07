@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-import User from "../models/employees.js";
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const orderSchema = new mongoose.Schema({
     UserId: String,
@@ -42,5 +42,5 @@ const orderSchema = new mongoose.Schema({
         required: true,
        }
   });
-const Order = mongoose.model('Order', orderSchema);
-export default Order;
+const Orders = mongoose.model('Order', orderSchema);
+module.exports = Orders;
