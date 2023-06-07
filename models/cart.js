@@ -5,6 +5,9 @@ const cartSchema = new Schema({
     type: String,
     required: true,
   },
+  
+  UserId: String,
+  
   ProductName: {
     type: String,
     

@@ -1,5 +1,6 @@
 const express = require("express");
 const session = require("express-session");
+//const https = require('https');
 
 const fileUpload = require("express-fileupload");
 const mongoose = require("mongoose");
@@ -259,3 +260,14 @@ app.use((req, res) => {
       user: req.session.user === undefined ? "" : req.session.user,
     });
 });
+//const options = {
+  //key: fs.readFileSync('./server.key'),
+  //cert: fs.readFileSync('./server.cert')
+//};
+
+//const server = https.createServer(options, app);
+
+//server.listen(3000, () => {
+  //console.log('Server running on https://localhost:3000');
+//});
+
