@@ -5,46 +5,15 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <script  src="https://kit.fontawesome.com/42a3832eaa.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="//code.tidio.co/tu1stys3qwixtipasrjnph1mwc7mgfl8.js" async></script>
-
+    <script src="//code.tidio.co/tu1stys3qwixtipasrjnph1mwc7mgfl8.js" async></script>
     <script src="/JS/ajax.js"></script>
-    
     <link rel="stylesheet" href="/CSS/Log.css">
-
     <meta charset="UTF-8" />
-
-    <script>
-  
-      function myFunction() {
-        let x = document.getElementById("l1").value;
-        let y = document.getElementById("l2").value;
-        let text;
-        let text2;
-        if (x === "") {
-          text = "Input not valid";
-        }
-        else text ="";
-        if (y==="") {
-            text2 ="Pass must be 8 or more char";
-        }
-        else text2 ="";
-
-        document.getElementById("demo").innerHTML = text;
-        document.getElementById("demo2").innerHTML = text2;
-      }
-      
-    </script>
-     <script>
-      function validate() {
-          if (document.getElementById('result').innerHTML.includes('taken'))
-              return false;
-          else
-              return true;
-      }
-  </script>
+    
   </head>
   <body>
-    <%- include("./partials/Nav.ejs") %>
+    <%- include("./partials/nav.ejs") %>
+
     <div id="container">
       <div id="cover">
         <h1 class="sign-up">Hello, Friend!</h1>
@@ -76,14 +45,17 @@
       <div id="register">
         <h1>Create Account</h1>
         <p>Use your email for registration:</p>
-        <form id="Sign_Up" action="/user/signup-action" method="post" enctype="multipart/form-data">
-          <input  type="text" placeholder="Name" id="un" name="un" autocomplete="off" /><br />
-          
-          <input type="email" placeholder="Email" name="em" autocomplete="off" /><br />
+        <form id="Sign_Up" action="/user/signup-action" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+          <input type="text" placeholder="Name" id="un" name="un" autocomplete="off"  /><br/>
+          <span id="nameerr" style="color: red;"></span><br />
+          <input type="email" placeholder="Email" name="em" id="em" autocomplete="off"  /><br />
+          <span id="ema" style="color: red;"></span><br/>
           <input type="hidden" name="tp" value="client">
-          <input type="password" placeholder="Password" name="pw" autocomplete="off" /><br />
-          <input type="number" name="ph" placeholder="Phone number" autocomplete="off" /><br/>
-          <input type="password" placeholder="Password"  autocomplete="off" /><br />
+          <input type="number" name="ph" placeholder="Phone number" autocomplete="off" required /><br/>
+          <input type="password" placeholder="Password" name="pw" id="password" autocomplete="off"  /><br />
+          <input type="password" placeholder="Confirm Password" id="confirmPassword" autocomplete="off"  />
+          <br>
+          <span id="passwordError" style="color: red;"></span><br />
           <input class="submit-btn" type="submit" value="Sign Up" />
         </form>
       </div>
