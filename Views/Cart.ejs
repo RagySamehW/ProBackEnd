@@ -86,18 +86,9 @@
                 <td id="tot" style="border-top: 1px solid #000;" class="price" colspan="4"></td>
             </tr>
             <tr>
-                <% if (carts.length > 0) { %>
-                    <% carts.forEach(crt=> { %>
-              <td colspan="5"><button id="checkoutButton">
-             <a href="/user/checkout"><span id="checkout">Check Out</span>
-              <span class="material-symbols-outlined" id="arrowicon">
-                arrow_forward</span>
-            </a> 
+              <td colspan="5"><button id="checkoutButton" onclick="clicked()">
+             checkout 
             </button></td>
-            <% }) %>
-            <% }%>
-                
-
             
             </tr>
         </table>
@@ -115,6 +106,9 @@
     document.getElementById("sub_tot").value = sumVal;
 
     document.getElementById("tot").innerHTML = sumVal + 50;
+    function clicked(){
+        window.location.href = `/user/checkout?totalprice=${document.getElementById("tot").innerHTML}`;
+    }
 
 </script>
 
