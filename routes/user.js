@@ -48,12 +48,11 @@ router.get("/logout", (req, res) => {
   req.session.destroy();
   res.redirect("/");
 });
- 
+ router.get("/checkout", User.checkout);
 
 router.post("/add_to_cart", User.AddtoCart);
 router.post("/remove_from_cart", User.RemoveCart);
-router.get("/Checkout/_id", User.checkout);
-router.post("/Checkout/_id", User.checkout);
+
 router.post('/checkU', User.checkUN);
 router.post('/order',User.order);
 
