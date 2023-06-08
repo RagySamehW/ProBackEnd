@@ -12,11 +12,6 @@ router.get("/Login2", (req, res) => {
     user: req.session.user === undefined ? "" : req.session.user,
   });
 });
-router.get("/checkout", (req, res) => {
-  res.render("checkout", {
-    user: req.session.user === undefined ? "" : req.session.user,
-  });
-});
 
 router.get("/signup", (req, res) => {
   res.render("signup", {
